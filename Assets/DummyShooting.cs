@@ -29,7 +29,13 @@ public class DummyShooting : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
             float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+
+            // Create Bullet
             GameObject newBullet = (GameObject)Instantiate(bullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
+            // Set Force
+            newBullet.GetComponent<Rigidbody2D>().AddForce(force * 10, ForceMode2D.Impulse);
+            // Destroy after 2 seconds
+            Destroy(newBullet, 2f);
         }
     }
 }
