@@ -165,6 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 729124977}
   - component: {fileID: 729124978}
+  - component: {fileID: 729124979}
   m_Layer: 0
   m_Name: DummyBody
   m_TagString: Untagged
@@ -239,6 +240,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &729124979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729124976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5959329fa1c5a04409ffe55925804d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1922917785}
+  healthPoints: 200
 --- !u!1 &926634625
 GameObject:
   m_ObjectHideFlags: 0
