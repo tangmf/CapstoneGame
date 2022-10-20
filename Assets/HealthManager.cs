@@ -21,11 +21,11 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("left"))
         {
             Damage(20);
         }
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("right"))
         {
             Heal(20);
         }
