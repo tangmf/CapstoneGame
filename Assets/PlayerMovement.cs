@@ -5,37 +5,60 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D playerBody;
-    public CapsuleCollider2D playerCollider;
-    public Vector2 playerPosition;
-    public float playerSpeed = 5.0f;
-    public float playerJumpHeight = 10.0f;
+    public GameObject groundRay;
+
+    public float playerMoveSpeed = 30.0f;
+    public float playerJumpSpeed = 30.0f;
+
+    float moveInput;
+    bool canJump;
 
     // Start is called before the first frame update
     void Start()
     {
         playerBody = gameObject.GetComponent<Rigidbody2D>();
-        playerCollider = gameObject.GetComponent<CapsuleCollider2D>();
+
+        canJump = false;
+    }
+
+    void FixedUpdate()
+    {
+        moveInput = Input.GetAxis("Horizontal");
+        playerBody.velocity = new Vector2(moveInput * playerMoveSpeed, playerBody.velocity.y);
+
+        RaycastHit2D touchingFloor = Physics2D.Raycast (groundRay.transform.position, -Vector2.up);
+        Debug.DrawRay(groundRay.transform.position, -Vector2.up * touchingFloor.distance, Color.red);
+
+        if (touchingFloor.collider != null)
+        {
+            if (touchingFloor.distance <= 0.2)
+            {
+                canJump = true;
+            }
+            else
+            {
+                canJump = false;
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("space"))
+        if (Input.GetKey("w") || Input.GetKey("space"))
         {
-            int results = playerCollider.Raycast(playerBody.position, new RaycastHit2D test[]);
-            playerBody.velocity = new Vector2(playerBody.velocity.x, playerJumpHeight);
-        }
-        else if (Input.GetKey("a"))
-        {
-            playerBody.velocity = new Vector2(-playerSpeed, playerBody.velocity.y);
+            if (canJump == true)
+            {
+                playerBody.velocity = Vector2.up * playerJumpSpeed;
+            }
+            else
+            {
+                return;
+            }
         }
         else if (Input.GetKey("s"))
         {
             Debug.Log(playerBody.position);
-        }
-        else if (Input.GetKey("d"))
-        {
-            playerBody.velocity = new Vector2(playerSpeed, playerBody.velocity.y);
         }
     }
 }
