@@ -58,7 +58,9 @@ public class BossBehaviour : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        newBullet.GetComponent<Rigidbody2D>().AddForce(force * 10, ForceMode2D.Impulse);
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+        newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
         Destroy(newBullet, 2f);
 
     }

@@ -32,8 +32,9 @@ public class DummyShooting : MonoBehaviour
 
             // Create Bullet
             GameObject newBullet = (GameObject)Instantiate(bullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-            // Set Force
-            newBullet.GetComponent<Rigidbody2D>().AddForce(force * 10, ForceMode2D.Impulse);
+            newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+            newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+            newBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
             // Destroy after 2 seconds
             Destroy(newBullet, 2f);
         }
