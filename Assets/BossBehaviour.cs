@@ -25,11 +25,7 @@ public class BossBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (Time.time > nextActionTime)
-            {
-                nextActionTime = Time.time + period;
-                Shoot();
-            }
+
     }
 
     void OnTriggerExit2D(Collider2D hitInfo)
@@ -44,24 +40,32 @@ public class BossBehaviour : MonoBehaviour
 
     void Shoot()
     {
-        GameObject newBullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (Time.time > nextActionTime)
+        {
 
-        GameObject player = GameObject.FindWithTag("Player");
-        Vector2 playerPos = player.transform.position;
-        Vector2 currPos = transform.position;
-        Vector2 force = (playerPos - currPos).normalized;
-        if (force.x > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            GameObject newBullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+            GameObject player = GameObject.FindWithTag("Player");
+            Vector2 playerPos = player.transform.position;
+            Vector2 currPos = transform.position;
+            Vector2 force = (playerPos - currPos).normalized;
+            if (force.x > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (force.x < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+            newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+            newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
+            Destroy(newBullet, 2f);
+
+
+            nextActionTime = Time.time + period;
         }
-        else if (force.x < 0)
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
-        newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
-        newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
-        Destroy(newBullet, 2f);
+        
 
     }
 }
