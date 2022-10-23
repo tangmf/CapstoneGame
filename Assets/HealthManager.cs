@@ -21,6 +21,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.transform.rotation = Quaternion.identity;
         if (Input.GetKeyDown("left"))
         {
             Damage(20);
