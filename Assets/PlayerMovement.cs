@@ -25,6 +25,14 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = Input.GetAxis("Horizontal");
         playerBody.velocity = new Vector2(moveInput * playerMoveSpeed, playerBody.velocity.y);
+        if(moveInput > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (moveInput < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
 
         RaycastHit2D touchingFloor = Physics2D.Raycast (groundRay.transform.position, -Vector2.up);
         Debug.DrawRay(groundRay.transform.position, -Vector2.up * touchingFloor.distance, Color.red);

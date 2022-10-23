@@ -27,6 +27,14 @@ public class BossRun : StateMachineBehaviour
         {
             Vector2 target = new Vector2(player.position.x, rb.position.y);
             Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+            if (target.x - animator.transform.position.x > 0)
+            {
+                animator.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (target.x - animator.transform.position.x < 0)
+            {
+                animator.transform.eulerAngles = new Vector3(0, 180, 0);
+            }
             rb.MovePosition(newPos);
 
         }
