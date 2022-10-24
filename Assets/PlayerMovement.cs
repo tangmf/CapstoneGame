@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpFloorDistance;
 
     float moveInput;
-    bool canJump;
 
     // Start is called before the first frame update
     void Start()
@@ -23,21 +22,11 @@ public class PlayerMovement : MonoBehaviour
         playerMoveSpeed = 8.0f;
         playerJumpSpeed = 15.0f;
         jumpFloorDistance = 0.2f;
-
-    canJump = false;
-    }
-    private void FixedUpdate()
-    {
-        RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
-        Debug.DrawRay(groundRay.transform.position, -Vector2.up * 10, Color.red);
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
-        Debug.DrawRay(groundRay.transform.position, -Vector2.up * touchingFloor.distance, Color.red);
-
         moveInput = Input.GetAxis("Horizontal");
         playerBody.velocity = new Vector2(moveInput * playerMoveSpeed, playerBody.velocity.y);
         if (moveInput > 0)
@@ -51,7 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown("w") || Input.GetKeyDown("space"))
         {
-            if (/*canJump == true*/ touchingFloor.collider != null)
+            RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
+
+            if (touchingFloor.collider != null)
             {
                 playerBody.velocity = Vector2.up * playerJumpSpeed;
             }
