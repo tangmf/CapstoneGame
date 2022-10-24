@@ -26,12 +26,21 @@ public class PlayerMovement : MonoBehaviour
 
     canJump = false;
     }
-
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+        RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
+        Debug.DrawRay(groundRay.transform.position, -Vector2.up * 10, Color.red);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
+        Debug.DrawRay(groundRay.transform.position, -Vector2.up * touchingFloor.distance, Color.red);
+
         moveInput = Input.GetAxis("Horizontal");
         playerBody.velocity = new Vector2(moveInput * playerMoveSpeed, playerBody.velocity.y);
-        if(moveInput > 0)
+        if (moveInput > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
@@ -40,35 +49,9 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
-        Debug.DrawRay(groundRay.transform.position, -Vector2.up * touchingFloor.distance, Color.red);
-
-        Debug.Log(canJump);
-
-        if (touchingFloor.collider != null)
-        {
-            canJump = true;
-            /*if (touchingFloor.distance <= 0.2)
-            {
-                canJump = true;
-            }
-            else
-            {
-                canJump = false;
-            }*/
-        }
-        else
-        {
-            canJump = false;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         if (Input.GetKeyDown("w") || Input.GetKeyDown("space"))
         {
-            if (canJump == true)
+            if (/*canJump == true*/ touchingFloor.collider != null)
             {
                 playerBody.velocity = Vector2.up * playerJumpSpeed;
             }
