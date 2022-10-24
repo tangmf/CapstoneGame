@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.03, y: -0.53}
-  m_SizeDelta: {x: 32.2225, y: 20}
+  m_AnchoredPosition: {x: 0.03, y: -0.57166666}
+  m_SizeDelta: {x: 32.2225, y: 17.9167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &52820735
 Canvas:
@@ -589,7 +589,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerMoveSpeed: 8
-  playerJumpSpeed: 15
+  playerJumpSpeed: 17.5
   jumpFloorDistance: 0.2
 --- !u!95 &729124984
 Animator:
@@ -751,20 +751,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 932523011}
     m_ColliderPaths:
-    - - X: 100000000
-        Y: 27250000
-      - X: -100000000
-        Y: 27250000
-      - X: -100000000
-        Y: -55250000
-      - X: 100000000
-        Y: -55250000
+    - - X: 125000000
+        Y: 36000000
+      - X: -125000000
+        Y: 36000000
+      - X: -125000000
+        Y: -64000000
+      - X: 125000000
+        Y: -64000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.99997, y: -5.525}
-      - {x: 9.99997, y: 2.7250001}
-      - {x: -10, y: 2.7249708}
-      - {x: -9.99997, y: -5.525}
+    - - {x: 12.49997, y: -6.4}
+      - {x: 12.49997, y: 3.6000001}
+      - {x: -12.5, y: 3.5999708}
+      - {x: -12.49997, y: -6.4}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &932523009
@@ -827,7 +827,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 8.25}
+  m_Size: {x: 25, y: 10}
   m_EdgeRadius: 0
 --- !u!1 &956676912
 GameObject:
@@ -907,7 +907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956676912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5249999, z: -10}
+  m_LocalPosition: {x: 0, y: -1.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -972,7 +972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142341261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2362,7 +2362,7 @@ Transform:
   m_GameObject: {fileID: 2108034390}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -0.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1803606736}
@@ -2487,11 +2487,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ab80a6728162d4ebbf830f60ad1a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDetect: 0
   entity: {fileID: 1142341261}
-  firePoint: {fileID: 1803606736}
-  period: 0.5
   bulletPrefab: {fileID: 5565238402336925566, guid: 83768ad48548b1145a609aa4b4d13086, type: 3}
+  firePoint: {fileID: 1803606736}
+  playerDetect: 0
+  period: 1
 --- !u!95 &2108034398
 Animator:
   serializedVersion: 4
