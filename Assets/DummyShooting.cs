@@ -6,6 +6,8 @@ public class DummyShooting : MonoBehaviour
 {
     public GameObject bullet;
     public Transform firePoint;
+    public float cooldown = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,7 @@ public class DummyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 currPos = transform.position;

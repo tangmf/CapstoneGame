@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D playerBody;
     public GameObject groundRay;
+    public LayerMask layerMask;
 
-    public float playerMoveSpeed = 30.0f;
-    public float playerJumpSpeed = 30.0f;
+    public float playerMoveSpeed;
+    public float playerJumpSpeed;
+    public float jumpFloorDistance;
 
     float moveInput;
     bool canJump;
@@ -18,7 +20,11 @@ public class PlayerMovement : MonoBehaviour
     {
         playerBody = gameObject.GetComponent<Rigidbody2D>();
 
-        canJump = false;
+        playerMoveSpeed = 8.0f;
+        playerJumpSpeed = 15.0f;
+        jumpFloorDistance = 0.2f;
+
+    canJump = false;
     }
 
     void FixedUpdate()
@@ -34,26 +40,33 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        RaycastHit2D touchingFloor = Physics2D.Raycast (groundRay.transform.position, -Vector2.up);
+        RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
         Debug.DrawRay(groundRay.transform.position, -Vector2.up * touchingFloor.distance, Color.red);
+
+        Debug.Log(canJump);
 
         if (touchingFloor.collider != null)
         {
-            if (touchingFloor.distance <= 0.2)
+            canJump = true;
+            /*if (touchingFloor.distance <= 0.2)
             {
                 canJump = true;
             }
             else
             {
                 canJump = false;
-            }
+            }*/
+        }
+        else
+        {
+            canJump = false;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w") || Input.GetKey("space"))
+        if (Input.GetKeyDown("w") || Input.GetKeyDown("space"))
         {
             if (canJump == true)
             {

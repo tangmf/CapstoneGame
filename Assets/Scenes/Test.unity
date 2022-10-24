@@ -403,7 +403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406939272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -531,6 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5565238402336925566, guid: 83768ad48548b1145a609aa4b4d13086, type: 3}
   firePoint: {fileID: 311091392}
+  cooldown: 10
 --- !u!70 &729124981
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -582,11 +583,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 0}
   groundRay: {fileID: 1593122550}
-  playerMoveSpeed: 8
-  playerJumpSpeed: 12.5
-  ground:
+  layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  playerMoveSpeed: 8
+  playerJumpSpeed: 15
+  jumpFloorDistance: 0.2
 --- !u!95 &729124984
 Animator:
   serializedVersion: 4
@@ -990,7 +992,7 @@ GameObject:
   - component: {fileID: 1405788058}
   - component: {fileID: 1405788060}
   - component: {fileID: 1405788059}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2856,7 +2858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107001430}
   - component: {fileID: 2107001429}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
