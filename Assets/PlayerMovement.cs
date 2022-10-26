@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D playerBody;
+    Animator animator;
+    Rigidbody2D playerBody;
     public GameObject groundRay;
     public LayerMask layerMask;
 
@@ -17,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerBody = gameObject.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        playerBody = GetComponent<Rigidbody2D>();
 
         playerMoveSpeed = 8.0f;
         playerJumpSpeed = 15.0f;
@@ -28,6 +30,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         moveInput = Input.GetAxis("Horizontal");
+        if(moveInput != 0)
+        {
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
+        
         playerBody.velocity = new Vector2(moveInput * playerMoveSpeed, playerBody.velocity.y);
         if (moveInput > 0)
         {
@@ -45,15 +56,26 @@ public class PlayerMovement : MonoBehaviour
             if (touchingFloor.collider != null)
             {
                 playerBody.velocity = Vector2.up * playerJumpSpeed;
+                animator.SetBool("Jumping", true);
             }
             else
             {
                 return;
             }
+
         }
-        else if (Input.GetKey("s"))
+        else
+        {
+            animator.SetBool("Jumping", false);
+        }
+        if (Input.GetKey("s"))
         {
             Debug.Log(playerBody.position);
+            animator.SetBool("Crouching", true);
+        }
+        else
+        {
+            animator.SetBool("Crouching", false);
         }
     }
 }
