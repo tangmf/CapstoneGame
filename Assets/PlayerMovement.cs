@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject groundRay;
     public LayerMask layerMask;
 
-    public float playerMoveSpeed;
-    public float playerJumpSpeed;
-    public float jumpFloorDistance;
+    public float playerMoveSpeed = 8.0f;
+    public float playerJumpSpeed = 17.5f;
+    public float jumpFloorDistance = 0.2f;
 
     float moveInput;
 
@@ -20,10 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerBody = GetComponent<Rigidbody2D>();
-
-        playerMoveSpeed = 8.0f;
-        playerJumpSpeed = 15.0f;
-        jumpFloorDistance = 0.2f;
     }
 
     // Update is called once per frame
@@ -62,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
-
         }
         else
         {
