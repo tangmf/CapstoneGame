@@ -77,5 +77,15 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("Crouching", false);
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            animator.SetBool("Shift", true);
+        }
+        else
+        {
+            animator.SetBool("Shift", false);
+        }
+
     }
 }
