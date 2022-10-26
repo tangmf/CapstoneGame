@@ -14,10 +14,12 @@ public class DummyShooting : MonoBehaviour
     public float attackRange = 1.0f;
     public float damage = 10.0f;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -59,49 +61,58 @@ public class DummyShooting : MonoBehaviour
         {
             if (attackTime + cooldown < Time.time)
             {
-                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 currentPos = transform.position;
-                Vector2 force = (mousePos - currentPos).normalized;
-
-                if (force.x > 0)
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                }
-                else if (force.x < 0)
-                {
-                    transform.eulerAngles = new Vector3(0, 180, 0);
-                }
-
-                float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
-
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, attackRange);
-                foreach (Collider2D enemy in hitEnemies)
-                {
-                    if (!enemy.CompareTag("Player") && enemy.gameObject.GetComponent<Rigidbody2D>())
-                    {
-
-                        enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 10.0f, ForceMode2D.Impulse);
-
-                        //Destroy(enemy.gameObject);
-                    }
-                    if (!enemy.CompareTag("Player") && enemy.gameObject.GetComponent<HealthManager>())
-                    {
-                        enemy.gameObject.GetComponent<HealthManager>().Damage(damage);
-                    }
-
-                    if (enemy.gameObject.GetComponent<BulletBehaviour>())
-                    {
-                        enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force);
-                        enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
-                        enemy.transform.position = firePoint.position;
-                        enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
-                        enemy.gameObject.GetComponent<BulletBehaviour>().damageTag = "Enemy";
-                    }
-
-                }
-
-                attackTime = Time.time;
+                animator.SetTrigger("Attack");
             }
+
         }
+    }
+
+    public void MeleeAttack()
+    {
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 currentPos = transform.position;
+        Vector2 force = (mousePos - currentPos).normalized;
+
+        if (force.x > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (force.x < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+        float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, attackRange);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (!enemy.CompareTag("Player") && enemy.gameObject.GetComponent<Rigidbody2D>())
+            {
+
+                enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 10.0f, ForceMode2D.Impulse);
+
+                //Destroy(enemy.gameObject);
+            }
+            if (!enemy.CompareTag("Player") && enemy.gameObject.GetComponent<HealthManager>())
+            {
+                enemy.gameObject.GetComponent<HealthManager>().Damage(damage);
+            }
+
+            if (enemy.gameObject.GetComponent<BulletBehaviour>())
+            {
+                enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force);
+                enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
+                enemy.transform.position = firePoint.position;
+                enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+                enemy.gameObject.GetComponent<BulletBehaviour>().damageTag = "Enemy";
+            }
+
+        }
+
+        attackTime = Time.time;
+        animator.ResetTrigger("Attack");
+
     }
 }
