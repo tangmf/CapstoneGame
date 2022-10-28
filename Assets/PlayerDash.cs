@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRollDash : StateMachineBehaviour
+public class PlayerDash : StateMachineBehaviour
 {
     Transform player;
     Rigidbody2D rb;
-    public float rollSpeed = 5.0f;
+    public float dashSpeed = 5.0f;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
-        
-        
+
+
 
     }
 
@@ -23,11 +23,11 @@ public class PlayerRollDash : StateMachineBehaviour
     {
         if (animator.transform.eulerAngles == new Vector3(0, 0, 0))
         {
-            rb.velocity = new Vector2(rollSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(dashSpeed, rb.velocity.y);
         }
         else
         {
-            rb.velocity = new Vector2(-rollSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(-dashSpeed, rb.velocity.y);
         }
     }
 

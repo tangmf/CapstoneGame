@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     float moveInput;
 
+    public bool grounded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         moveInput = Input.GetAxis("Horizontal");
+        RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
+        if (touchingFloor.collider != null)
+        {
+            animator.SetBool("Grounded", true);
+            grounded = true;
+        }
+        else
+        {
+            animator.SetBool("Grounded", false);
+            grounded = false;
+        }
+    
         if(moveInput != 0)
         {
             animator.SetBool("Moving", true);
@@ -47,17 +61,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown("w") || Input.GetKeyDown("space"))
         {
-            RaycastHit2D touchingFloor = Physics2D.Raycast(groundRay.transform.position, -Vector2.up, jumpFloorDistance, layerMask);
-
-            if (touchingFloor.collider != null)
+            if (grounded)
             {
                 playerBody.velocity = Vector2.up * playerJumpSpeed;
                 animator.SetBool("Jumping", true);
             }
-            else
-            {
-                return;
-            }
+                
         }
         else
         {
@@ -81,6 +90,5 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("Shift", false);
         }
-
     }
 }
