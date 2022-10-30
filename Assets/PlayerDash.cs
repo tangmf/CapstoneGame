@@ -7,6 +7,7 @@ public class PlayerDash : StateMachineBehaviour
     Transform player;
     Rigidbody2D rb;
     public float dashSpeed = 5.0f;
+    public GameObject dashEffect;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,6 +30,8 @@ public class PlayerDash : StateMachineBehaviour
         {
             rb.velocity = new Vector2(-dashSpeed, rb.velocity.y);
         }
+        Instantiate(dashEffect, player.position, Quaternion.identity);
+        player.GetComponent<PlayerMovement>().NextDash();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state

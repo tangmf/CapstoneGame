@@ -29,6 +29,7 @@ public class PlayerRollDash : StateMachineBehaviour
         {
             rb.velocity = new Vector2(-rollSpeed, rb.velocity.y);
         }
+        player.GetComponent<PlayerMovement>().NextDash();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state

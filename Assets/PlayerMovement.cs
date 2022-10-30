@@ -14,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpFloorDistance = 0.2f;
 
     float moveInput;
-
+    public float dashCD = 0.5f;
+    public float nextDash = 0.0f;
     public bool grounded = false;
 
     // Start is called before the first frame update
@@ -90,5 +91,17 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("Shift", false);
         }
+        if(Time.time >= nextDash)
+        {
+            animator.SetBool("CanDash", true);
+        }
+        else
+        {
+            animator.SetBool("CanDash", false);
+        }
+    }
+    public void NextDash()
+    {
+        nextDash = Time.time + dashCD;
     }
 }
