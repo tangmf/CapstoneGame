@@ -7,11 +7,13 @@ public class HealthManager : MonoBehaviour
 {
     // References
     public Slider healthBar;
+    GameMaster gm;
     // Variables
     public float healthPoints;
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         // Set bar to match entity hp
         healthBar.maxValue = healthPoints;
         // Set to max health
@@ -38,6 +40,7 @@ public class HealthManager : MonoBehaviour
         if(healthPoints <= 0)
         {
             healthPoints = 0;
+            Die();
         }
 
         healthBar.value = healthPoints;
@@ -57,5 +60,14 @@ public class HealthManager : MonoBehaviour
     public void MaxHealth()
     {
         healthBar.value = healthBar.maxValue;
+    }
+
+    public void Die()
+    {
+        GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
+        GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
+        Debug.Log(gameObject.ToString() + " has been killed");
+        gm.WaitForRespawn();
+
     }
 }

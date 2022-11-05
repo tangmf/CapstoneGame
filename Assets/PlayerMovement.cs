@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     Rigidbody2D playerBody;
     public GameObject groundRay;
     public LayerMask layerMask;
