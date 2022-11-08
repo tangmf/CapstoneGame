@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     public float nextDash = 0.0f;
     public bool grounded = false;
 
+    bool jumpKeyHeld;
+    bool isJumping = false;
+    Vector2 counterJumpForce = new Vector2(0,-30);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Grounded", false);
             grounded = false;
         }
-    
-        if(moveInput != 0)
+
+        if (moveInput != 0)
         {
             animator.SetBool("Moving", true);
         }
@@ -49,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("Moving", false);
         }
-        
+
         playerBody.velocity = new Vector2(moveInput * playerMoveSpeed, playerBody.velocity.y);
         if (moveInput > 0)
         {
@@ -62,12 +66,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown("w") || Input.GetKeyDown("space"))
         {
+            jumpKeyHeld = true;
             if (grounded)
             {
+                isJumping = true;
                 playerBody.velocity = Vector2.up * playerJumpSpeed;
                 animator.SetBool("Jumping", true);
             }
-                
+
+        }
+        else if (Input.GetKeyUp("w") || Input.GetKeyUp("space"))
+        {
+            jumpKeyHeld = false;
         }
         else
         {
@@ -100,8 +110,27 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("CanDash", false);
         }
     }
+
+    void FixedUpdate()
+    {
+        if (isJumping)
+        {
+            if (!jumpKeyHeld && Vector2.Dot(playerBody.velocity, Vector2.up) > 0)
+            {
+                playerBody.AddForce(counterJumpForce * playerBody.mass);
+            }
+        }
+    }
     public void NextDash()
     {
         nextDash = Time.time + dashCD;
+    }
+
+    public static float CalculateJumpForce(float gravityStrength, float jumpHeight)
+    {
+        //h = v^2/2g
+        //2gh = v^2
+        //sqrt(2gh) = v
+        return Mathf.Sqrt(2 * gravityStrength * jumpHeight);
     }
 }
