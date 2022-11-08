@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool jumpKeyHeld;
     bool isJumping = false;
-    Vector2 counterJumpForce = new Vector2(0,-30);
+    public Vector2 counterJumpForce = new Vector2(0,-30);
 
     // Start is called before the first frame update
     void Start()
