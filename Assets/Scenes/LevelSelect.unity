@@ -1647,6 +1647,7 @@ MonoBehaviour:
   transitionTime: 1
   loadScreen: {fileID: 1509620478}
   loadBar: {fileID: 1579143232}
+  minLoadTime: 1
 --- !u!114 &821425676
 MonoBehaviour:
   m_ObjectHideFlags: 0

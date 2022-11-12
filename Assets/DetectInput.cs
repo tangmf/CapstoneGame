@@ -23,6 +23,7 @@ public class DetectInput : MonoBehaviour
 
         }
 
+
     }
 
     public void TogglePause()

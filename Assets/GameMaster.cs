@@ -11,8 +11,22 @@ public class GameMaster : MonoBehaviour
     public GameObject playerContainer;
     public float respawnTime = 2.0f;
 
+    public GameObject gameOverScreen;
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("k"))
+        {
+            GameOver("WIN");
+        }
+
+    }
+
     void Awake()
     {
+        /*
         if (instance == null)
         {
             instance = this;
@@ -22,6 +36,7 @@ public class GameMaster : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        */
         transform.position = new Vector3(0, 0, 0);
         Respawn();
     }
@@ -77,7 +92,24 @@ public class GameMaster : MonoBehaviour
     private void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene != null) //use your desired check here to compare your scene
-            player.transform.position = GameObject.FindGameObjectWithTag("WorldSpawn").GetComponent<Transform>().position;
+            if(GameObject.FindGameObjectWithTag("WorldSpawn") != null)
+                player.transform.position = GameObject.FindGameObjectWithTag("WorldSpawn").GetComponent<Transform>().position;
     }
+
+
+    public void GameStart()
+    {
+        // spawn boss based on difficulty level
+    }
+
+
+    public void GameOver(string type)
+    {
+        if(type == "WIN")
+        {
+            gameOverScreen.SetActive(true);
+        }
+    }
+
 
 }

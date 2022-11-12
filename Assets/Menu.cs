@@ -63,13 +63,11 @@ public class Menu : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
         loadScreen.SetActive(true);
-
         while (!operation.isDone)
         {
             float progressVal = Mathf.Clamp01(operation.progress / 0.9f);
 
             loadBar.value = progressVal;
-
             yield return null;
         }
     }
