@@ -12,6 +12,7 @@ public class GameMaster : MonoBehaviour
     public float respawnTime = 2.0f;
 
     public GameObject gameOverScreen;
+    public GameObject winScreen;
     public GameObject popUp;
 
     public GameObject gameStartScreen;
@@ -27,8 +28,14 @@ public class GameMaster : MonoBehaviour
     {
         if (Input.GetKeyDown("k"))
         {
+            GameOver("WIN");
+        }
+
+        if (Input.GetKeyDown("l"))
+        {
             GameOver("LOSE");
         }
+
 
     }
 
@@ -124,6 +131,7 @@ public class GameMaster : MonoBehaviour
     IEnumerator WrapUp(string type)
     {
         Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(1.0f);
         GameObject newPopUp = Instantiate(popUp);
         yield return new WaitForSeconds(1.0f);
         Destroy(newPopUp);
@@ -133,6 +141,10 @@ public class GameMaster : MonoBehaviour
         if (type == "LOSE")
         {
             GameObject newGameOverScreen = Instantiate(gameOverScreen);
+        }
+        else
+        {
+            Instantiate(winScreen);
         }
         
 

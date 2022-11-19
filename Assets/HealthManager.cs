@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
     GameMaster gm;
     // Variables
     public float healthPoints;
+    public bool dead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,12 @@ public class HealthManager : MonoBehaviour
         if(healthPoints <= 0)
         {
             healthPoints = 0;
-            Die();
+            if (!dead)
+            {
+                Die();
+                dead = true;
+            }
+            
         }
 
         healthBar.value = healthPoints;
@@ -64,10 +70,19 @@ public class HealthManager : MonoBehaviour
 
     public void Die()
     {
-        GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
-        GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
-        Debug.Log(gameObject.ToString() + " has been killed");
-        gm.WaitForRespawn();
+        if (gameObject.CompareTag("Player"))
+        {
+            GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
+            GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
+            Debug.Log(gameObject.ToString() + " has been killed");
+            gm.GameOver("LOSE");
+            gm.WaitForRespawn();
+        }
+        else
+        {
+            gm.GameOver("WIN");
+        }
+        
 
     }
 }
