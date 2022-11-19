@@ -12,14 +12,20 @@ public class GameMaster : MonoBehaviour
     public float respawnTime = 2.0f;
 
     public GameObject gameOverScreen;
+    public GameObject popUp;
 
+    void Start()
+    {
+        
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("k"))
         {
-            GameOver("WIN");
+            GameOver("LOSE");
         }
 
     }
@@ -105,10 +111,26 @@ public class GameMaster : MonoBehaviour
 
     public void GameOver(string type)
     {
-        if(type == "WIN")
+
+        StartCoroutine(WrapUp(type));
+
+    }
+
+    IEnumerator WrapUp(string type)
+    {
+        Time.timeScale = 0.5f;
+        GameObject newPopUp = Instantiate(popUp);
+        yield return new WaitForSeconds(1.0f);
+        Destroy(newPopUp);
+
+
+        Time.timeScale = 1.0f;
+        if (type == "LOSE")
         {
-            gameOverScreen.SetActive(true);
+            GameObject newGameOverScreen = Instantiate(gameOverScreen);
         }
+        
+
     }
 
 
