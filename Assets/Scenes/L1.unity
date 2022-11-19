@@ -907,6 +907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1922917785}
   healthPoints: 200
+  dead: 0
 --- !u!114 &729124980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,7 +1481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1017448852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3161,7 +3162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216606, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Home
+      value: LevelSelect
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216607, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_RaycastTarget
@@ -3677,6 +3678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 52820736}
   healthPoints: 500
+  dead: 0
 --- !u!212 &2108034396
 SpriteRenderer:
   m_ObjectHideFlags: 0
