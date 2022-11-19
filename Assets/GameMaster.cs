@@ -14,6 +14,8 @@ public class GameMaster : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject popUp;
 
+    public GameObject gameStartScreen;
+
     void Start()
     {
         
@@ -45,6 +47,7 @@ public class GameMaster : MonoBehaviour
         */
         transform.position = new Vector3(0, 0, 0);
         Respawn();
+        StartCoroutine(GameStart());
     }
 
     // used by pause menu
@@ -81,6 +84,14 @@ public class GameMaster : MonoBehaviour
         Respawn();
     }
 
+    IEnumerator GameStart()
+    {
+        GameObject newGameStartScreen = Instantiate(gameStartScreen);
+        yield return new WaitForSeconds(1.0f);
+        Destroy(newGameStartScreen);
+
+    }
+
 
     private void OnEnable()
     {
@@ -100,12 +111,6 @@ public class GameMaster : MonoBehaviour
         if (scene != null) //use your desired check here to compare your scene
             if(GameObject.FindGameObjectWithTag("WorldSpawn") != null)
                 player.transform.position = GameObject.FindGameObjectWithTag("WorldSpawn").GetComponent<Transform>().position;
-    }
-
-
-    public void GameStart()
-    {
-        // spawn boss based on difficulty level
     }
 
 
