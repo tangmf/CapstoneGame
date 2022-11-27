@@ -532,8 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6995b8a50baa0b848b9701af0a1d2515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 1260089992}
-  transitionTime: 1
+  transition: {fileID: 3365101788962459861, guid: 838ba4a49e32e0b4a8b1b01abec7938d, type: 3}
   loadScreen: {fileID: 1628038862}
   loadBar: {fileID: 1578294738}
 --- !u!224 &890841141 stripped
@@ -755,11 +754,6 @@ CanvasRenderer:
 --- !u!224 &1260089991 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2464912628178619846, guid: a49ad7e76a44d5e47b6cc65c96f73aef, type: 3}
-  m_PrefabInstance: {fileID: 2464912627288866625}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1260089992 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2464912628178619849, guid: a49ad7e76a44d5e47b6cc65c96f73aef, type: 3}
   m_PrefabInstance: {fileID: 2464912627288866625}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1447743592

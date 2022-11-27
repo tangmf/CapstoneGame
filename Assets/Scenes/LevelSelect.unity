@@ -972,7 +972,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1863368075}
   m_HandleRect: {fileID: 1863368074}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1256,8 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6995b8a50baa0b848b9701af0a1d2515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  transitionTime: 1
+  transition: {fileID: 3365101788962459861, guid: 838ba4a49e32e0b4a8b1b01abec7938d, type: 3}
   loadScreen: {fileID: 1509620478}
   loadBar: {fileID: 1579143232}
 --- !u!114 &821425676

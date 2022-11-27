@@ -6,15 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public Animator transition;
-    public float transitionTime = 1f;
+    public GameObject transition;
 
     public GameObject loadScreen;
     public Slider loadBar;
 
     public void NextScene()
     {
-        PlayTransition();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -26,15 +24,13 @@ public class Menu : MonoBehaviour
 
     public void PreviousScene()
     {
-        PlayTransition();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LoadSceneByName(string sceneName)
     {
-        PlayTransition();
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 
+        StartCoroutine(PlayTransition(sceneName));
 
     }
 
@@ -47,15 +43,23 @@ public class Menu : MonoBehaviour
 
     public void AddSceneByName(string sceneName)
     {
-        PlayTransition();
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 
-    IEnumerator PlayTransition()
+    IEnumerator PlayTransition(string sceneName)
     {
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(transitionTime);
+        if(transition != null)
+        {
+            GameObject newTransition = Instantiate(transition);
+            //newTransition.transform.parent = gameObject.transform;
+            yield return new WaitForSeconds(0.25f);
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+        
     }
 
     IEnumerator PlayLoadScreen(string sceneName)

@@ -14,6 +14,15 @@ public class AutoDestroy : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(audio, this.gameObject.transform.position);
         }
-        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
+
+        if (GetComponent<Animator>() != null)
+        {
+            Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
+        }
+        else
+        {
+            Destroy(gameObject, delay);
+        }
+        
     }
 }
