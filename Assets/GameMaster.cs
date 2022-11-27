@@ -19,7 +19,7 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
-        
+
 
     }
 
@@ -37,6 +37,8 @@ public class GameMaster : MonoBehaviour
         }
 
 
+
+
     }
 
     void Awake()
@@ -52,9 +54,13 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
         */
-        transform.position = new Vector3(0, 0, 0);
-        Respawn();
-        StartCoroutine(GameStart());
+        if (GameObject.FindGameObjectWithTag("WorldSpawn") != null)
+        {
+            transform.position = new Vector3(0, 0, 0);
+            Respawn();
+            StartCoroutine(GameStart());
+        }
+
     }
 
     // used by pause menu
@@ -116,7 +122,7 @@ public class GameMaster : MonoBehaviour
     private void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene != null) //use your desired check here to compare your scene
-            if(GameObject.FindGameObjectWithTag("WorldSpawn") != null)
+            if (GameObject.FindGameObjectWithTag("WorldSpawn") != null)
                 player.transform.position = GameObject.FindGameObjectWithTag("WorldSpawn").GetComponent<Transform>().position;
     }
 
@@ -146,7 +152,7 @@ public class GameMaster : MonoBehaviour
         {
             Instantiate(winScreen);
         }
-        
+
 
     }
 
