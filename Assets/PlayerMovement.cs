@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping = false;
     public Vector2 counterJumpForce = new Vector2(0,-30);
 
+    public ParticleSystem dust;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveInput != 0)
         {
+            CreateDust();
             animator.SetBool("Moving", true);
         }
         else
@@ -132,5 +135,10 @@ public class PlayerMovement : MonoBehaviour
         //2gh = v^2
         //sqrt(2gh) = v
         return Mathf.Sqrt(2 * gravityStrength * jumpHeight);
+    }
+
+    public void CreateDust()
+    {
+        dust.Play();
     }
 }
