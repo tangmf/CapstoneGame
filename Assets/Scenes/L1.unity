@@ -10561,7 +10561,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 7399051546643772837, guid: f83ac92363b0cc947b5d7befcd4325c5, type: 3}
   winScreen: {fileID: 7399051546643772837, guid: 30a5e5f308e485547b7b3ac9dcfd0ad2, type: 3}
   popUp: {fileID: 3830975922311703976, guid: c0aaff4fc8a2c884cb050c5d07979fe3, type: 3}
-  gameStartScreen: {fileID: 3830975922311703976, guid: c0aaff4fc8a2c884cb050c5d07979fe3, type: 3}
+  gameStartScreen: {fileID: 3694950635913348853, guid: c72c65d4b47b2f447b246943e2787955, type: 3}
 --- !u!114 &1768607703
 MonoBehaviour:
   m_ObjectHideFlags: 0

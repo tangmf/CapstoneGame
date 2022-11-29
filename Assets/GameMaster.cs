@@ -101,7 +101,6 @@ public class GameMaster : MonoBehaviour
     {
         GameObject newGameStartScreen = Instantiate(gameStartScreen);
         yield return new WaitForSeconds(1.0f);
-        Destroy(newGameStartScreen);
 
     }
 

@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 821425675}
     - target: {fileID: 5352567169138293556, guid: 86794123f99b662469e71979153f156f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSceneByName
+      value: LoadScreenByName
       objectReference: {fileID: 0}
     - target: {fileID: 5352567169138293556, guid: 86794123f99b662469e71979153f156f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1863368075}
   m_HandleRect: {fileID: 1863368074}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
