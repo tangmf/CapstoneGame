@@ -8,7 +8,7 @@ public class accursed_anathema_walking : StateMachineBehaviour
     Transform player;
     accursed_anathema_ai boss;
 
-    public float moveSpeed = 0.8f;
+    public float moveSpeed = 0.75f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
