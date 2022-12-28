@@ -13,8 +13,8 @@ public class accursed_anathema_ai : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        body = this.transform.GetChild(0).GetComponent<Rigidbody2D>();
+        animator = this.transform.GetChild(0).GetComponent<Animator>();
 
         Physics2D.IgnoreLayerCollision(0, 0);
     }

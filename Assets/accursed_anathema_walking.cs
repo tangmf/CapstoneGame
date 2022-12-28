@@ -15,7 +15,7 @@ public class accursed_anathema_walking : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = animator.GetComponent<Rigidbody2D>();
-        boss = animator.GetComponent<accursed_anathema_ai>();
+        boss = animator.transform.parent.GetComponent<accursed_anathema_ai>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
