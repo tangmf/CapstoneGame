@@ -14,7 +14,7 @@ public class accursed_anathema_walking : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        rigidbody = animator.GetComponent<Rigidbody2D>();
+        rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
         boss = animator.transform.parent.GetComponent<accursed_anathema_ai>();
     }
 

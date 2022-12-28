@@ -13,8 +13,8 @@ public class accursed_anathema_ai : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        body = this.transform.GetChild(0).GetComponent<Rigidbody2D>();
-        animator = this.transform.GetChild(0).GetComponent<Animator>();
+        body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         Physics2D.IgnoreLayerCollision(0, 0);
     }
@@ -31,21 +31,17 @@ public class accursed_anathema_ai : MonoBehaviour
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
-        Debug.Log("testtest");
-
         if (transform.position.x > player.position.x && isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
-            Debug.Log("testfalse");
         }
         else if (transform.position.x < player.position.x && !isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
-            Debug.Log("testtrue");
         }
     }
 }
