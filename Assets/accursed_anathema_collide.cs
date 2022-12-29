@@ -9,9 +9,6 @@ public class accursed_anathema_collide : MonoBehaviour
 
     public float damage;
 
-    public string ignoreTag;
-    public string damageTag;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +26,16 @@ public class accursed_anathema_collide : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(damageTag))
+        if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("DamagePlayer");
+
             if (collision.gameObject.GetComponent<HealthManager>())
             {
                 collision.gameObject.GetComponent<HealthManager>().Damage(damage);
             }
         }
-        if (collision.gameObject.CompareTag(ignoreTag) || collision.gameObject.CompareTag("Untagged"))
+        if (collision.gameObject.CompareTag(gameObject.tag) || collision.gameObject.CompareTag("Untagged"))
         {
 
         }
