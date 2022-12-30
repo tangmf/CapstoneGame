@@ -306,7 +306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25611370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.1, y: -3.18, z: 0}
+  m_LocalPosition: {x: -23.79, y: -0.58, z: 0}
   m_LocalScale: {x: 0.3609, y: 0.3609, z: 0.3609}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5557,7 +5557,7 @@ RectTransform:
   - {fileID: 405814447}
   - {fileID: 1630891825}
   m_Father: {fileID: 1768607701}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6222,7 +6222,7 @@ Transform:
   m_Children:
   - {fileID: 729124977}
   m_Father: {fileID: 1768607701}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440915358
 GameObject:
@@ -7344,7 +7344,7 @@ RectTransform:
   - {fileID: 1885809618}
   - {fileID: 874535779}
   m_Father: {fileID: 1768607701}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7522,7 +7522,7 @@ GameObject:
   - component: {fileID: 1040268388}
   - component: {fileID: 1040268387}
   m_Layer: 0
-  m_Name: accursed_anathema
+  m_Name: Boss1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7724,7 +7724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1142341262
 Transform:
   m_ObjectHideFlags: 0
@@ -7733,7 +7733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142341261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalPosition: {x: 6.73, y: 1.53, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9952,7 +9952,7 @@ GameObject:
   - component: {fileID: 1422689650}
   - component: {fileID: 1422689651}
   m_Layer: 0
-  m_Name: sight
+  m_Name: Boss1Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10476,7 +10476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637943768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.77, y: -6.06, z: 0}
+  m_LocalPosition: {x: -25.71, y: -6.06, z: 0}
   m_LocalScale: {x: 0.3609, y: 0.3609, z: 0.3609}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10807,9 +10807,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 406939273}
   - {fileID: 1017448855}
   - {fileID: 246096231}
+  - {fileID: 406939273}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11454,7 +11454,7 @@ GameObject:
   - component: {fileID: 2061779722}
   - component: {fileID: 2061779721}
   m_Layer: 0
-  m_Name: accursed_anathema_body
+  m_Name: Boss1Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11630,7 +11630,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -2.5, y: 0}
   m_SizeDelta: {x: 5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11932,7 +11932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108034390}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.89, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11974,7 +11974,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

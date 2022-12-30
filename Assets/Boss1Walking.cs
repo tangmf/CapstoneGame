@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class accursed_anathema_walking : StateMachineBehaviour
+public class Boss1Walking : StateMachineBehaviour
 {
     Rigidbody2D rigidbody;
     Transform player;
-    accursed_anathema_ai boss;
+    Boss1Behavior boss;
 
     public float moveSpeed = 0.75f;
 
@@ -15,7 +15,7 @@ public class accursed_anathema_walking : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
-        boss = animator.transform.parent.GetComponent<accursed_anathema_ai>();
+        boss = animator.transform.parent.GetComponent<Boss1Behavior>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

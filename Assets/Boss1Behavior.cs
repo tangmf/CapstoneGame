@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class accursed_anathema_ai : MonoBehaviour
+public class Boss1Behavior : MonoBehaviour
 {
     Rigidbody2D body;
     Animator animator;

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class accursed_anathema_sight : MonoBehaviour
+public class Boss1Detection : MonoBehaviour
 {
     public Animator animator;
 
-    public bool player_seen;
+    public bool player_seen = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,8 @@ public class accursed_anathema_sight : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log(collision);
+
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("SawPlayer");
@@ -33,6 +35,8 @@ public class accursed_anathema_sight : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("Exit2D");
+
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("UnSawPlayer");

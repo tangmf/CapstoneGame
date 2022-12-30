@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class accursed_anathema_collide : MonoBehaviour
+public class Boss1Collide : MonoBehaviour
 {
     CapsuleCollider2D enemyHitbox;
     CapsuleCollider2D playerHitbox;

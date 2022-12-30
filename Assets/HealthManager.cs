@@ -16,7 +16,7 @@ public class HealthManager : MonoBehaviour
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         // Set bar to match entity hp
-        healthBar.maxValue = healthPoints;
+        //healthBar.maxValue = healthPoints;
         // Set to max health
         MaxHealth();
     }
@@ -24,7 +24,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.transform.rotation = Quaternion.identity;
+        //healthBar.transform.rotation = Quaternion.identity;
         if (Input.GetKeyDown("left"))
         {
             Damage(20);
@@ -65,7 +65,7 @@ public class HealthManager : MonoBehaviour
 
     public void MaxHealth()
     {
-        healthBar.value = healthBar.maxValue;
+        //healthBar.value = healthBar.maxValue;
     }
 
     public void Die()

@@ -21,7 +21,7 @@ public class Detection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-
+        Debug.Log(collision);
         if (collision.gameObject.CompareTag(target))
         {
             animator.SetBool("Detected", true);
