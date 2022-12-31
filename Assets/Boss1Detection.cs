@@ -22,8 +22,6 @@ public class Boss1Detection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(collision);
-
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("SawPlayer");
@@ -35,8 +33,6 @@ public class Boss1Detection : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exit2D");
-
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("UnSawPlayer");

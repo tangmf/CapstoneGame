@@ -6,7 +6,9 @@ public class Boss1Behavior : MonoBehaviour
 {
     Rigidbody2D body;
     Animator animator;
-    public Transform player;
+    Collider2D collider;
+
+    Transform player;
 
     public bool isFlipped = false;
 
@@ -15,8 +17,11 @@ public class Boss1Behavior : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        collider = GetComponent<Collider2D>();
 
-        Physics2D.IgnoreLayerCollision(0, 0);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        Physics2D.IgnoreCollision(collider, player.GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -27,7 +32,6 @@ public class Boss1Behavior : MonoBehaviour
 
     public void LookAtPlayer()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
