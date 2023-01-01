@@ -6,12 +6,13 @@ public class Boss1Detection : MonoBehaviour
 {
     public Animator animator;
 
-    public bool player_seen = true;
+    bool player_seen;
+    bool boss_attacking;
 
     // Start is called before the first frame update
     void Start()
     {
-        player_seen = false;
+        
     }
 
     // Update is called once per frame
@@ -24,10 +25,7 @@ public class Boss1Detection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("SawPlayer");
-
             animator.SetBool("Player_Seen", true);
-            player_seen = true;
         }
     }
 
@@ -35,10 +33,8 @@ public class Boss1Detection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("UnSawPlayer");
-            
             animator.SetBool("Player_Seen", false);
-            player_seen = false;
+            animator.SetBool("Boss_Attacking", false);
         }
     }
 }
