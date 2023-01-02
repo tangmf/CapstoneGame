@@ -26,8 +26,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8847b2e33c1ef4abee1ee01c18a974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingDuration: 3
-  firingLoop: 0
 --- !u!1101 &-8387378464484693946
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

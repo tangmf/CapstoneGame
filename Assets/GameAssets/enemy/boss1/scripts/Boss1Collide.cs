@@ -28,8 +28,6 @@ public class Boss1Collide : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("DamagePlayer");
-
             if (collision.gameObject.GetComponent<HealthManager>())
             {
                 collision.gameObject.GetComponent<HealthManager>().Damage(damage);

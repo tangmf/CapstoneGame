@@ -10,6 +10,9 @@ public class Boss1Behavior : MonoBehaviour
 
     Transform player;
 
+    public GameObject eyeBulletPrefab;
+    public Transform firePoint;
+
     public bool isFlipped = false;
 
     // Start is called before the first frame update
@@ -46,6 +49,48 @@ public class Boss1Behavior : MonoBehaviour
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
+        }
+    }
+
+    public void Fire()
+    {
+        createEyeBullet(0);
+        createEyeBullet(-20);
+        createEyeBullet(-40);
+        createEyeBullet(20);
+        createEyeBullet(40);
+
+        void createEyeBullet(float angle)
+        {
+            GameObject eyeBullet = Instantiate(eyeBulletPrefab, firePoint.position, firePoint.rotation);
+
+            GameObject player = GameObject.FindWithTag("Player");
+            Vector2 playerPos = player.transform.position;
+            Vector2 currPos = transform.position;
+            Vector2 force = (playerPos - currPos).normalized;
+
+            if (force.x > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (force.x < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+
+            eyeBullet.GetComponent<EyeBulletBehavior>().SetForce(RotateVector(force, angle));
+            eyeBullet.GetComponent<EyeBulletBehavior>().ignoreTag = gameObject.tag;
+            eyeBullet.GetComponent<EyeBulletBehavior>().damageTag = "Player";
+
+            Destroy(eyeBullet, 2f);
+        }
+
+        Vector2 RotateVector(Vector2 v, float angle)
+        {
+            float radian = angle * Mathf.Deg2Rad;
+            float _x = v.x * Mathf.Cos(radian) - v.y * Mathf.Sin(radian);
+            float _y = v.x * Mathf.Sin(radian) + v.y * Mathf.Cos(radian);
+            return new Vector2(_x, _y);
         }
     }
 }
