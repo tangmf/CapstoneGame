@@ -137,9 +137,9 @@ GameObject:
   - component: {fileID: 25611373}
   - component: {fileID: 25611372}
   - component: {fileID: 25611371}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: platform2
-  m_TagString: Ground
+  m_TagString: Foreground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6072,9 +6072,9 @@ GameObject:
   - component: {fileID: 400515027}
   - component: {fileID: 400515026}
   - component: {fileID: 400515025}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: platform3
-  m_TagString: Ground
+  m_TagString: Foreground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6848,9 +6848,9 @@ GameObject:
   - component: {fileID: 840012436}
   - component: {fileID: 840012435}
   - component: {fileID: 840012434}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: platform4
-  m_TagString: Ground
+  m_TagString: Foreground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7504,7 +7504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956676912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000009536743, y: 0.19999158, z: -10}
+  m_LocalPosition: {x: 0.0000009536743, y: 0.19999158, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11225,9 +11225,9 @@ GameObject:
   - component: {fileID: 1637943772}
   - component: {fileID: 1637943771}
   - component: {fileID: 1637943774}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: platform1
-  m_TagString: Ground
+  m_TagString: Foreground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,7 +6,7 @@ public class Boss1Behavior : MonoBehaviour
 {
     Rigidbody2D body;
     Animator animator;
-    Collider2D collider2D;
+    Collider2D hitbox;
 
     Transform player;
 
@@ -20,11 +20,11 @@ public class Boss1Behavior : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        collider2D = GetComponent<Collider2D>();
+        hitbox = GetComponent<Collider2D>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        Physics2D.IgnoreCollision(collider2D, player.GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision(hitbox, player.GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -54,29 +54,18 @@ public class Boss1Behavior : MonoBehaviour
 
     public void Fire()
     {
-        createEyeBullet(0);
-        createEyeBullet(-20);
-        createEyeBullet(-40);
-        createEyeBullet(20);
-        createEyeBullet(40);
+        createEyeBullet(-30);
+        createEyeBullet(-10);
+        createEyeBullet(10);
+        createEyeBullet(30);
 
         void createEyeBullet(float angle)
         {
             GameObject eyeBullet = Instantiate(eyeBulletPrefab, firePoint.position, firePoint.rotation);
 
-            GameObject player = GameObject.FindWithTag("Player");
             Vector2 playerPos = player.transform.position;
             Vector2 currPos = transform.position;
             Vector2 force = (playerPos - currPos).normalized;
-
-            if (force.x > 0)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-            else if (force.x < 0)
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
 
             eyeBullet.GetComponent<EyeBulletBehavior>().SetForce(RotateVector(force, angle));
             eyeBullet.GetComponent<EyeBulletBehavior>().ignoreTag = gameObject.tag;

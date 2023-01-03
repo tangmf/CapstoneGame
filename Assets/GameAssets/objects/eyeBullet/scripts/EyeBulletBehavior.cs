@@ -5,12 +5,22 @@ using UnityEngine;
 public class EyeBulletBehavior : MonoBehaviour
 {
     public EyeBullet eyeBullet;
+
+    Collider2D hitbox;
+    BoxCollider2D foreground;
+
     public string ignoreTag;
     public string damageTag;
 
     // Start is called before the first frame update
     void Start()
     {
+        hitbox = GetComponent<Collider2D>();
+
+        foreground = GameObject.FindGameObjectWithTag("Foreground").GetComponent<BoxCollider2D>();
+
+        Physics2D.IgnoreCollision(hitbox, foreground);
+
         /*if (eyeBullet.shootSfx != null)
         {
             AudioSource.PlayClipAtPoint(eyeBullet.shootSfx, transform.position);
