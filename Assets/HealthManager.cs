@@ -65,7 +65,8 @@ public class HealthManager : MonoBehaviour
 
     public void MaxHealth()
     {
-        //healthBar.value = healthBar.maxValue;
+        healthBar.maxValue = healthPoints;
+        healthBar.value = healthPoints;
     }
 
     public void Die()
