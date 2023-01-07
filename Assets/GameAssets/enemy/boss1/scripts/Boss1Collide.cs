@@ -31,6 +31,7 @@ public class Boss1Collide : MonoBehaviour
             if (collision.gameObject.GetComponent<HealthManager>())
             {
                 collision.gameObject.GetComponent<HealthManager>().Damage(damage);
+                //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(-30.0f, ForceMode2D.Impulse);
             }
         }
         if (collision.gameObject.CompareTag(gameObject.tag) || collision.gameObject.CompareTag("Untagged"))

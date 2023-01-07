@@ -13,6 +13,9 @@ public class Boss1Behavior : MonoBehaviour
     public GameObject eyeBulletPrefab;
     public Transform firePoint;
 
+    public GameObject warning;
+    public GameObject spike;
+
     public bool isFlipped = false;
 
     // Start is called before the first frame update
@@ -62,7 +65,20 @@ public class Boss1Behavior : MonoBehaviour
         
     }
 
-    void createEyeBullet(float angle)
+    public void StartShootSpike()
+    {
+        StartCoroutine(ShootSpike());
+    }
+    IEnumerator ShootSpike()
+    {
+        var targetPos = player.position;
+        targetPos.y = -10;
+        GameObject newWarning = Instantiate(warning, targetPos, Quaternion.identity);
+        yield return new WaitForSeconds(1.0f);
+        GameObject newSpike = Instantiate(spike, targetPos, Quaternion.identity);
+    }
+
+        void createEyeBullet(float angle)
     {
         var newRotation = firePoint.rotation;
         newRotation *= Quaternion.Euler(0, 0, -90 + angle);

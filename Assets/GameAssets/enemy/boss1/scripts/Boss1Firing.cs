@@ -44,6 +44,7 @@ public class Boss1Firing : StateMachineBehaviour
         else
         {
             boss.Fire();
+            boss.StartShootSpike();
             firingLoop = 0.5f;
         }
     }
