@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6910398185374781780}
   - component: {fileID: 2528564633627673183}
   - component: {fileID: 4658436615099346970}
-  - component: {fileID: 3629080889682462758}
+  - component: {fileID: 4554262211564556185}
   m_Layer: 0
   m_Name: EyeBullet
   m_TagString: Untagged
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3629080889682462758
+--- !u!114 &4554262211564556185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8887486330499392155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d269b6bcd118264584626fc3c03a432, type: 3}
+  m_Script: {fileID: 11500000, guid: a0843cf0e4dbde842afb873d02a20477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeBullet: {fileID: 11400000, guid: dc000f47e2552fd4e83e866d0e3bb3a3, type: 2}
+  bullet: {fileID: 11400000, guid: 34f014f37f177c54cb49378c871327ab, type: 2}
   ignoreTag: 
   damageTag: 

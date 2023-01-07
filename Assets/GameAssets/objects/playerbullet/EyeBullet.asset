@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03a03607ab8d274f84c733e1b8cc927, type: 3}
+  m_Script: {fileID: 11500000, guid: e1f78e79232eb3b4c9af86610bdbf5d3, type: 3}
   m_Name: EyeBullet
   m_EditorClassIdentifier: 
-  type: EyeBullet
+  type: Default
   name: EyeBullet
-  bulletSpeed: 10
+  bulletSpeed: 1
   damage: 10
   forceMultiplier: 10
   hitEffect: {fileID: 7038756251294249094, guid: b903057e090cbb947865678465ed68c3, type: 3}

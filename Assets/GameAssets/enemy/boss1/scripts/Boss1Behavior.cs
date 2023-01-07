@@ -57,10 +57,9 @@ public class Boss1Behavior : MonoBehaviour
 
     public void Fire()
     {
-        createEyeBullet(-30);
-        createEyeBullet(-10);
-        createEyeBullet(10);
-        createEyeBullet(30);
+        createEyeBullet(-1);
+        createEyeBullet(0);
+        createEyeBullet(1);
 
         
     }
@@ -80,6 +79,25 @@ public class Boss1Behavior : MonoBehaviour
 
         void createEyeBullet(float angle)
     {
+        Vector2 playerPos = player.position;
+        Vector2 currentPos = firePoint.position;
+        playerPos.y += angle;
+        Vector2 force = (playerPos - currentPos).normalized;
+
+
+        float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+
+        // Create Bullet
+        GameObject newBullet = Instantiate(eyeBulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force * eyeBulletPrefab.GetComponent<BulletBehaviour>().bullet.bulletSpeed);
+        newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+        newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
+
+        // Destroy after 2 seconds
+        Destroy(newBullet, 2f);
+
+
+        /*
         var newRotation = firePoint.rotation;
         newRotation *= Quaternion.Euler(0, 0, -90 + angle);
         GameObject eyeBullet = Instantiate(eyeBulletPrefab, firePoint.position, newRotation);
@@ -93,6 +111,7 @@ public class Boss1Behavior : MonoBehaviour
         eyeBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
         Destroy(eyeBullet, 2f);
+        */
     }
 
     Vector2 RotateVector(Vector2 v, float angle)
@@ -102,4 +121,6 @@ public class Boss1Behavior : MonoBehaviour
         float _y = v.x * Mathf.Sin(radian) + v.y * Mathf.Cos(radian);
         return new Vector2(_x, _y);
     }
+
+
 }
