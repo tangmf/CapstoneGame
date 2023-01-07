@@ -59,27 +59,31 @@ public class Boss1Behavior : MonoBehaviour
         createEyeBullet(10);
         createEyeBullet(30);
 
-        void createEyeBullet(float angle)
-        {
-            GameObject eyeBullet = Instantiate(eyeBulletPrefab, firePoint.position, firePoint.rotation);
+        
+    }
 
-            Vector2 playerPos = player.transform.position;
-            Vector2 currPos = transform.position;
-            Vector2 force = (playerPos - currPos).normalized;
+    void createEyeBullet(float angle)
+    {
+        var newRotation = firePoint.rotation;
+        newRotation *= Quaternion.Euler(0, 0, -90 + angle);
+        GameObject eyeBullet = Instantiate(eyeBulletPrefab, firePoint.position, newRotation);
 
-            eyeBullet.GetComponent<EyeBulletBehavior>().SetForce(RotateVector(force, angle));
-            eyeBullet.GetComponent<EyeBulletBehavior>().ignoreTag = gameObject.tag;
-            eyeBullet.GetComponent<EyeBulletBehavior>().damageTag = "Player";
+        Vector2 playerPos = player.transform.position;
+        Vector2 currPos = transform.position;
+        Vector2 force = (playerPos - currPos).normalized;
 
-            Destroy(eyeBullet, 2f);
-        }
+        eyeBullet.GetComponent<BulletBehaviour>().SetForce(RotateVector(force, angle));
+        eyeBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+        eyeBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
-        Vector2 RotateVector(Vector2 v, float angle)
-        {
-            float radian = angle * Mathf.Deg2Rad;
-            float _x = v.x * Mathf.Cos(radian) - v.y * Mathf.Sin(radian);
-            float _y = v.x * Mathf.Sin(radian) + v.y * Mathf.Cos(radian);
-            return new Vector2(_x, _y);
-        }
+        Destroy(eyeBullet, 2f);
+    }
+
+    Vector2 RotateVector(Vector2 v, float angle)
+    {
+        float radian = angle * Mathf.Deg2Rad;
+        float _x = v.x * Mathf.Cos(radian) - v.y * Mathf.Sin(radian);
+        float _y = v.x * Mathf.Sin(radian) + v.y * Mathf.Cos(radian);
+        return new Vector2(_x, _y);
     }
 }
