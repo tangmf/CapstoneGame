@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3530844150034303855}
-  healthPoints: 100
+  healthPoints: 300
   dead: 0
 --- !u!114 &6307910007083524458
 MonoBehaviour:
@@ -576,6 +576,7 @@ MonoBehaviour:
   warning: {fileID: 2166767555180047522, guid: 754cd8dad52e58d45a650bf81f8e1bc0, type: 3}
   spike: {fileID: 3702326162941164976, guid: 6ab7af3ab15ba964cb5714b4da656470, type: 3}
   isFlipped: 0
+  healthManager: {fileID: 6307910007083524459}
 --- !u!1 &6307910007248823022
 GameObject:
   m_ObjectHideFlags: 0

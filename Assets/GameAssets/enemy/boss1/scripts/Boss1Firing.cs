@@ -8,8 +8,10 @@ public class Boss1Firing : StateMachineBehaviour
     Transform player;
     Boss1Behavior boss;
 
-    float firingDuration;
-    float firingLoop;
+    public float firingDuration = 3f;
+    public float firingLoop = 0.5f;
+    public bool shootSpike = false;
+    public bool shootBullet = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -18,8 +20,6 @@ public class Boss1Firing : StateMachineBehaviour
         rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
         boss = animator.transform.parent.GetComponent<Boss1Behavior>();
 
-        firingDuration = 3f;
-        firingLoop = 0.5f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -43,8 +43,15 @@ public class Boss1Firing : StateMachineBehaviour
         }
         else
         {
-            boss.Fire();
-            boss.StartShootSpike();
+            if (shootBullet)
+            {
+                boss.Fire();
+            }
+            if (shootSpike)
+            {
+                boss.StartShootSpike();
+            }
+            
             firingLoop = 0.5f;
         }
     }

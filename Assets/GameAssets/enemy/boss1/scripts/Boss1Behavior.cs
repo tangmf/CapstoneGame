@@ -18,6 +18,8 @@ public class Boss1Behavior : MonoBehaviour
 
     public bool isFlipped = false;
 
+    public HealthManager healthManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,10 @@ public class Boss1Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(healthManager.healthPoints <= healthManager.healthBar.maxValue * 0.5)
+        {
+            animator.SetTrigger("Enrage");
+        }
     }
 
     public void LookAtPlayer()

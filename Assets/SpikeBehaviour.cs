@@ -45,10 +45,22 @@ public class SpikeBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(damageTag) && collision.gameObject.GetComponent<Rigidbody2D>())
+        if (collision.gameObject.CompareTag(damageTag))
         {
-            float bounce = -6f; //amount of force to apply
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(collision.contacts[0].normal * bounce);
+            if (collision.gameObject.GetComponent<HealthManager>())
+            {
+                collision.gameObject.GetComponent<HealthManager>().Damage(bullet.damage);
+                if (collision.gameObject.GetComponent<Rigidbody2D>())
+                {
+                    float bounce = -6f; //amount of force to apply
+                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(collision.contacts[0].normal * bounce);
+                }
+                if (bullet.hitSfx != null)
+                {
+                    AudioSource.PlayClipAtPoint(bullet.hitSfx, transform.position);
+                }
+
+            }
         }
     }
 
