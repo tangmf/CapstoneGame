@@ -18,9 +18,6 @@ public class Boss1Walking : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
         boss = animator.transform.parent.GetComponent<Boss1Behavior>();
-
-        moveSpeed = 0.8f;
-        attackCooldown = 3f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
