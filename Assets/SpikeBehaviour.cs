@@ -43,14 +43,23 @@ public class SpikeBehaviour : MonoBehaviour
 
     }
 
-    /*
-    void OnTriggerStay2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        other.attachedRigidbody.AddForce(-0.1F * other.attachedRigidbody.velocity);
+        if (collision.gameObject.CompareTag(damageTag) && collision.gameObject.GetComponent<Rigidbody2D>())
+        {
+            float bounce = -6f; //amount of force to apply
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(collision.contacts[0].normal * bounce);
+        }
     }
-    */
 
-    public void SetForce(Vector2 force)
+            /*
+            void OnTriggerStay2D(Collider2D other)
+            {
+                other.attachedRigidbody.AddForce(-0.1F * other.attachedRigidbody.velocity);
+            }
+            */
+
+            public void SetForce(Vector2 force)
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(force * bullet.forceMultiplier, ForceMode2D.Impulse);
     }

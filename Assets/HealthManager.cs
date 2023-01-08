@@ -25,6 +25,7 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         //healthBar.transform.rotation = Quaternion.identity;
+        /*
         if (Input.GetKeyDown("left"))
         {
             Damage(20);
@@ -33,6 +34,7 @@ public class HealthManager : MonoBehaviour
         {
             Heal(20);
         }
+        */
     }
 
     public void Damage(float dmg)

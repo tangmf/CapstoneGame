@@ -104,7 +104,11 @@ public class GameMaster : MonoBehaviour
     {
         GameObject newGameStartScreen = Instantiate(gameStartScreen);
         yield return new WaitForSeconds(3.0f);
-        Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
+        if(boss != null)
+        {
+            Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
+        }
+        
 
     }
 
