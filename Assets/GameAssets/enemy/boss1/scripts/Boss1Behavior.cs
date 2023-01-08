@@ -75,6 +75,8 @@ public class Boss1Behavior : MonoBehaviour
         GameObject newWarning = Instantiate(warning, targetPos, Quaternion.identity);
         yield return new WaitForSeconds(1.0f);
         GameObject newSpike = Instantiate(spike, targetPos, Quaternion.identity);
+        newSpike.GetComponent<SpikeBehaviour>().ignoreTag = gameObject.tag;
+        newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
     }
 
         void createEyeBullet(float angle)
