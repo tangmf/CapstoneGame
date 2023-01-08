@@ -52,8 +52,10 @@ public class SpikeBehaviour : MonoBehaviour
                 collision.gameObject.GetComponent<HealthManager>().Damage(bullet.damage);
                 if (collision.gameObject.GetComponent<Rigidbody2D>())
                 {
-                    float bounce = -6f; //amount of force to apply
-                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(collision.contacts[0].normal * bounce);
+                    Vector2 collisionPos = collision.transform.position;
+                    Vector2 currentPos = transform.position;
+                    Vector2 force = (collisionPos - currentPos).normalized;
+                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(force * bullet.forceMultiplier, ForceMode2D.Impulse);
                 }
                 if (bullet.hitSfx != null)
                 {
