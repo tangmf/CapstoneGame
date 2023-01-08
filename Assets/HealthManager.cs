@@ -81,7 +81,7 @@ public class HealthManager : MonoBehaviour
             gm.GameOver("LOSE");
             gm.WaitForRespawn();
         }
-        else
+        else if(gameObject.CompareTag("Enemy"))
         {
             gm.GameOver("WIN");
         }
