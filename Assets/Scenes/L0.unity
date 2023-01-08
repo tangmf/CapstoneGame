@@ -495,6 +495,7 @@ MonoBehaviour:
   healthBar: {fileID: 1773971627}
   healthPoints: 100
   dead: 0
+  hitSfx: {fileID: 0}
 --- !u!70 &142656610
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1355,6 +1356,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5002448651817485488, guid: f1e28dd67a7dc2f4a9fe12980b645fa8, type: 3}
+      propertyPath: meleeSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
+    - target: {fileID: 5002448651817485495, guid: f1e28dd67a7dc2f4a9fe12980b645fa8, type: 3}
+      propertyPath: hitSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 11ca7167ef25e6b43a1f4f456539d886, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e28dd67a7dc2f4a9fe12980b645fa8, type: 3}
 --- !u!1001 &1089780913
@@ -6222,6 +6231,7 @@ MonoBehaviour:
   healthBar: {fileID: 52820736}
   healthPoints: 500
   dead: 0
+  hitSfx: {fileID: 0}
 --- !u!212 &2108034396
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -6541,7 +6541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5002448651516555252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0000009536743, y: 0.19999158, z: -10}
+  m_LocalPosition: {x: 0, y: 1.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7000,6 +7000,7 @@ MonoBehaviour:
   healthBar: {fileID: 5002448650620531037}
   healthPoints: 200
   dead: 0
+  hitSfx: {fileID: 8300000, guid: 11ca7167ef25e6b43a1f4f456539d886, type: 3}
 --- !u!114 &5002448651817485488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7019,6 +7020,7 @@ MonoBehaviour:
   bulletSpeed: 2
   attackRange: 1
   damage: 10
+  meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
 --- !u!50 &5002448651817485490
 Rigidbody2D:
   serializedVersion: 4

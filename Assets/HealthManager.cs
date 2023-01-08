@@ -11,6 +11,7 @@ public class HealthManager : MonoBehaviour
     // Variables
     public float healthPoints;
     public bool dead = false;
+    public AudioClip hitSfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,11 @@ public class HealthManager : MonoBehaviour
     public void Damage(float dmg)
     {
         healthPoints -= dmg;
-        if(healthPoints <= 0)
+        if (hitSfx != null)
+        {
+            AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
+        }
+        if (healthPoints <= 0)
         {
             healthPoints = 0;
             if (!dead)

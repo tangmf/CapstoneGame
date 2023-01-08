@@ -13,6 +13,7 @@ public class DummyShooting : MonoBehaviour
 
     public float attackRange = 1.0f;
     public float damage = 10.0f;
+    public AudioClip meleeSfx;
 
     Animator animator;
 
@@ -69,7 +70,10 @@ public class DummyShooting : MonoBehaviour
 
     public void MeleeAttack()
     {
-
+        if (meleeSfx != null)
+        {
+            AudioSource.PlayClipAtPoint(meleeSfx, this.gameObject.transform.position);
+        }
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 currentPos = transform.position;
         Vector2 force = (mousePos - currentPos).normalized;

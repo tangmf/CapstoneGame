@@ -558,6 +558,7 @@ MonoBehaviour:
   healthBar: {fileID: 3530844150034303855}
   healthPoints: 300
   dead: 0
+  hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
 --- !u!114 &6307910007083524458
 MonoBehaviour:
   m_ObjectHideFlags: 0

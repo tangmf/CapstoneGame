@@ -16,8 +16,8 @@ MonoBehaviour:
   name: Default
   bulletSpeed: 10
   damage: 10
-  forceMultiplier: 40
+  forceMultiplier: 100
   hitEffect: {fileID: 7038756251294249094, guid: 02ec44d7f1ff61c4eb7d96df3f13475e, type: 3}
   bulletObject: {fileID: 5565238402336925566, guid: 83768ad48548b1145a609aa4b4d13086, type: 3}
-  shootSfx: {fileID: 0}
+  shootSfx: {fileID: 8300000, guid: 64032c52228679e499876df288eaa5a2, type: 3}
   hitSfx: {fileID: 0}
