@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss1Behavior : MonoBehaviour
 {
     Rigidbody2D body;
-    Animator animator;
+    public Animator animator;
     Collider2D hitbox;
 
     Transform player;

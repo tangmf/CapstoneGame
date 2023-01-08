@@ -83,6 +83,7 @@ public class HealthManager : MonoBehaviour
         }
         else if(gameObject.CompareTag("Enemy"))
         {
+            GetComponent<Boss1Behavior>().animator.SetTrigger("IsDead");
             gm.GameOver("WIN");
         }
         
