@@ -18,6 +18,8 @@ public class GameMaster : MonoBehaviour
     public GameObject boss;
     public Transform bossSpawnPos;
 
+    public bool gameEnded;
+
     public GameObject gameStartScreen;
 
     void Start()
@@ -136,8 +138,12 @@ public class GameMaster : MonoBehaviour
 
     public void GameOver(string type)
     {
-
-        StartCoroutine(WrapUp(type));
+        if (!gameEnded)
+        {
+            gameEnded = true;
+            StartCoroutine(WrapUp(type));
+        }
+        
 
     }
 

@@ -22,7 +22,6 @@ public class Boss1Behavior : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         hitbox = GetComponent<Collider2D>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
