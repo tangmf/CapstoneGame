@@ -34,12 +34,14 @@ public class BulletBehaviour : MonoBehaviour
                 collision.gameObject.GetComponent<HealthManager>().Damage(bullet.damage);
             }
         }
+        
         if (collision.gameObject.CompareTag(ignoreTag) || collision.gameObject.CompareTag("Untagged"))
         {
 
         }
         else
         {
+            Debug.Log("Bullet hit " + collision.gameObject.ToString());
             GameObject effect = Instantiate(bullet.hitEffect, transform.position, transform.rotation);
             if (bullet.hitSfx != null)
             {
@@ -57,6 +59,7 @@ public class BulletBehaviour : MonoBehaviour
 
     public void SetForce(Vector2 force)
     {
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         gameObject.GetComponent<Rigidbody2D>().AddForce(force * bullet.forceMultiplier, ForceMode2D.Impulse);
     }
     
