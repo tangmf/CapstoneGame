@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b086b2fdf850ae42a319a9ce12f9790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 11400000, guid: ad83d212a78c1b9419008b861e2ff30b, type: 2}
+  bullet: {fileID: 11400000, guid: 9dbb385c2889d4e41b033a76b905ba27, type: 2}
   ignoreTag: 
   damageTag: 
 --- !u!70 &-3846892476672321292

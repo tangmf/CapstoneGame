@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
         {
             // Create Bullet
             GameObject newBullet = Instantiate(bullet, firePoint.position, Quaternion.Euler(0f, 0f, 0f));
-            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(1,0) * bullet.GetComponent<BulletBehaviour>().bullet.bulletSpeed);
+            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(1,0));
             newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
             newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 

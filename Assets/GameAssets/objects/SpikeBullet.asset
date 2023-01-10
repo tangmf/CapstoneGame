@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f78e79232eb3b4c9af86610bdbf5d3, type: 3}
-  m_Name: EyeBullet
+  m_Name: SpikeBullet
   m_EditorClassIdentifier: 
-  type: Default
-  name: EyeBullet
-  bulletSpeed: 10
+  type: Spike
+  name: Spike
+  bulletSpeed: 50
   damage: 10
-  forceMultiplier: 10
-  hitEffect: {fileID: 7038756251294249094, guid: b903057e090cbb947865678465ed68c3, type: 3}
-  bulletObject: {fileID: 8887486330499392155, guid: eb82e384c40eac8459bb046c163e8fec, type: 3}
-  shootSfx: {fileID: 0}
+  forceMultiplier: 100
+  hitEffect: {fileID: 7038756251294249094, guid: 02ec44d7f1ff61c4eb7d96df3f13475e, type: 3}
+  bulletObject: {fileID: 0}
+  shootSfx: {fileID: 8300000, guid: 64032c52228679e499876df288eaa5a2, type: 3}
   hitSfx: {fileID: 0}

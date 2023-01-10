@@ -95,7 +95,7 @@ public class Boss1Behavior : MonoBehaviour
 
         // Create Bullet
         GameObject newBullet = Instantiate(eyeBulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force * eyeBulletPrefab.GetComponent<BulletBehaviour>().bullet.bulletSpeed);
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
