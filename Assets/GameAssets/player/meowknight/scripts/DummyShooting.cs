@@ -92,7 +92,7 @@ public class DummyShooting : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, attackRange);
         foreach (Collider2D enemy in hitEnemies)
         {
-            
+
             /*
             if (!enemy.CompareTag("Player") && enemy.gameObject.GetComponent<Rigidbody2D>())
             {
@@ -118,9 +118,15 @@ public class DummyShooting : MonoBehaviour
                     enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
                     enemy.gameObject.GetComponent<BulletBehaviour>().damageTag = "Enemy";
                 }
+
+                if (enemy.gameObject.GetComponent<Rigidbody2D>() && !enemy.gameObject.GetComponent<BulletBehaviour>())
+                {
+
+                    enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 10.0f, ForceMode2D.Impulse);
+                }
             }
-            
-            
+
+
 
         }
 
