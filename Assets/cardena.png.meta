@@ -108,9 +108,9 @@ TextureImporter:
       name: cardena_0
       rect:
         serializedVersion: 2
-        x: 45
+        x: 43
         y: 559
-        width: 209
+        width: 220
         height: 453
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -129,12 +129,12 @@ TextureImporter:
       name: cardena_1
       rect:
         serializedVersion: 2
-        x: 357
+        x: 299
         y: 559
-        width: 277
+        width: 346
         height: 453
-      alignment: 9
-      pivot: {x: 0.41271445, y: -0.003953542}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,9 +171,9 @@ TextureImporter:
       name: cardena_3
       rect:
         serializedVersion: 2
-        x: 147
+        x: 135
         y: 59
-        width: 278
+        width: 308
         height: 453
       alignment: 9
       pivot: {x: 0.40838885, y: -0.000000025262896}
@@ -192,7 +192,7 @@ TextureImporter:
       name: cardena_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 507
         y: 59
         width: 294
         height: 453
