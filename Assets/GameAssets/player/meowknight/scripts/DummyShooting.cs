@@ -5,6 +5,7 @@ using UnityEngine;
 public class DummyShooting : MonoBehaviour
 {
     public GameObject bullet;
+    public Transform pivot;
     public Transform firePoint;
 
     public float cooldown;
@@ -26,24 +27,20 @@ public class DummyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 currentPos = transform.position;
+        Vector2 force = (mousePos - currentPos).normalized;
+
+
+        float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+        pivot.rotation= Quaternion.Euler(0f, 0f, rotation);
+
         if (Input.GetMouseButtonDown(0))
         {
             if (attackTime + cooldown < Time.time)
             {
-                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 currentPos = transform.position;
-                Vector2 force = (mousePos - currentPos).normalized;
 
-                if (force.x > 0)
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                }
-                else if (force.x < 0)
-                {
-                    transform.eulerAngles = new Vector3(0, 180, 0);
-                }
 
-                float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
 
                 // Create Bullet
                 GameObject newBullet = Instantiate(bullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
@@ -134,11 +131,13 @@ public class DummyShooting : MonoBehaviour
         animator.ResetTrigger("Attack");
 
     }
-
+    
     void OnDrawGizmos()
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(firePoint.position, attackRange);
     }
+    
+    
 }
