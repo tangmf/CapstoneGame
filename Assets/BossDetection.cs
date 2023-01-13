@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1Detection : MonoBehaviour
+public class BossDetection : MonoBehaviour
 {
     public Animator animator;
 

@@ -80,7 +80,7 @@ public class HealthManager : MonoBehaviour
     {
         if (gameObject.CompareTag("Player"))
         {
-            GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
+            GetComponent<PlayerMovement>().animator.SetTrigger("Is_Dead");
             GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
             Debug.Log(gameObject.ToString() + " has been killed");
             gm.GameOver("LOSE");
@@ -88,9 +88,9 @@ public class HealthManager : MonoBehaviour
         }
         else if(gameObject.CompareTag("Enemy"))
         {
-            if (GetComponent<Boss1Behavior>())
+            if (GetComponent<BossBehavior>())
             {
-                GetComponent<Boss1Behavior>().animator.SetTrigger("IsDead");
+                GetComponent<BossBehavior>().animator.SetTrigger("Is_Dead");
             }
             
             gm.GameOver("WIN");

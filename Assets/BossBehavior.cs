@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1Behavior : MonoBehaviour
+public class BossBehavior : MonoBehaviour
 {
     Rigidbody2D body;
     public Animator animator;
@@ -59,11 +59,26 @@ public class Boss1Behavior : MonoBehaviour
         }
     }
 
-    public void Fire()
+    public void Fire(int count, float spreadAngle)
     {
-        createEyeBullet(-1);
-        createEyeBullet(0);
-        createEyeBullet(1);
+        if (count % 2 == 0) // If projectile count even
+        {
+            for (int i = 1; i <= count / 2; i++)
+            {
+                createEyeBullet((i * spreadAngle) - spreadAngle / 2);
+                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2));
+            }
+        }
+        else // If projectile count odd
+        {
+            createEyeBullet(0);
+
+            for (int i = 1; i <= (count - 1) / 2; i++)
+            {
+                createEyeBullet(i * spreadAngle);
+                createEyeBullet(-i * spreadAngle);
+            }
+        }
     }
 
     public void StartShootSpike()

@@ -6,7 +6,7 @@ public class Boss1Firing : StateMachineBehaviour
 {
     Rigidbody2D rigidbody;
     Transform player;
-    Boss1Behavior boss;
+    BossBehavior boss;
 
     public float firingDuration = 3f;
     public float firingLoop = 0.5f;
@@ -18,7 +18,7 @@ public class Boss1Firing : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
-        boss = animator.transform.parent.GetComponent<Boss1Behavior>();
+        boss = animator.transform.parent.GetComponent<BossBehavior>();
 
     }
 
@@ -45,7 +45,7 @@ public class Boss1Firing : StateMachineBehaviour
         {
             if (shootBullet)
             {
-                boss.Fire();
+                boss.Fire(3, 1);
             }
             if (shootSpike)
             {
