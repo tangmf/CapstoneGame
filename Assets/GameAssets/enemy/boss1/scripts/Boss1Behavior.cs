@@ -64,14 +64,13 @@ public class Boss1Behavior : MonoBehaviour
         createEyeBullet(-1);
         createEyeBullet(0);
         createEyeBullet(1);
-
-        
     }
 
     public void StartShootSpike()
     {
         StartCoroutine(ShootSpike());
     }
+
     IEnumerator ShootSpike()
     {
         var targetPos = player.position;
@@ -83,7 +82,7 @@ public class Boss1Behavior : MonoBehaviour
         newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
     }
 
-        void createEyeBullet(float angle)
+    void createEyeBullet(float angle)
     {
         Vector2 playerPos = player.position;
         Vector2 currentPos = firePoint.position;
@@ -127,6 +126,4 @@ public class Boss1Behavior : MonoBehaviour
         float _y = v.x * Mathf.Sin(radian) + v.y * Mathf.Cos(radian);
         return new Vector2(_x, _y);
     }
-
-
 }
