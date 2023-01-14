@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        if (Input.GetKeyDown("w") || Input.GetKeyDown("space"))
+        if (Input.GetKey("w") || Input.GetKey("space"))
         {
             jumpKeyHeld = true;
             if (grounded)
