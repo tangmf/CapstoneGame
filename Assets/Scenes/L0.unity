@@ -784,7 +784,7 @@ Transform:
   m_GameObject: {fileID: 295740748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.38, y: 0.27, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.40000004, z: 0.40000004}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1678910158}
@@ -844,13 +844,13 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
-  playerMoveSpeed: 8
+  playerMoveSpeed: 15
   playerJumpSpeed: 30
   jumpFloorDistance: 0.5
   dashCD: 0.5
   nextDash: 0
   grounded: 0
-  counterJumpForce: {x: 0, y: -40}
+  counterJumpForce: {x: 0, y: -100}
   dust: {fileID: 1550136402}
 --- !u!70 &295740753
 CapsuleCollider2D:
@@ -884,7 +884,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a70a333ad4e29694fb3924abc528d7b1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -951,7 +951,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 10, y: 10.21875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -973,7 +973,7 @@ MonoBehaviour:
   firePoint: {fileID: 1443594888}
   cooldown: 1
   attackTime: 0
-  attackRange: 1
+  attackRange: 2
   damage: 10
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
@@ -12109,7 +12109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 1.4, z: -10}
+  m_FollowOffset: {x: 0, y: 5, z: -10}
   m_XDamping: 0.5
   m_YDamping: 3
   m_ZDamping: 0.5
@@ -12571,7 +12571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5821668829092855431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2799997, y: -7.229999, z: -10}
+  m_LocalPosition: {x: 3.2799997, y: -3.6299992, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12601,7 +12601,7 @@ MonoBehaviour:
   m_Follow: {fileID: 295740749}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -13987,7 +13987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5821668830388422555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2799997, y: -7.229999, z: -10}
+  m_LocalPosition: {x: 3.2799997, y: -3.6299992, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14021,7 +14021,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
