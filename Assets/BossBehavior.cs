@@ -100,11 +100,12 @@ public class BossBehavior : MonoBehaviour
     void createEyeBullet(float angle)
     {
         Vector2 playerPos = player.position;
-        Vector2 currentPos = firePoint.position;
-        playerPos.y += angle;
-        Vector2 force = (playerPos - currentPos).normalized;
+        //Vector2 currentPos = firePoint.position;
+        //playerPos.y += angle;
+        //Vector2 force = (playerPos - currentPos).normalized;
+        Vector2 force = (Quaternion.AngleAxis(angle, Vector3.forward) * playerPos).normalized;
 
-
+        // To rotate bullet sprite
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
 
         // Create Bullet

@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    
     public Bullet bullet;
     public string ignoreTag;
     public string damageTag;
 
+    public Transform bulletTransform;
+
     // Start is called before the first frame update
     void Start()
     {
+        bulletTransform = GetComponent<Transform>();
+
         if (bullet.shootSfx != null)
         {
             AudioSource.PlayClipAtPoint(bullet.shootSfx, transform.position);

@@ -44,7 +44,7 @@ public class Boss2Firing : StateMachineBehaviour
         {
             if (shootBullet)
             {
-                boss.Fire(5, 3);
+                boss.Fire(5, 20);
             }
             // For second attack in the future
             /*if (shootSpike)

@@ -45,7 +45,7 @@ public class Boss1Firing : StateMachineBehaviour
         {
             if (shootBullet)
             {
-                boss.Fire(3, 1);
+                boss.Fire(3, 10);
             }
             if (shootSpike)
             {

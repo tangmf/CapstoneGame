@@ -108,7 +108,8 @@ public class GameMaster : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         if(boss != null)
         {
-            Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
+            // Disable boss 1 spawn for now, will add boss 2 once done
+            //Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
         }
         
 
