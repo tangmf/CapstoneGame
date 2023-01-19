@@ -20,8 +20,8 @@ public class Boss2Flying : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
-        boss = animator.transform.parent.GetComponent<BossBehavior>();
-        bossTransform = GameObject.FindGameObjectWithTag("Enemy").transform;
+        boss = animator.transform.GetComponent<BossBehavior>();
+        bossTransform = animator.transform;
 
         // Pick random fly position
         flyPos = new Vector2(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));

@@ -16,8 +16,8 @@ public class Boss2Firing : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
-        boss = animator.transform.parent.GetComponent<BossBehavior>();
+        rigidbody = animator.transform.GetComponent<Rigidbody2D>();
+        boss = animator.transform.GetComponent<BossBehavior>();
 
     }
 
