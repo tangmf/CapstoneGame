@@ -91,7 +91,7 @@ public class PlayerBehaviour : MonoBehaviour
                 if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
                 {
                     enemy.transform.position = firePoint.position;
-                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force);
+                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
                     //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
                     enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
                     enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
