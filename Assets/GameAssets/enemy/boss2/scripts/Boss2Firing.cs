@@ -8,8 +8,8 @@ public class Boss2Firing : StateMachineBehaviour
     Transform player;
     BossBehavior boss;
 
-    public float firingDuration = 3f;
-    public float firingLoop = 1f;
+    public float firingDuration = 2.1f;
+    public float firingLoop = 0.7f;
     public bool shootBullet = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -32,7 +32,7 @@ public class Boss2Firing : StateMachineBehaviour
         else
         {
             animator.SetBool("Boss_Attacking", false);
-            firingDuration = 3f;
+            firingDuration = 2.1f;
         }
 
         // Code for Firing Attack pattern
@@ -52,7 +52,7 @@ public class Boss2Firing : StateMachineBehaviour
                 boss.StartShootSpike();
             }*/
             
-            firingLoop = 1f;
+            firingLoop = 0.7f;
         }
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552dfeb1bb20eba42a992bd96c73fd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingDuration: 3
-  firingLoop: 1
+  firingDuration: 2.1
+  firingLoop: 0.7
   shootBullet: 1
 --- !u!1101 &-3847022591895988723
 AnimatorStateTransition:
@@ -212,8 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7481ce4dafc2d4880e822df77b7392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  attackCooldown: 3
+  moveSpeed: 15
+  attackCooldown: 2
 --- !u!1102 &5541914360054512472
 AnimatorState:
   serializedVersion: 6

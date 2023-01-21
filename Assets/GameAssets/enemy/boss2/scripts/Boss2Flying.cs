@@ -24,9 +24,18 @@ public class Boss2Flying : StateMachineBehaviour
         bossTransform = animator.transform;
 
         // Pick random fly position
-        flyPos = new Vector2(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
-
-        Debug.Log(flyPos.ToString());
+        flyPos = bossTransform.position;
+        while (true)
+        {
+            if (Vector2.Distance(bossTransform.position, flyPos) < 15)
+            {
+                flyPos = new Vector2(Random.Range(-18.0f, 18.0f), Random.Range(-3.0f, 7.0f));
+            }
+            else
+            {
+                break;
+            }
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -51,7 +60,7 @@ public class Boss2Flying : StateMachineBehaviour
         {
             animator.SetBool("Boss_Attacking", true);
             animator.SetTrigger("Boss_Fire");
-            attackCooldown = 3f;
+            attackCooldown = 2f;
         }
     }
 
