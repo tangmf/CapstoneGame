@@ -141,4 +141,22 @@ public class BossBehavior : MonoBehaviour
         float _y = v.x * Mathf.Sin(radian) + v.y * Mathf.Cos(radian);
         return new Vector2(_x, _y);
     }
+
+    public void StartShootLaser()
+    {
+        StartCoroutine(ShootLaser());
+    }
+
+    IEnumerator ShootLaser()
+    {
+        Vector2 targetPos = player.position;
+        Vector2 bossEyePos = firePoint.position;
+
+        Physics2D.Raycast(bossEyePos, targetPos.normalized);
+        Debug.DrawLine(bossEyePos, targetPos.normalized, Color.red);
+
+        yield return new WaitForSeconds(1.0f);
+
+        animator.SetBool("Boss_Attacking", false);
+    }
 }

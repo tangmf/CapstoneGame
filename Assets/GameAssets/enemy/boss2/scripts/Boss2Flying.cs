@@ -52,15 +52,17 @@ public class Boss2Flying : StateMachineBehaviour
         rigidbody.MovePosition(newPos);*/
 
         // Code for counting down to Firing Attack
-        if (attackCooldown > 0)
+        float attackCountdown = attackCooldown;
+
+        if (attackCountdown > 0)
         {
-            attackCooldown -= Time.deltaTime;
+            attackCountdown -= Time.deltaTime;
         }
         else
         {
             animator.SetBool("Boss_Attacking", true);
             animator.SetTrigger("Boss_Fire");
-            attackCooldown = 2f;
+            attackCountdown = attackCooldown;
         }
     }
 

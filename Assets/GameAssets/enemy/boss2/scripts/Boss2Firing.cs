@@ -12,6 +12,10 @@ public class Boss2Firing : StateMachineBehaviour
     public float firingLoop = 0.7f;
     public bool shootBullet = false;
 
+    public float laserDelay = 1.5f;
+    public float laserDuration = 1f;
+    public bool shootLaser = false;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -24,35 +28,35 @@ public class Boss2Firing : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // Code for counting down to Firing Attack
-        if (firingDuration > 0)
+        if (shootBullet)
         {
-            firingDuration -= Time.deltaTime;
-        }
-        else
-        {
-            animator.SetBool("Boss_Attacking", false);
-            firingDuration = 2.1f;
-        }
+            // Code for counting down to Firing Attack
+            if (firingDuration > 0)
+            {
+                firingDuration -= Time.deltaTime;
+            }
+            else
+            {
+                animator.SetBool("Boss_Attacking", false);
+                firingDuration = 2.1f;
+            }
 
-        // Code for Firing Attack pattern
-        if (firingLoop > 0)
-        {
-            firingLoop -= Time.deltaTime;
-        }
-        else
-        {
-            if (shootBullet)
+            // Code for Firing Attack pattern
+            if (firingLoop > 0)
+            {
+                firingLoop -= Time.deltaTime;
+            }
+            else
             {
                 boss.Fire(5, 20);
+
+                firingLoop = 0.7f;
             }
-            // For second attack in the future
-            /*if (shootSpike)
-            {
-                boss.StartShootSpike();
-            }*/
-            
-            firingLoop = 0.7f;
+        }
+
+        if (shootLaser)
+        {
+            boss.StartShootLaser();
         }
     }
 }
