@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey("s"))
         {
-            Debug.Log(playerBody.position);
+            //Debug.Log(playerBody.position);
             animator.SetBool("Crouching", true);
         }
         else

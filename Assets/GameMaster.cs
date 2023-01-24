@@ -22,6 +22,11 @@ public class GameMaster : MonoBehaviour
 
     public GameObject gameStartScreen;
 
+    int score = 0;
+
+    float winTime = 0.0f;
+    float winHealthPoints = 0.0f;
+
     void Start()
     {
 
@@ -141,10 +146,19 @@ public class GameMaster : MonoBehaviour
         if (!gameEnded)
         {
             gameEnded = true;
+            winHealthPoints = player.GetComponent<HealthManager>().healthPoints;
+            winTime = Time.time;
+            CalculateScore();
             StartCoroutine(WrapUp(type));
         }
         
 
+    }
+    
+    public void CalculateScore()
+    {
+        score = (int)(winHealthPoints * 10 - winTime);
+        Debug.Log("Score: " + score.ToString());
     }
 
     IEnumerator WrapUp(string type)
@@ -157,6 +171,9 @@ public class GameMaster : MonoBehaviour
 
 
         Time.timeScale = 1.0f;
+        GameObject newGameOverScreen = Instantiate(gameOverScreen);
+        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score);
+        /*
         if (type == "LOSE")
         {
             GameObject newGameOverScreen = Instantiate(gameOverScreen);
@@ -165,6 +182,7 @@ public class GameMaster : MonoBehaviour
         {
             Instantiate(winScreen);
         }
+        */
 
 
     }
