@@ -12,6 +12,7 @@ public class Boss2Flying : StateMachineBehaviour
     public float moveSpeed;
 
     public float attackCooldown;
+    float attackCountdown;
 
     Vector2 flyPos;
 
@@ -22,6 +23,8 @@ public class Boss2Flying : StateMachineBehaviour
         rigidbody = animator.transform.parent.GetComponent<Rigidbody2D>();
         boss = animator.transform.GetComponent<BossBehavior>();
         bossTransform = animator.transform;
+
+        attackCountdown = attackCooldown;
 
         // Pick random fly position
         flyPos = bossTransform.position;
@@ -52,8 +55,6 @@ public class Boss2Flying : StateMachineBehaviour
         rigidbody.MovePosition(newPos);*/
 
         // Code for counting down to Firing Attack
-        float attackCountdown = attackCooldown;
-
         if (attackCountdown > 0)
         {
             attackCountdown -= Time.deltaTime;

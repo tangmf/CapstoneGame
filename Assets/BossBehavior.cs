@@ -153,7 +153,7 @@ public class BossBehavior : MonoBehaviour
         Vector2 bossEyePos = firePoint.position;
 
         Physics2D.Raycast(bossEyePos, targetPos.normalized);
-        Debug.DrawLine(bossEyePos, targetPos.normalized, Color.red);
+        Debug.DrawLine(bossEyePos, targetPos, Color.blue);
 
         yield return new WaitForSeconds(1.0f);
 
