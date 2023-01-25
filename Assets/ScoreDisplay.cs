@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class ScoreDisplay : MonoBehaviour
 {
     public TextMeshProUGUI grade;
     public string scene;
+    public GameObject lockObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,17 @@ public class ScoreDisplay : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/ScoreDataFile.json");
         ScoreDataList datas = JsonUtility.FromJson<ScoreDataList>(json);
         ScoreData highScore = null;
+
+        string[] splitArray = scene.Split(char.Parse("L"));
+        string newNumber = (splitArray[1]);
+        Debug.Log(newNumber);
+
+        string prevSceneName = "L" + (Convert.ToInt32(newNumber)-1).ToString();
+        if(scene == "L0")
+        {
+            RemoveLock();
+        }
+
         foreach(ScoreData data in datas.scoreDatas)
         {
             if(data.sceneName == scene)
@@ -42,12 +55,22 @@ public class ScoreDisplay : MonoBehaviour
                 }
                 
             }
+            else if(data.sceneName == prevSceneName)
+            {
+                RemoveLock();
+            }
         }
         if(highScore != null)
         {
             Debug.Log(highScore.score);
             grade.text = highScore.grade.ToString();
+            RemoveLock();
         }
         
+    }
+
+    public void RemoveLock()
+    {
+        lockObject.SetActive(false);
     }
 }
