@@ -415,6 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9034356539144613075}
   - component: {fileID: 1914077779457023924}
+  - component: {fileID: 1203836595238131290}
   m_Layer: 5
   m_Name: LevelContainer
   m_TagString: Untagged
@@ -492,6 +493,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1203836595238131290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9034356539144613074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db7b7ae1f73b254391af16dec6a615b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grade: {fileID: 5932889931123013232}
+  scene: 
 --- !u!1 &9034356539694462127
 GameObject:
   m_ObjectHideFlags: 0

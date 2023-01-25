@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,11 +31,11 @@ public class GameOverManager : MonoBehaviour
         if (winLose == "WIN")
         {
             winLoseText.text = "WIN";
-            if (score >= 950)
+            if (score >= 1500)
             {
                 grade = 'S';
             }
-            else if (score >= 800)
+            else if (score >= 1000)
             {
                 grade = 'A';
             }
@@ -119,8 +120,21 @@ public class GameOverManager : MonoBehaviour
 
     public List<ScoreData> LoadScoreDatas()
     {
-        string json = File.ReadAllText(Application.dataPath + "/ScoreDataFile.json");
-        ScoreDataList datas = JsonUtility.FromJson<ScoreDataList>(json);
-        return datas.scoreDatas;
+
+        try
+        {
+            string json = File.ReadAllText(Application.dataPath + "/ScoreDataFile.json");
+            ScoreDataList datas = JsonUtility.FromJson<ScoreDataList>(json);
+            return datas.scoreDatas;
+        }
+
+        catch
+        {
+            List<ScoreData> empty = new List<ScoreData>();
+            return empty;
+        }
+            
+
+        
     }
 }
