@@ -50,6 +50,7 @@ public class GameOverManager : MonoBehaviour
             {
                 grade = 'D';
             }
+            SaveToJson(score, grade);
         }
         else
         {
@@ -60,9 +61,9 @@ public class GameOverManager : MonoBehaviour
             }
             grade = 'F';
         }
-        SaveToJson(score, grade);
         scoreText.text = score.ToString();
         gradeText.text = grade.ToString();
+        
 
     }
 
@@ -97,12 +98,29 @@ public class GameOverManager : MonoBehaviour
     {
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;
+
+
+        ScoreDataList datas = new ScoreDataList();
+        datas.scoreDatas = new List<ScoreData>();
         ScoreData data = new ScoreData();
         data.sceneName = currentSceneName;
         data.score = score;
         data.grade = grade;
+        foreach(var i in LoadScoreDatas())
+        {
+            datas.scoreDatas.Add(i);
+        }
+        datas.scoreDatas.Add(data);
+        Debug.Log(datas.ToString()); 
 
-        string json = JsonUtility.ToJson(data, true);
+        string json = JsonUtility.ToJson(datas, true);
         File.WriteAllText(Application.dataPath + "/ScoreDataFile.json", json);
+    }
+
+    public List<ScoreData> LoadScoreDatas()
+    {
+        string json = File.ReadAllText(Application.dataPath + "/ScoreDataFile.json");
+        ScoreDataList datas = JsonUtility.FromJson<ScoreDataList>(json);
+        return datas.scoreDatas;
     }
 }
