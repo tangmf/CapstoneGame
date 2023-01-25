@@ -19,6 +19,7 @@ public class BossBehavior : MonoBehaviour
     public bool isFlipped = false;
 
     public HealthManager healthManager;
+    public Boss2Laser boss2Laser;
 
     // Start is called before the first frame update
     void Start()
@@ -149,13 +150,19 @@ public class BossBehavior : MonoBehaviour
 
     IEnumerator ShootLaser()
     {
-        Vector2 targetPos = player.position;
-        Vector2 bossEyePos = firePoint.position;
+        Vector2 playerPos = player.position;
+        Vector2 currentPos = firePoint.position;
 
-        Physics2D.Raycast(bossEyePos, targetPos.normalized);
-        Debug.DrawLine(bossEyePos, targetPos, Color.blue);
+        boss2Laser.ShowLaser();
 
-        yield return new WaitForSeconds(1.0f);
+        Physics2D.Raycast(currentPos, playerPos.normalized);
+
+        boss2Laser.LaserTelegraph(playerPos, currentPos);
+        yield return new WaitForSeconds(1.25f);
+        boss2Laser.LaserAttack(playerPos, currentPos);
+        yield return new WaitForSeconds(1.5f);
+
+        boss2Laser.HideLaser();
 
         animator.SetBool("Boss_Attacking", false);
     }
