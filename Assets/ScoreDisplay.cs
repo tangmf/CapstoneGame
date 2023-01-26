@@ -10,6 +10,10 @@ public class ScoreDisplay : MonoBehaviour
     public TextMeshProUGUI grade;
     public string scene;
     public GameObject lockObject;
+    public GameObject scoreBoard;
+    public TextMeshProUGUI levelText;
+
+    ScoreDataList datas;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +29,7 @@ public class ScoreDisplay : MonoBehaviour
     public void LoadFromJson()
     {
         string json = File.ReadAllText(Application.dataPath + "/ScoreDataFile.json");
-        ScoreDataList datas = JsonUtility.FromJson<ScoreDataList>(json);
+        datas = JsonUtility.FromJson<ScoreDataList>(json);
         ScoreData highScore = null;
 
         string[] splitArray = scene.Split(char.Parse("L"));
@@ -72,5 +76,11 @@ public class ScoreDisplay : MonoBehaviour
     public void RemoveLock()
     {
         lockObject.SetActive(false);
+    }
+
+    public void ShowScoreBoard()
+    {
+        scoreBoard.SetActive(true);
+        scoreBoard.GetComponent<ScoreBoardManager>().ShowScores(levelText.text, datas, scene);
     }
 }
