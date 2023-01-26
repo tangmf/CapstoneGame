@@ -27,7 +27,7 @@ public class BossBehavior : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<Collider2D>();
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>().pivot;
 
         Physics2D.IgnoreCollision(hitbox, player.GetComponent<Collider2D>());
     }

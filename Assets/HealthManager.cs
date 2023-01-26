@@ -82,9 +82,22 @@ public class HealthManager : MonoBehaviour
     {
         Debug.Log("HIT");
         Color prevColor = gameObject.GetComponent<SpriteRenderer>().color;
-        gameObject.GetComponent<SpriteRenderer>().material.color = Color.red;
-        yield return new WaitForSeconds(0.2f);
+        Color tmp = prevColor;
+        if (gameObject.CompareTag("Player"))
+        {
+            
+            tmp = Color.red;
+            
+        }
+        else
+        {
+            tmp.a = 0f;
+        }
+
+        gameObject.GetComponent<SpriteRenderer>().material.color = tmp;
+        yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<SpriteRenderer>().material.color = prevColor;
+
     }
     public void MaxHealth()
     {
