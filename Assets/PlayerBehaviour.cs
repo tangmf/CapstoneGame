@@ -90,7 +90,9 @@ public class PlayerBehaviour : MonoBehaviour
 
                 if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
                 {
+                    Transform prevBulletTransform = enemy.gameObject.transform;
                     enemy.transform.position = firePoint.position;
+                    //force.y += prevBulletTransform.rotation.eulerAngles.z;
                     enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
                     //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
                     enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);

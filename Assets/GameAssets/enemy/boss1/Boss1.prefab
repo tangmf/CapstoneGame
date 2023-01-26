@@ -484,8 +484,8 @@ Transform:
   m_GameObject: {fileID: 6307910007083524461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11.38, y: -8.97, z: 0}
-  m_LocalScale: {x: 0.7091, y: 0.7091, z: 0.7091}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6307910008096759297}
   - {fileID: 6307910008530393212}
@@ -578,6 +578,7 @@ MonoBehaviour:
   spike: {fileID: 3702326162941164976, guid: 6ab7af3ab15ba964cb5714b4da656470, type: 3}
   isFlipped: 0
   healthManager: {fileID: 6307910007083524459}
+  boss2Laser: {fileID: 0}
 --- !u!1 &6307910007248823022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,8 +1184,8 @@ MonoBehaviour:
   - {fileID: 6307910008108924558}
   - {fileID: 6307910008042694837}
   m_Bounds:
-    m_Center: {x: -1.9958377, y: -0.6630945, z: 0}
-    m_Extent: {x: 4.0853305, y: 5.169365, z: 0}
+    m_Center: {x: -1.9958382, y: -0.6630945, z: 0}
+    m_Extent: {x: 4.085332, y: 5.169365, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
