@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameMaster : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class GameMaster : MonoBehaviour
     float winTime = 0.0f;
     float winHealthPoints = 0.0f;
 
+    public TextMeshProUGUI timer;
+
     void Start()
     {
 
@@ -45,6 +48,7 @@ public class GameMaster : MonoBehaviour
         {
             GameOver("LOSE");
         }
+        timer.text = ((int)(Time.time)).ToString();
 
 
 
