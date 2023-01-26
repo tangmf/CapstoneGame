@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour
     public float healthPoints;
     public bool dead = false;
     public AudioClip hitSfx;
+    public bool isBoss = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -125,8 +126,11 @@ public class HealthManager : MonoBehaviour
             {
                 GetComponent<BossBehavior>().animator.SetTrigger("Is_Dead");
             }
+            if (isBoss)
+            {
+                gm.GameOver("WIN");
+            }
             
-            gm.GameOver("WIN");
         }
         
 

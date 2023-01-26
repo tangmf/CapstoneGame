@@ -636,6 +636,7 @@ MonoBehaviour:
   healthPoints: 200
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
+  isBoss: 1
 --- !u!70 &2965223419133373639
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

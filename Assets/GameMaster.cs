@@ -48,7 +48,7 @@ public class GameMaster : MonoBehaviour
         {
             GameOver("LOSE");
         }
-        timer.text = ((int)(Time.time)).ToString();
+        timer.text = ((int)(Time.timeSinceLevelLoad)).ToString();
 
 
 
@@ -151,7 +151,7 @@ public class GameMaster : MonoBehaviour
         {
             gameEnded = true;
             winHealthPoints = player.GetComponent<HealthManager>().healthPoints;
-            winTime = Time.time;
+            winTime = Time.timeSinceLevelLoad;
             CalculateScore();
             StartCoroutine(WrapUp(type));
         }
