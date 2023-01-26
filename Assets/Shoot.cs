@@ -46,7 +46,7 @@ public class Shoot : MonoBehaviour
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
-        // Destroy after 2 seconds
-        Destroy(newBullet, 2f);
+        // Destroy after 5 seconds
+        Destroy(newBullet, 5f);
     }
 }

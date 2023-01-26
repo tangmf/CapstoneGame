@@ -6689,6 +6689,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8055663115408967901, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.6299992
+      objectReference: {fileID: 0}
     - target: {fileID: 8055663115736925251, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6758,6 +6762,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6774758854055441392, guid: 98f81a19b2c9ff9468821a63a513f70e, type: 3}
+      propertyPath: direction
+      value: RIGHT
+      objectReference: {fileID: 0}
     - target: {fileID: 6774758854055441393, guid: 98f81a19b2c9ff9468821a63a513f70e, type: 3}
       propertyPath: m_Name
       value: Cardena

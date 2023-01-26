@@ -114,7 +114,7 @@ public class BossBehavior : MonoBehaviour
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
-        // Destroy after 2 seconds
+        // Destroy after 5 seconds
         Destroy(newBullet, 5f);
 
 
