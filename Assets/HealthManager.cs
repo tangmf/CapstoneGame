@@ -41,6 +41,14 @@ public class HealthManager : MonoBehaviour
     public void Damage(float dmg)
     {
         healthPoints -= dmg;
+        /*
+        if (gameObject.CompareTag("Player"))
+        {
+            PlayerBehaviour player = gameObject.GetComponent<PlayerBehaviour>();
+            player.animator.SetTrigger("Damaged");
+        }
+        */
+        StartCoroutine(Damaged());
         if (hitSfx != null)
         {
             AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
@@ -70,6 +78,14 @@ public class HealthManager : MonoBehaviour
         healthBar.value = healthPoints;
     }
 
+    IEnumerator Damaged()
+    {
+        Debug.Log("HIT");
+        Color prevColor = gameObject.GetComponent<SpriteRenderer>().color;
+        gameObject.GetComponent<SpriteRenderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<SpriteRenderer>().material.color = prevColor;
+    }
     public void MaxHealth()
     {
         healthBar.maxValue = healthPoints;

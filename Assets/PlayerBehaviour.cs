@@ -15,7 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float swingForce = 2f;
     public AudioClip meleeSfx;
 
-    Animator animator;
+    public Animator animator;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
