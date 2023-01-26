@@ -87,16 +87,20 @@ public class HealthManager : MonoBehaviour
         {
             
             tmp = Color.red;
-            
+            gameObject.GetComponent<SpriteRenderer>().material.color = tmp;
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().material.color = prevColor;
+
         }
         else
         {
-            tmp.a = 0f;
+            tmp.a = 0.7f;
+            gameObject.GetComponent<SpriteRenderer>().color = tmp;
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().color = prevColor;
         }
 
-        gameObject.GetComponent<SpriteRenderer>().material.color = tmp;
-        yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<SpriteRenderer>().material.color = prevColor;
+        
 
     }
     public void MaxHealth()
