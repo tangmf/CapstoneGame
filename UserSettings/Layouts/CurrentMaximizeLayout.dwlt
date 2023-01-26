@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 25462
+  controlID: 43354
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,10 +225,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: be1a0100
-      m_LastClickedID: 72382
-      m_ExpandedIDs: 9c70feff1873feff7432ffff2233ffff384cffff8a5bfffffe5bffff0e5cfffffa62ffff0c63ffff3083ffff7683ffffc687ffffd887ffff6289ffff148bffffd08cffff068dffffa08dffff228effff7492ffffbc92ffff0c97ffff2097ffffaa98ffff5c9affff189cffff4e9cffffe89cffff6a9dffff88eaffff10fbffffe66100000c6200001a62000050620000626200006a62000084620000c262000056b90000c8b9000052ba000066ba000090ba000000c900008ac90000fac90000b6ca0000e8ca00002ce20000221b0100
+      scrollPos: {x: 0, y: 140.4}
+      m_SelectedIDs: b0450100
+      m_LastClickedID: 83376
+      m_ExpandedIDs: 7edcfdffd4dcfdff92e1fdffcce1fdffbc12feff6613feff6813fefffa21feffea6ffeffee6ffeff6270feff9c70feff1873feff7432ffff2233ffff384cffff8a5bfffffe5bffff0e5cfffffa62ffff0c63ffff3083ffff7683ffffc687ffffd887ffff6289ffff148bffffd08cffff068dffffa08dffff228effff7492ffffbc92ffff0c97ffff2097ffffaa98ffff5c9affff189cffff4e9cffffe89cffff6a9dffff88eaffff10fbffffe66100000c6200001a62000050620000626200006a62000084620000c262000056b90000c8b9000052ba000066ba000090ba000000c900008ac90000fac90000b6ca0000e8ca00002ce20000221b010016460100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 854.4
     height: 397.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -312,7 +312,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -100, y: -25.600006}
+      snapOffset: {x: -101, y: -26}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
@@ -367,7 +367,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Tilemap Focus
@@ -526,9 +526,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 28.182457, y: 0.23931998, z: 0.51603496}
+    m_Target: {x: 25.148933, y: 13.773813, z: 0.7642235}
     speed: 2
-    m_Value: {x: 28.182457, y: 0.23931998, z: 0.51603496}
+    m_Value: {x: 25.148933, y: 13.773813, z: 0.7642235}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -579,9 +579,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 25.04743
+    m_Target: 19.647032
     speed: 2
-    m_Value: 25.04743
+    m_Value: 19.647032
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 11}
-  - {fileID: 15}
+  - {fileID: 14}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -685,7 +685,6 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 13}
   - {fileID: 2}
-  - {fileID: 14}
   m_Selected: 2
   m_LastSelected: 0
 --- !u!114 &12
@@ -717,7 +716,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: plat
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -729,21 +728,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: plat
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\derps\Documents\GitHub\CapstoneGame\CapstoneGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 99.80002}
-    m_SelectedIDs: ec6b0000
-    m_LastClickedID: 27628
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 94660000
+    m_LastClickedID: 26260
     m_ExpandedIDs: 000000009466000096660000986600009a6600009c6600009e660000a0660000a2660000a4660000a666000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -797,9 +796,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: be1a0100
-    m_LastClickedInstanceID: 72382
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: b0450100
+    m_LastClickedInstanceID: 83376
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300001c70000074a400008ca40000a4a400006ca400009ca4000090a4000080a4000094a400007ca4000098a40000a8a400007eef00007aef00008eef000086ef00003c6000003e7c00009e6a0000347b000066680000b6660000fa7a0000a66c00006678000056f70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -865,6 +864,100 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GridPaintPaletteWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 425.6
+    y: 0
+    width: 726.4
+    height: 325.19998
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 15}
+  - {fileID: 16}
+  - {fileID: 17}
+  m_Selected: 1
+  m_LastSelected: 2
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 425.6
+    y: 471.2
+    width: 724.4
+    height: 304.19998
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: -127398
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Tile Palette
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 425.6
+    y: 471.2
+    width: 724.4
+    height: 304.19998
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_PreviewResizer:
+    m_CachedPref: -50
+    m_ControlHash: 1964396721
+    m_PrefName: Preview_TilemapBrushInspector
+  m_Palette: {fileID: 1996396727661549070, guid: 8d1107a62a5423f4cbd49d7e854ca90e, type: 3}
+  m_DrawGridGizmo: 1
+  m_DrawGizmos: 0
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -876,9 +969,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 425.6
     y: 471.2
-    width: 424.6
+    width: 724.4
     height: 304.19998
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -942,14 +1035,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.5735396
+    - e00: 0.5652691
       e01: 0
       e02: 0
-      e03: -239.3496
+      e03: -5.652649
       e10: 0
-      e11: 0.5735396
+      e11: 0.5652691
       e12: 0
-      e13: 100.215904
+      e13: 153.11145
       e20: 0
       e21: 0
       e22: 1
@@ -1022,99 +1115,6 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GridPaintPaletteWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 425.6
-    y: 0
-    width: 726.4
-    height: 325.19998
-  m_MinSize: {x: 240, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 17}
-  m_Panes:
-  - {fileID: 16}
-  - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
---- !u!114 &16
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Animation
-    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 425.6
-    y: 471.2
-    width: 724.4
-    height: 304.19998
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: 72382
---- !u!114 &17
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 240, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Tile Palette
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 425.6
-    y: 471.2
-    width: 724.4
-    height: 304.19998
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_PreviewResizer:
-    m_CachedPref: -50
-    m_ControlHash: 1964396721
-    m_PrefName: Preview_TilemapBrushInspector
-  m_Palette: {fileID: 1996396727661549070, guid: 8d1107a62a5423f4cbd49d7e854ca90e, type: 3}
-  m_DrawGridGizmo: 1
-  m_DrawGizmos: 0
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
