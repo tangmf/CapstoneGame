@@ -109,7 +109,7 @@ public class HealthManager : MonoBehaviour
     {
         if (gameObject.CompareTag("Player"))
         {
-            GetComponent<PlayerMovement>().animator.SetTrigger("Is_Dead");
+            GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
             GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
             Debug.Log(gameObject.ToString() + " has been killed");
             gm.GameOver("LOSE");
