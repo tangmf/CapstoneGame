@@ -18,11 +18,27 @@ public class PlayerBehaviour : MonoBehaviour
     public Animator animator;
     Rigidbody2D rb;
 
+    CapsuleCollider2D collider;
+    Vector2 normalSize;
+    Vector2 normalOffset;
+    Vector2 newSize;
+    Vector2 newOffset;
+
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        collider = GetComponent<CapsuleCollider2D>();
+        normalSize = collider.size;
+        newSize = collider.size * new Vector2(1f, 0.5f);
+
+
+        normalOffset = collider.offset;
+        newOffset = collider.offset * new Vector2(1f, 0.5f);
+        
     }
 
     // Update is called once per frame
@@ -122,4 +138,17 @@ public class PlayerBehaviour : MonoBehaviour
         Gizmos.DrawSphere(firePoint.position, attackRange);
     }
     */
+
+    public void Crouch()
+    {
+        collider.size = newSize;
+        collider.offset = newOffset;
+    }
+
+    public void UnCrouch()
+    {
+        collider.size = normalSize;
+        collider.offset = normalOffset;
+    }
+
 }

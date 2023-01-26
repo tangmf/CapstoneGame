@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class PlayerCrouch : StateMachineBehaviour
 {
-    CapsuleCollider2D collider;
-    Vector2 normalSize;
-    Vector2 normalOffset;
+    GameObject player;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        collider = player.GetComponent<CapsuleCollider2D>();
-        normalSize = collider.size;
-        var newSize = collider.size * new Vector2(1f, 0.5f);
-        collider.size = newSize;
-
-        normalOffset = collider.offset;
-        var newOffset = collider.offset * new Vector2(1f, 0.5f);
-        collider.offset = newOffset;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        player.GetComponent<PlayerBehaviour>().Crouch();
     }
 
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        collider.offset = normalOffset;
-        collider.size = normalSize;
+        player.GetComponent<PlayerBehaviour>().UnCrouch();
     }
 
 
