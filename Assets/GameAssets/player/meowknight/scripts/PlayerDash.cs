@@ -24,11 +24,11 @@ public class PlayerDash : StateMachineBehaviour
     {
         if (animator.transform.eulerAngles == new Vector3(0, 0, 0))
         {
-            rb.velocity = new Vector2(dashSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(dashSpeed, 0);
         }
         else
         {
-            rb.velocity = new Vector2(-dashSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(-dashSpeed, 0);
         }
         Instantiate(dashEffect, player.position, Quaternion.identity);
         player.GetComponent<PlayerMovement>().NextDash();
