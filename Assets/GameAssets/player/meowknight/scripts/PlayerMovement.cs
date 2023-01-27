@@ -47,9 +47,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Grounded", false);
             grounded = false;
         }
-        RaycastHit2D nearCeiling = Physics2D.Raycast(ceilingRay.transform.position, Vector2.up, 0.5f, layerMask);
-        RaycastHit2D touchingCeiling = Physics2D.Raycast(ceilingRay.transform.position, Vector2.up, 0.0f, layerMask);
-        if (nearCeiling.collider != null || touchingCeiling.collider != null)
+        RaycastHit2D nearCeiling = Physics2D.Raycast(ceilingRay.transform.position, Vector2.up, 1.0f, layerMask);
+        //RaycastHit2D touchingCeiling = Physics2D.Raycast(ceilingRay.transform.position, Vector2.up, -0.5f, layerMask);
+        if (nearCeiling.collider != null)
         {
             animator.SetBool("Ceilinged", true);
         }
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        else if ((Input.GetKeyUp("w") || Input.GetKeyUp("space")) && !animator.GetBool("Ceilinged"))
+        else if ((Input.GetKeyUp("w") || Input.GetKeyUp("space"))&& !animator.GetBool("Ceilinged"))
         {
             jumpKeyHeld = false;
         }
