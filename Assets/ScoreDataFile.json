@@ -24,6 +24,11 @@
             "sceneName": "L0(Actual)",
             "score": 1769,
             "grade": 83
+        },
+        {
+            "sceneName": "L0",
+            "score": 1498,
+            "grade": 65
         }
     ]
 }
