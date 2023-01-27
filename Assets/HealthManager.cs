@@ -43,29 +43,33 @@ public class HealthManager : MonoBehaviour
 
     public void Damage(float dmg)
     {
-        healthPoints -= dmg;
-        /*
-        if (gameObject.CompareTag("Player"))
+        if(healthPoints > 0)
         {
-            PlayerBehaviour player = gameObject.GetComponent<PlayerBehaviour>();
-            player.animator.SetTrigger("Damaged");
-        }
-        */
-        StartCoroutine(Damaged());
-        if (hitSfx != null)
-        {
-            AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
-        }
-        if (healthPoints <= 0)
-        {
-            healthPoints = 0;
-            if (!dead)
+            healthPoints -= dmg;
+            /*
+            if (gameObject.CompareTag("Player"))
             {
-                Die();
-                dead = true;
+                PlayerBehaviour player = gameObject.GetComponent<PlayerBehaviour>();
+                player.animator.SetTrigger("Damaged");
             }
-            
+            */
+            StartCoroutine(Damaged());
+            if (hitSfx != null)
+            {
+                AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
+            }
+            if (healthPoints <= 0)
+            {
+                healthPoints = 0;
+                if (!dead)
+                {
+                    Die();
+                    dead = true;
+                }
+
+            }
         }
+        
 
         healthBar.value = healthPoints;
     }
@@ -118,6 +122,7 @@ public class HealthManager : MonoBehaviour
         {
             GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
             GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             Debug.Log(gameObject.ToString() + " has been killed");
             gm.GameOver("LOSE");
             gm.WaitForRespawn();
