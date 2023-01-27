@@ -71,19 +71,19 @@ public class GameOverManager : MonoBehaviour
     public void ShowScore(int score)
     {
         char grade;
-        if (score >= 1900)
+        if (score >= 1940)
         {
             grade = 'S';
         }
-        else if (score >= 1500)
+        else if (score >= 1900)
         {
             grade = 'A';
         }
-        else if (score >= 1000)
+        else if (score >= 1500)
         {
             grade = 'B';
         }
-        else if (score >= 500)
+        else if (score >= 1000)
         {
             grade = 'C';
         }
