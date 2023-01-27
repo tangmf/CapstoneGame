@@ -9,18 +9,23 @@ public class PlayerCrouch : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
+        
     }
 
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player.GetComponent<PlayerBehaviour>().Crouch();
+
+
     }
 
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player.GetComponent<PlayerBehaviour>().UnCrouch();
+
     }
 
 

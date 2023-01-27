@@ -6441,6 +6441,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8055663116215942200, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 2965223420056320392, guid: a81f1f91747d2694686f377166b3f57d, type: 3}
     - target: {fileID: 8055663116215942202, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
       propertyPath: m_Name
       value: GameMaster (1)

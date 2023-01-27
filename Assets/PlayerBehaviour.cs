@@ -24,6 +24,8 @@ public class PlayerBehaviour : MonoBehaviour
     Vector2 newSize;
     Vector2 newOffset;
 
+    float normalSpeed;
+    float newSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,10 @@ public class PlayerBehaviour : MonoBehaviour
 
         normalOffset = collider.offset;
         newOffset = collider.offset * new Vector2(1f, 0.5f);
-        
+
+        normalSpeed = GetComponent<PlayerMovement>().playerMoveSpeed;
+        newSpeed = normalSpeed * 0.5f;
+
     }
 
     // Update is called once per frame
@@ -144,12 +149,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         collider.size = newSize;
         collider.offset = newOffset;
+        GetComponent<PlayerMovement>().playerMoveSpeed = newSpeed;
     }
 
     public void UnCrouch()
     {
         collider.size = normalSize;
         collider.offset = normalOffset;
+        GetComponent<PlayerMovement>().playerMoveSpeed = normalSpeed;
     }
 
 }
