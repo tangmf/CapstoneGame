@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Crouchdash through this gap!
+  m_text: Crouch dash through this gap!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a0b43f0faac86640a2ee0d0c3699799, type: 2}
   m_sharedMaterial: {fileID: 3397805452417403969, guid: 7a0b43f0faac86640a2ee0d0c3699799, type: 2}
@@ -10676,6 +10676,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4540136504919141768, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540136504919141770, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4540136505109096976, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
       propertyPath: m_SortingOrder
       value: 1
