@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
     public bool dead = false;
     public AudioClip hitSfx;
     public bool isBoss = false;
+    Color prevColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class HealthManager : MonoBehaviour
         //healthBar.maxValue = healthPoints;
         // Set to max health
         MaxHealth();
+        prevColor = gameObject.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -82,7 +84,7 @@ public class HealthManager : MonoBehaviour
     IEnumerator Damaged()
     {
         Debug.Log("HIT");
-        Color prevColor = gameObject.GetComponent<SpriteRenderer>().color;
+        
         Color tmp = prevColor;
         if (gameObject.CompareTag("Player"))
         {
