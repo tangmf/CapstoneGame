@@ -2,18 +2,53 @@
     "scoreDatas": [
         {
             "sceneName": "L0",
-            "score": 1881,
+            "score": 1976,
+            "grade": 83
+        },
+        {
+            "sceneName": "L0",
+            "score": 902,
+            "grade": 66
+        },
+        {
+            "sceneName": "L3",
+            "score": 1471,
+            "grade": 65
+        },
+        {
+            "sceneName": "L3",
+            "score": 1472,
+            "grade": 65
+        },
+        {
+            "sceneName": "L3",
+            "score": 1368,
+            "grade": 65
+        },
+        {
+            "sceneName": "L0",
+            "score": 1976,
             "grade": 83
         },
         {
             "sceneName": "L1",
-            "score": 1082,
+            "score": 364,
+            "grade": 68
+        },
+        {
+            "sceneName": "L2",
+            "score": 1748,
+            "grade": 83
+        },
+        {
+            "sceneName": "L2",
+            "score": 1356,
             "grade": 65
         },
         {
             "sceneName": "L2",
-            "score": 1176,
-            "grade": 65
+            "score": 1644,
+            "grade": 83
         }
     ]
 }

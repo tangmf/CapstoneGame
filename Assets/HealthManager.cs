@@ -87,8 +87,6 @@ public class HealthManager : MonoBehaviour
 
     IEnumerator Damaged()
     {
-        Debug.Log("HIT");
-        
         Color tmp = prevColor;
         if (gameObject.CompareTag("Player"))
         {

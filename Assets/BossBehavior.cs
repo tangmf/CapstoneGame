@@ -169,7 +169,6 @@ public class BossBehavior : MonoBehaviour
 
         while (telegraphDuration > 0)
         {
-            Debug.Log("aiming");
             playerPos = player.position;
             currentPos = transform.position;
             boss2Laser.LaserTelegraph(playerPos, currentPos, width);
@@ -183,7 +182,7 @@ public class BossBehavior : MonoBehaviour
         }
         while (attackDuration > 0)
         {
-            if (width < 3)
+            if (width < 4)
             {
                 width = width + 0.1f;
             }

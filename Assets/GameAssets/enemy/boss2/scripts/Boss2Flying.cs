@@ -24,8 +24,6 @@ public class Boss2Flying : StateMachineBehaviour
         boss = animator.transform.GetComponent<BossBehavior>();
         bossTransform = animator.transform;
 
-        Debug.Log("resetCountdown");
-
         attackCountdown = attackCooldown;
 
         // Pick random fly position
