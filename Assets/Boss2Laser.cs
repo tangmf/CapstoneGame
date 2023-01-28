@@ -13,6 +13,8 @@ public class Boss2Laser : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        lineRenderer.enabled = false;
     }
 
     // Update is called once per frame
@@ -33,6 +35,8 @@ public class Boss2Laser : MonoBehaviour
 
     public void LaserTelegraph(Vector3 playerPos, Vector3 currentPos)
     {
+        lineRenderer.startWidth = 0.1f;
+
         playerPos[1] += 1.75f;
         Vector3 offshootPos = (playerPos - currentPos) * laserLength;
 
@@ -42,6 +46,8 @@ public class Boss2Laser : MonoBehaviour
 
     public void LaserAttack(Vector3 playerPos, Vector3 currentPos)
     {
+        lineRenderer.startWidth = 1f;
+
         playerPos[1] += 1.75f;
         Vector3 offshootPos = (playerPos - currentPos) * laserLength;
 

@@ -619,7 +619,7 @@ MonoBehaviour:
   spike: {fileID: 0}
   isFlipped: 0
   healthManager: {fileID: 2965223419133373638}
-  boss2Laser: {fileID: 0}
+  boss2Laser: {fileID: 7972960923184099101}
 --- !u!114 &2965223419133373638
 MonoBehaviour:
   m_ObjectHideFlags: 0

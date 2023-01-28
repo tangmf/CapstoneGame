@@ -158,11 +158,13 @@ public class BossBehavior : MonoBehaviour
         Physics2D.Raycast(currentPos, playerPos.normalized);
 
         boss2Laser.LaserTelegraph(playerPos, currentPos);
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(3f);
         boss2Laser.LaserAttack(playerPos, currentPos);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         boss2Laser.HideLaser();
+
+        yield return new WaitForSeconds(5f);
 
         animator.SetBool("Boss_Attacking", false);
     }
