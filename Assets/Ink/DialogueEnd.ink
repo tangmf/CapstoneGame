@@ -11,3 +11,9 @@ All in a day's work.
 Congratulations
 
 
+{Name("EMPLOYEE OF THE MONTH")}
+{Portrait("emp")}
+Tada!
+
+
+
