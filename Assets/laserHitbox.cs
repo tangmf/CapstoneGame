@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class laserHitbox : MonoBehaviour
+public class LaserHitbox : MonoBehaviour
 {
+    public bool laserDamaging = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +20,14 @@ public class laserHitbox : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject);
-
-        if (collision.gameObject.CompareTag("Player"))
+        if (laserDamaging)
         {
-            if (collision.gameObject.GetComponent<HealthManager>())
+            if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<HealthManager>().Damage(2f);
+                if (collision.gameObject.GetComponent<HealthManager>())
+                {
+                    collision.gameObject.GetComponent<HealthManager>().Damage(2f);
+                }
             }
         }
     }
