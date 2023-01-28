@@ -23,6 +23,10 @@ public class Boss2Firing : StateMachineBehaviour
         rigidbody = animator.transform.GetComponent<Rigidbody2D>();
         boss = animator.transform.GetComponent<BossBehavior>();
 
+        if (shootLaser)
+        {
+            boss.StartShootLaser();
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -52,11 +56,6 @@ public class Boss2Firing : StateMachineBehaviour
 
                 firingLoop = 0.7f;
             }
-        }
-
-        if (shootLaser)
-        {
-            boss.StartShootLaser();
         }
     }
 }

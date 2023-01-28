@@ -366,7 +366,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.5, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 0.5, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -619,7 +619,10 @@ MonoBehaviour:
   spike: {fileID: 3702326162941164976, guid: 6ab7af3ab15ba964cb5714b4da656470, type: 3}
   isFlipped: 0
   healthManager: {fileID: 2965223419133373638}
-  boss2Laser: {fileID: 0}
+  boss2Laser: {fileID: 7972960923184099101}
+  telegraphDuration: 0
+  delayDuration: 0
+  attackDuration: 0
 --- !u!114 &2965223419133373638
 MonoBehaviour:
   m_ObjectHideFlags: 0
