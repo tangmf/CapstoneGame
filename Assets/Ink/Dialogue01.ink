@@ -2,13 +2,14 @@
 EXTERNAL Portrait(charName)
 
 
-{Name("Woman")}
-{Portrait("03")}
-Welcome!
-This is game
+{Name("Yomo")}
+{Portrait("portrait2")}
+Finally I can get paid!
+I'm gettin that trophy thingy fr
+Let's look through what contracts we got and get started!
 
+{Name("Miss Boss")}
+{Portrait("portrait5")}
+Good luck!
 
-{Name("Person 1")}
-{Portrait("01")}
-I am person 1
 
