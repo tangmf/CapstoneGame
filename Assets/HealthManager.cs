@@ -12,6 +12,8 @@ public class HealthManager : MonoBehaviour
     public float healthPoints;
     public bool dead = false;
     public AudioClip hitSfx;
+    public bool isBoss = false;
+    Color prevColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class HealthManager : MonoBehaviour
         //healthBar.maxValue = healthPoints;
         // Set to max health
         MaxHealth();
+        prevColor = gameObject.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -40,21 +43,33 @@ public class HealthManager : MonoBehaviour
 
     public void Damage(float dmg)
     {
-        healthPoints -= dmg;
-        if (hitSfx != null)
+        if(healthPoints > 0)
         {
-            AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
-        }
-        if (healthPoints <= 0)
-        {
-            healthPoints = 0;
-            if (!dead)
+            healthPoints -= dmg;
+            /*
+            if (gameObject.CompareTag("Player"))
             {
-                Die();
-                dead = true;
+                PlayerBehaviour player = gameObject.GetComponent<PlayerBehaviour>();
+                player.animator.SetTrigger("Damaged");
             }
-            
+            */
+            StartCoroutine(Damaged());
+            if (hitSfx != null)
+            {
+                AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
+            }
+            if (healthPoints <= 0)
+            {
+                healthPoints = 0;
+                if (!dead)
+                {
+                    Die();
+                    dead = true;
+                }
+
+            }
         }
+        
 
         healthBar.value = healthPoints;
     }
@@ -70,6 +85,31 @@ public class HealthManager : MonoBehaviour
         healthBar.value = healthPoints;
     }
 
+    IEnumerator Damaged()
+    {
+        Debug.Log("HIT");
+        
+        Color tmp = prevColor;
+        if (gameObject.CompareTag("Player"))
+        {
+            
+            tmp = Color.red;
+            gameObject.GetComponent<SpriteRenderer>().material.color = tmp;
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().material.color = prevColor;
+
+        }
+        else
+        {
+            tmp.a = 0.7f;
+            gameObject.GetComponent<SpriteRenderer>().color = tmp;
+            yield return new WaitForSeconds(0.1f);
+            gameObject.GetComponent<SpriteRenderer>().color = prevColor;
+        }
+
+        
+
+    }
     public void MaxHealth()
     {
         healthBar.maxValue = healthPoints;
@@ -80,8 +120,9 @@ public class HealthManager : MonoBehaviour
     {
         if (gameObject.CompareTag("Player"))
         {
-            GetComponent<PlayerMovement>().animator.SetTrigger("Is_Dead");
+            GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
             GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             Debug.Log(gameObject.ToString() + " has been killed");
             gm.GameOver("LOSE");
             gm.WaitForRespawn();
@@ -92,8 +133,11 @@ public class HealthManager : MonoBehaviour
             {
                 GetComponent<BossBehavior>().animator.SetTrigger("Is_Dead");
             }
+            if (isBoss)
+            {
+                gm.GameOver("WIN");
+            }
             
-            gm.GameOver("WIN");
         }
         
 

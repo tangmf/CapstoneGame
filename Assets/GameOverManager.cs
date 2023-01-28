@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,11 +31,11 @@ public class GameOverManager : MonoBehaviour
         if (winLose == "WIN")
         {
             winLoseText.text = "WIN";
-            if (score >= 950)
+            if (score >= 1500)
             {
                 grade = 'S';
             }
-            else if (score >= 800)
+            else if (score >= 1000)
             {
                 grade = 'A';
             }
@@ -50,6 +51,7 @@ public class GameOverManager : MonoBehaviour
             {
                 grade = 'D';
             }
+            SaveToJson(score, grade);
         }
         else
         {
@@ -60,28 +62,28 @@ public class GameOverManager : MonoBehaviour
             }
             grade = 'F';
         }
-        SaveToJson(score, grade);
         scoreText.text = score.ToString();
         gradeText.text = grade.ToString();
+        
 
     }
 
     public void ShowScore(int score)
     {
         char grade;
-        if (score >= 950)
+        if (score >= 1940)
         {
             grade = 'S';
         }
-        else if (score >= 800)
+        else if (score >= 1900)
         {
             grade = 'A';
         }
-        else if (score >= 600)
+        else if (score >= 1500)
         {
             grade = 'B';
         }
-        else if (score >= 400)
+        else if (score >= 1000)
         {
             grade = 'C';
         }
@@ -97,12 +99,42 @@ public class GameOverManager : MonoBehaviour
     {
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;
+
+
+        ScoreDataList datas = new ScoreDataList();
+        datas.scoreDatas = new List<ScoreData>();
         ScoreData data = new ScoreData();
         data.sceneName = currentSceneName;
         data.score = score;
         data.grade = grade;
+        foreach(var i in LoadScoreDatas())
+        {
+            datas.scoreDatas.Add(i);
+        }
+        datas.scoreDatas.Add(data);
+        Debug.Log(datas.ToString()); 
 
-        string json = JsonUtility.ToJson(data, true);
+        string json = JsonUtility.ToJson(datas, true);
         File.WriteAllText(Application.dataPath + "/ScoreDataFile.json", json);
+    }
+
+    public List<ScoreData> LoadScoreDatas()
+    {
+
+        try
+        {
+            string json = File.ReadAllText(Application.dataPath + "/ScoreDataFile.json");
+            ScoreDataList datas = JsonUtility.FromJson<ScoreDataList>(json);
+            return datas.scoreDatas;
+        }
+
+        catch
+        {
+            List<ScoreData> empty = new List<ScoreData>();
+            return empty;
+        }
+            
+
+        
     }
 }

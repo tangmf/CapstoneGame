@@ -15,14 +15,35 @@ public class PlayerBehaviour : MonoBehaviour
     public float swingForce = 2f;
     public AudioClip meleeSfx;
 
-    Animator animator;
+    public Animator animator;
     Rigidbody2D rb;
+
+    CapsuleCollider2D collider;
+    Vector2 normalSize;
+    Vector2 normalOffset;
+    Vector2 newSize;
+    Vector2 newOffset;
+
+    float normalSpeed;
+    float newSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        collider = GetComponent<CapsuleCollider2D>();
+        normalSize = collider.size;
+        newSize = collider.size * new Vector2(1f, 0.5f);
+
+
+        normalOffset = collider.offset;
+        newOffset = collider.offset * new Vector2(1f, 0.5f);
+
+        normalSpeed = GetComponent<PlayerMovement>().playerMoveSpeed;
+        newSpeed = normalSpeed * 0.5f;
+
     }
 
     // Update is called once per frame
@@ -44,6 +65,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
 
         }
+
     }
 
     public void MeleeAttack()
@@ -91,6 +113,7 @@ public class PlayerBehaviour : MonoBehaviour
                 if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
                 {
                     enemy.transform.position = firePoint.position;
+                    //force.y += prevBulletTransform.rotation.eulerAngles.z;
                     enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
                     //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
                     enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
@@ -113,11 +136,27 @@ public class PlayerBehaviour : MonoBehaviour
         animator.ResetTrigger("Attack");
 
     }
-
+    /*
     void OnDrawGizmos()
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(firePoint.position, attackRange);
     }
+    */
+
+    public void Crouch()
+    {
+        collider.size = newSize;
+        collider.offset = newOffset;
+        GetComponent<PlayerMovement>().playerMoveSpeed = newSpeed;
+    }
+
+    public void UnCrouch()
+    {
+        collider.size = normalSize;
+        collider.offset = normalOffset;
+        GetComponent<PlayerMovement>().playerMoveSpeed = normalSpeed;
+    }
+
 }

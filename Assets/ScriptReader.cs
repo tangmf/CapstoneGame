@@ -21,9 +21,18 @@ public class ScriptReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadStory();
+        string isRead = PlayerPrefs.GetString(inkFile.name);
+        if(isRead == "Done")
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            LoadStory();
 
-        DisplayNextLine();
+            DisplayNextLine();
+        }
+        
     }
 
     // Update is called once per frame
@@ -52,6 +61,7 @@ public class ScriptReader : MonoBehaviour
             dialogueBox.text = text;
             if (!story.canContinue)
             {
+                PlayerPrefs.SetString(inkFile.name, "Done");
                 Destroy(nextBtn);
             }
         }
@@ -73,5 +83,11 @@ public class ScriptReader : MonoBehaviour
     {
         var charIcon = Resources.Load<Sprite>("CharPortraits/"+name);
         charPortrait.sprite = charIcon;
+    }
+
+    public void Close()
+    {
+        PlayerPrefs.SetString(inkFile.name, "Done");
+        gameObject.SetActive(false);
     }
 }

@@ -615,8 +615,8 @@ MonoBehaviour:
   animator: {fileID: 2965223419133373637}
   eyeBulletPrefab: {fileID: 8887486330499392155, guid: eb82e384c40eac8459bb046c163e8fec, type: 3}
   firePoint: {fileID: 2965223418746777716}
-  warning: {fileID: 0}
-  spike: {fileID: 0}
+  warning: {fileID: 2166767555180047522, guid: 754cd8dad52e58d45a650bf81f8e1bc0, type: 3}
+  spike: {fileID: 3702326162941164976, guid: 6ab7af3ab15ba964cb5714b4da656470, type: 3}
   isFlipped: 0
   healthManager: {fileID: 2965223419133373638}
   boss2Laser: {fileID: 7972960923184099101}
@@ -636,6 +636,7 @@ MonoBehaviour:
   healthPoints: 200
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
+  isBoss: 1
 --- !u!70 &2965223419133373639
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -649,8 +650,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 7.4375, y: 7.4375}
+  m_Offset: {x: 0.2, y: 0}
+  m_Size: {x: 5.26, y: 3.42}
   m_Direction: 0
 --- !u!50 &2965223419133373656
 Rigidbody2D:

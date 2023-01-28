@@ -27,7 +27,7 @@ public class BossBehavior : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<Collider2D>();
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>().pivot;
 
         Physics2D.IgnoreCollision(hitbox, player.GetComponent<Collider2D>());
     }
@@ -114,7 +114,7 @@ public class BossBehavior : MonoBehaviour
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
-        // Destroy after 2 seconds
+        // Destroy after 5 seconds
         Destroy(newBullet, 5f);
 
 

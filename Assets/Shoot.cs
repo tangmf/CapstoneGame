@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
 
     public float cooldown;
     public float attackTime;
+    public string direction = "LEFT";
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +33,20 @@ public class Shoot : MonoBehaviour
     {
         // Create Bullet
         GameObject newBullet = Instantiate(bullet, firePoint.position, Quaternion.Euler(0f, 0f, 0f));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(1, 0));
+        if (direction == "LEFT")
+        {
+            newBullet.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(-1, 0));
+        }
+        else
+        {
+            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(1, 0));
+        }
+        
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
-        // Destroy after 2 seconds
-        Destroy(newBullet, 2f);
+        // Destroy after 5 seconds
+        Destroy(newBullet, 5f);
     }
 }

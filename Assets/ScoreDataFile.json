@@ -1,5 +1,34 @@
 {
-    "sceneName": "L2",
-    "score": 1167,
-    "grade": 83
+    "scoreDatas": [
+        {
+            "sceneName": "L0",
+            "score": 1976,
+            "grade": 83
+        },
+        {
+            "sceneName": "L0",
+            "score": 902,
+            "grade": 66
+        },
+        {
+            "sceneName": "L3",
+            "score": 1471,
+            "grade": 65
+        },
+        {
+            "sceneName": "L3",
+            "score": 1472,
+            "grade": 65
+        },
+        {
+            "sceneName": "L3",
+            "score": 1368,
+            "grade": 65
+        },
+        {
+            "sceneName": "L0",
+            "score": 1976,
+            "grade": 83
+        }
+    ]
 }
