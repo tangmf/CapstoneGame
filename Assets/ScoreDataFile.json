@@ -79,6 +79,11 @@
             "sceneName": "L4",
             "score": 1994,
             "grade": 83
+        },
+        {
+            "sceneName": "L3",
+            "score": 316,
+            "grade": 68
         }
     ]
 }

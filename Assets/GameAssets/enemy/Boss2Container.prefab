@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5f974a12373a04e82478833206eb47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserDamaging: 0
 --- !u!1 &2965223418062328651
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +695,7 @@ MonoBehaviour:
   isFlipped: 0
   healthManager: {fileID: 2965223419133373638}
   boss2Laser: {fileID: 7972960923184099101}
+  laserHitbox: {fileID: 5934590450724925453}
   telegraphDuration: 0
   delayDuration: 0
   attackDuration: 0

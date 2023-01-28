@@ -20,6 +20,7 @@ public class BossBehavior : MonoBehaviour
 
     public HealthManager healthManager;
     public Boss2Laser boss2Laser;
+    public LaserHitbox laserHitbox;
 
     public float telegraphDuration;
     public float delayDuration;
@@ -178,6 +179,9 @@ public class BossBehavior : MonoBehaviour
             delayDuration -= Time.deltaTime;
             yield return null;
         }
+
+        laserHitbox.laserDamaging = true;
+
         while (attackDuration > 0)
         {
             if (width < 4)
@@ -195,6 +199,7 @@ public class BossBehavior : MonoBehaviour
             yield return null;
         }
 
+        laserHitbox.laserDamaging = false;
         boss2Laser.HideLaser();
 
         animator.SetBool("Boss_Attacking", false);
