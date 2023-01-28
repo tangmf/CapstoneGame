@@ -2536,7 +2536,7 @@ PrefabInstance:
       objectReference: {fileID: 2096078550}
     - target: {fileID: 4159573175189091635, guid: 86794123f99b662469e71979153f156f, type: 3}
       propertyPath: m_text
-      value: ???
+      value: Dark web
       objectReference: {fileID: 0}
     - target: {fileID: 5352567169138293556, guid: 86794123f99b662469e71979153f156f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3004,7 +3004,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5350108302412570298, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_text
-      value: Close
+      value: FIGHT
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216604, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_Name
