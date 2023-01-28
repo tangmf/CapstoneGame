@@ -406,8 +406,8 @@ Transform:
   m_GameObject: {fileID: 2965223419133373635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2965223418746777716}
   m_Father: {fileID: 2965223420056320395}
@@ -454,7 +454,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1962372921, guid: 775f821e428514f48965d3f329204d11, type: 3}
+  m_Sprite: {fileID: 58023696, guid: 2d05c6d0d9c06754f83e21ede90dc967, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -475,7 +475,7 @@ Animator:
   m_GameObject: {fileID: 2965223419133373635}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06cb4edd271fef44cbb18be5b8508140, type: 2}
+  m_Controller: {fileID: 9100000, guid: 331318c23aa2242449a75769d65ee2cc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2965223418062328653}
-  healthPoints: 200
+  healthPoints: 1
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
   isBoss: 1
@@ -535,11 +535,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: 0}
-  m_Size: {x: 5.26, y: 3.42}
+  m_Offset: {x: 0, y: 7.078125}
+  m_Size: {x: 6.875, y: 14.15625}
   m_Direction: 0
 --- !u!50 &2965223419133373656
 Rigidbody2D:
@@ -549,7 +549,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2965223419133373635}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -561,7 +561,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &2965223419585566800
 GameObject:
   m_ObjectHideFlags: 0
