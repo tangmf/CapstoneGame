@@ -21,6 +21,10 @@ public class BossBehavior : MonoBehaviour
     public HealthManager healthManager;
     public Boss2Laser boss2Laser;
 
+    public float telegraphDuration;
+    public float delayDuration;
+    public float attackDuration;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -151,20 +155,50 @@ public class BossBehavior : MonoBehaviour
     IEnumerator ShootLaser()
     {
         Vector2 playerPos = player.position;
-        Vector2 currentPos = firePoint.position;
+        Vector2 currentPos = transform.position;
+        telegraphDuration = 1f;
+        delayDuration = 0.5f;
+        attackDuration = 1f;
+        float width = 0.1f;
+
+        boss2Laser.LaserTelegraph(playerPos, currentPos, width);
 
         boss2Laser.ShowLaser();
-
+        // Use this later for attack
         Physics2D.Raycast(currentPos, playerPos.normalized);
 
-        boss2Laser.LaserTelegraph(playerPos, currentPos);
-        yield return new WaitForSeconds(3f);
-        boss2Laser.LaserAttack(playerPos, currentPos);
-        yield return new WaitForSeconds(2f);
+        while (telegraphDuration > 0)
+        {
+            Debug.Log("aiming");
+            playerPos = player.position;
+            currentPos = transform.position;
+            boss2Laser.LaserTelegraph(playerPos, currentPos, width);
+            telegraphDuration -= Time.deltaTime;
+            yield return null;
+        }
+        while (delayDuration > 0)
+        {
+            delayDuration -= Time.deltaTime;
+            yield return null;
+        }
+        while (attackDuration > 0)
+        {
+            if (width < 3)
+            {
+                width = width + 0.1f;
+            }
+            boss2Laser.LaserAttack(playerPos, currentPos, width);
+            attackDuration -= Time.deltaTime;
+            yield return null;
+        }
+        while (width > 0)
+        {
+            width = width - 0.1f;
+            boss2Laser.LaserAttack(playerPos, currentPos, width);
+            yield return null;
+        }
 
         boss2Laser.HideLaser();
-
-        yield return new WaitForSeconds(5f);
 
         animator.SetBool("Boss_Attacking", false);
     }
