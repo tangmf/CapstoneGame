@@ -12,7 +12,7 @@ public class ScoreDisplay : MonoBehaviour
     public GameObject lockObject;
     public GameObject scoreBoard;
     public TextMeshProUGUI levelText;
-
+    
     ScoreDataList datas;
     // Start is called before the first frame update
     void Start()
