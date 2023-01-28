@@ -161,11 +161,9 @@ public class BossBehavior : MonoBehaviour
         attackDuration = 1f;
         float width = 0.1f;
 
-        boss2Laser.LaserTelegraph(playerPos, currentPos, width);
-
         boss2Laser.ShowLaser();
         // Use this later for attack
-        Physics2D.Raycast(currentPos, playerPos.normalized);
+        //Physics2D.Raycast(currentPos, playerPos.normalized);
 
         while (telegraphDuration > 0)
         {
