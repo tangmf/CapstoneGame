@@ -28,6 +28,8 @@ public class BossBehavior : MonoBehaviour
     public float delayDuration;
     public float attackDuration;
 
+    public bool enraged;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,9 +44,10 @@ public class BossBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthManager.healthPoints <= healthManager.healthBar.maxValue * 0.5)
+        if(!enraged && healthManager.healthPoints <= healthManager.healthBar.maxValue * 0.5)
         {
             animator.SetTrigger("Enrage");
+            enraged = true;
         }
     }
 
