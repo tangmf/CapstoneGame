@@ -16,6 +16,9 @@ public class Boss2Flying : StateMachineBehaviour
 
     Vector2 flyPos;
 
+    public Vector2 bottomLeftBounds = new Vector2(-18.0f,-3.0f);
+    public Vector2 topRightBounds = new Vector2(18.0f, 7.0f);
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -32,7 +35,7 @@ public class Boss2Flying : StateMachineBehaviour
         {
             if (Vector2.Distance(bossTransform.position, flyPos) < 15)
             {
-                flyPos = new Vector2(Random.Range(-18.0f, 18.0f), Random.Range(-3.0f, 7.0f));
+                flyPos = new Vector2(Random.Range(bottomLeftBounds.x, topRightBounds.x), Random.Range(bottomLeftBounds.y, topRightBounds.y));
             }
             else
             {

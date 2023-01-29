@@ -42,7 +42,6 @@ public class Boss2Firing : StateMachineBehaviour
             else
             {
                 animator.SetBool("Boss_Attacking", false);
-                firingDuration = 2.1f;
             }
 
             // Code for Firing Attack pattern
