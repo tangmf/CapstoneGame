@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7481ce4dafc2d4880e822df77b7392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 30
   attackCooldown: 1.5
   minDistance: 15
   bottomLeftBounds: {x: -18, y: -3}
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7481ce4dafc2d4880e822df77b7392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 20
   attackCooldown: 2
   minDistance: 15
   bottomLeftBounds: {x: -18, y: -3}
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552dfeb1bb20eba42a992bd96c73fd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateDuration: 2.5
+  stateDuration: 3.5
   shootBullet: 0
   laserDelay: 1.5
   laserDuration: 1

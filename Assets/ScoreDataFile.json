@@ -1,184 +1,24 @@
 {
     "scoreDatas": [
         {
-            "sceneName": "L3",
-            "score": 456,
-            "grade": 67
-        },
-        {
-            "sceneName": "L3",
-            "score": 1383,
-            "grade": 65
-        },
-        {
-            "sceneName": "L4",
-            "score": 1994,
-            "grade": 83
-        },
-        {
-            "sceneName": "L3",
-            "score": 1587,
-            "grade": 83
-        },
-        {
-            "sceneName": "L3",
-            "score": 1474,
-            "grade": 65
-        },
-        {
-            "sceneName": "L3",
-            "score": 1679,
+            "sceneName": "L0",
+            "score": 1873,
             "grade": 83
         },
         {
             "sceneName": "L1",
-            "score": 874,
-            "grade": 66
-        },
-        {
-            "sceneName": "L2",
-            "score": 1279,
-            "grade": 65
-        },
-        {
-            "sceneName": "L4",
-            "score": 1995,
-            "grade": 83
-        },
-        {
-            "sceneName": "L3",
-            "score": 1674,
-            "grade": 83
-        },
-        {
-            "sceneName": "L3",
-            "score": 1779,
-            "grade": 83
-        },
-        {
-            "sceneName": "L3",
-            "score": 1677,
-            "grade": 83
-        },
-        {
-            "sceneName": "L3",
-            "score": 48,
-            "grade": 68
-        },
-        {
-            "sceneName": "L3",
-            "score": 856,
-            "grade": 66
-        },
-        {
-            "sceneName": "L3",
-            "score": 1377,
-            "grade": 65
-        },
-        {
-            "sceneName": "L3",
-            "score": 449,
-            "grade": 67
-        },
-        {
-            "sceneName": "L3",
-            "score": 861,
-            "grade": 66
-        },
-        {
-            "sceneName": "L3",
-            "score": 845,
-            "grade": 66
-        },
-        {
-            "sceneName": "L3",
-            "score": 652,
-            "grade": 66
-        },
-        {
-            "sceneName": "L3",
-            "score": 1166,
-            "grade": 65
-        },
-        {
-            "sceneName": "L3",
-            "score": 167,
-            "grade": 68
-        },
-        {
-            "sceneName": "L3",
-            "score": 869,
-            "grade": 66
-        },
-        {
-            "sceneName": "L2",
-            "score": 1583,
+            "score": 1879,
             "grade": 83
         },
         {
             "sceneName": "L2",
-            "score": 1435,
+            "score": 1269,
             "grade": 65
         },
         {
             "sceneName": "L2",
-            "score": 936,
-            "grade": 66
-        },
-        {
-            "sceneName": "L2",
-            "score": 1336,
-            "grade": 65
-        },
-        {
-            "sceneName": "L0",
-            "score": 1835,
+            "score": 1624,
             "grade": 83
-        },
-        {
-            "sceneName": "L2",
-            "score": 1082,
-            "grade": 65
-        },
-        {
-            "sceneName": "L3",
-            "score": 465,
-            "grade": 67
-        },
-        {
-            "sceneName": "L3",
-            "score": 1478,
-            "grade": 65
-        },
-        {
-            "sceneName": "L2",
-            "score": 972,
-            "grade": 66
-        },
-        {
-            "sceneName": "L2",
-            "score": 1316,
-            "grade": 65
-        },
-        {
-            "sceneName": "L3",
-            "score": 957,
-            "grade": 66
-        },
-        {
-            "sceneName": "L4",
-            "score": 1995,
-            "grade": 83
-        },
-        {
-            "sceneName": "L2",
-            "score": 500,
-            "grade": 67
-        },
-        {
-            "sceneName": "L2",
-            "score": 1438,
-            "grade": 65
         }
     ]
 }
