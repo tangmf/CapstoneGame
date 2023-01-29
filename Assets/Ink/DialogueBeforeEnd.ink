@@ -14,7 +14,7 @@ HAHAHAHAHAHAHA YESSSS
 {Name("Miss Boss")}
 {Portrait("portrait5")}
 One small problem.
-I'm technically an employee as well, of the ACF.
+I'm technically an employee as well, of the higher ups.
 And who said I couldn't be the employee of the month.
 
 {Name("Yomo")}

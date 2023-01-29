@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask layerMask;
 
     public float playerMoveSpeed = 8.0f;
+
     public float playerJumpSpeed = 17.5f;
     public float jumpFloorDistance = 0.2f;
 

@@ -21,7 +21,7 @@ Welcome to the meeting, fellow members of the 11th divison.
 
 {Name("Miss Boss")}
 {Portrait("portrait5")}
-I've recieved news from the higher ups.
+I've recieved news from the higher ups at the Anti-Curse Federation.
 Curse activity in our assigned locations are not dropping.
 To cut things short, you guys have been slacking off too much, and now the higher ups are after our ass-
 
@@ -33,7 +33,7 @@ Can I get a quick smoke break
 {Portrait("portrait5")}
 No
 So...
-I have an idea.
+I have an idea. To finally have you guys get your work done.
 The first one to finish all their assigned contracts wins the employee of the month award by yours truly.
 
 {Name("Yomo")}
@@ -49,6 +49,7 @@ The rest get nothing.
 
 {Name("Yomo")}
 {Portrait("portrait2")}
+Huh
 You won't pay the rest?
 
 {Name("Cardena")}
@@ -72,3 +73,11 @@ Wow.
 {Name("Hound")}
 {Portrait("hound1")}
 indeed
+
+{Name("Cardena")}
+{Portrait("portrait3")}
+...
+
+{Name("Miss Boss")}
+{Portrait("portrait5")}
+Have fun guys
