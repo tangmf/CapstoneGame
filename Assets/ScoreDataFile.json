@@ -154,6 +154,21 @@
             "sceneName": "L2",
             "score": 972,
             "grade": 66
+        },
+        {
+            "sceneName": "L2",
+            "score": 1316,
+            "grade": 65
+        },
+        {
+            "sceneName": "L3",
+            "score": 957,
+            "grade": 66
+        },
+        {
+            "sceneName": "L4",
+            "score": 1995,
+            "grade": 83
         }
     ]
 }

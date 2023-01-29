@@ -127,7 +127,7 @@ public class PlayerBehaviour : MonoBehaviour
                 if (enemy.gameObject.GetComponent<Rigidbody2D>() && !enemy.gameObject.GetComponent<BulletBehaviour>())
                 {
 
-                    enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 10.0f, ForceMode2D.Impulse);
+                    enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 50.0f, ForceMode2D.Impulse);
                 }
             }
 
