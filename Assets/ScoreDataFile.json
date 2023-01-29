@@ -14,6 +14,36 @@
             "sceneName": "L4",
             "score": 1994,
             "grade": 83
+        },
+        {
+            "sceneName": "L3",
+            "score": 1587,
+            "grade": 83
+        },
+        {
+            "sceneName": "L3",
+            "score": 1474,
+            "grade": 65
+        },
+        {
+            "sceneName": "L3",
+            "score": 1679,
+            "grade": 83
+        },
+        {
+            "sceneName": "L1",
+            "score": 874,
+            "grade": 66
+        },
+        {
+            "sceneName": "L2",
+            "score": 1279,
+            "grade": 65
+        },
+        {
+            "sceneName": "L4",
+            "score": 1995,
+            "grade": 83
         }
     ]
 }
