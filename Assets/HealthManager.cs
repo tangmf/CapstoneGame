@@ -125,7 +125,7 @@ public class HealthManager : MonoBehaviour
             gm.GameOver("LOSE");
             gm.WaitForRespawn();
         }
-        else if(gameObject.CompareTag("Enemy"))
+        else if(gameObject.CompareTag("Enemy") &&   isBoss)
         {
             if (GetComponent<BossBehavior>())
             {
@@ -137,7 +137,12 @@ public class HealthManager : MonoBehaviour
             }
             
         }
-        
+        else if (gameObject.CompareTag("Enemy") && !isBoss)
+        {
+            Destroy(gameObject);
+
+        }
+
 
     }
 }

@@ -5613,7 +5613,7 @@ MonoBehaviour:
   firePoint: {fileID: 4540136504078667213}
   cooldown: 0.2
   attackTime: 0
-  attackRange: 3.5
+  attackRange: 4
   damage: 10
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
