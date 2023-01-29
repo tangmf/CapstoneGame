@@ -15,7 +15,7 @@ public class Boss2Flying : StateMachineBehaviour
     float attackCountdown;
 
     Vector2 flyPos;
-
+    public int minDistance = 15;
     public Vector2 bottomLeftBounds = new Vector2(-18.0f,-3.0f);
     public Vector2 topRightBounds = new Vector2(18.0f, 7.0f);
 
@@ -33,7 +33,7 @@ public class Boss2Flying : StateMachineBehaviour
         flyPos = bossTransform.position;
         while (true)
         {
-            if (Vector2.Distance(bossTransform.position, flyPos) < 15)
+            if (Vector2.Distance(bossTransform.position, flyPos) < minDistance)
             {
                 flyPos = new Vector2(Random.Range(bottomLeftBounds.x, topRightBounds.x), Random.Range(bottomLeftBounds.y, topRightBounds.y));
             }
@@ -52,11 +52,16 @@ public class Boss2Flying : StateMachineBehaviour
 
         Vector2 bossPos = bossTransform.position;
         bossTransform.position = Vector2.MoveTowards(bossPos, flyPos, moveSpeed * Time.deltaTime);
+        if (bossPos == flyPos)
+        {
+            animator.SetBool("Boss_Attacking", true);
+            animator.SetTrigger("Boss_Fire");
+        }
 
         /*Vector2 target = new Vector2(player.position.x, rigidbody.position.y);
         Vector2 newPos = Vector2.MoveTowards(rigidbody.position, target, moveSpeed * Time.fixedDeltaTime);
         rigidbody.MovePosition(newPos);*/
-
+        /*
         // Code for counting down to Firing Attack
         if (attackCountdown > 0)
         {
@@ -68,6 +73,7 @@ public class Boss2Flying : StateMachineBehaviour
             animator.SetTrigger("Boss_Fire");
             attackCountdown = attackCooldown;
         }
+        */
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

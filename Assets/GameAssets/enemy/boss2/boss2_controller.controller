@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Boss_Fire
+    m_ConditionEvent: Boss_Attacking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7214599730675526146}
@@ -39,6 +39,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   attackCooldown: 1.5
+  minDistance: 15
+  bottomLeftBounds: {x: -18, y: -3}
+  topRightBounds: {x: 18, y: 7}
 --- !u!114 &-7361466434788983667
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,9 +54,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552dfeb1bb20eba42a992bd96c73fd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingDuration: 2.1
-  firingLoop: 0.7
-  shootBullet: 1
+  stateDuration: 1
+  shootBullet: 0
   laserDelay: 1.5
   laserDuration: 1
   shootLaser: 0
@@ -79,7 +81,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0408eef30ba709246befdef93a19abe0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5ae5bcb0b08b4ac42b2fe2cbe9a1e54f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -97,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552dfeb1bb20eba42a992bd96c73fd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingDuration: 2.1
-  firingLoop: 0.7
+  stateDuration: 21
   shootBullet: 0
   laserDelay: 1.5
   laserDuration: 1
@@ -330,7 +331,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Boss_Fire
+    m_ConditionEvent: Boss_Attacking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9063954154600801924}
@@ -482,6 +483,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   attackCooldown: 2
+  minDistance: 15
+  bottomLeftBounds: {x: -18, y: -3}
+  topRightBounds: {x: 18, y: 7}
 --- !u!1102 &5541914360054512472
 AnimatorState:
   serializedVersion: 6
@@ -523,8 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552dfeb1bb20eba42a992bd96c73fd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingDuration: 2.1
-  firingLoop: 0.7
+  stateDuration: 2.5
   shootBullet: 0
   laserDelay: 1.5
   laserDuration: 1
@@ -601,7 +604,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0408eef30ba709246befdef93a19abe0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5ae5bcb0b08b4ac42b2fe2cbe9a1e54f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

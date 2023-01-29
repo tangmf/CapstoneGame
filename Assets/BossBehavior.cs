@@ -12,6 +12,8 @@ public class BossBehavior : MonoBehaviour
 
     public GameObject eyeBulletPrefab;
     public Transform firePoint;
+    public Transform lowFirePoint;
+    public Transform highFirePoint;
 
     public GameObject warning;
     public GameObject spike;
@@ -34,7 +36,7 @@ public class BossBehavior : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>().pivot;
 
-        Physics2D.IgnoreCollision(hitbox, player.GetComponent<Collider2D>());
+        //Physics2D.IgnoreCollision(hitbox, player.GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -87,6 +89,29 @@ public class BossBehavior : MonoBehaviour
         }
     }
 
+    public void Fire2(int count)
+    {
+        float spreadAngle = 10.0f;
+        if (count % 2 == 0) // If projectile count even
+        {
+            for (int i = 1; i <= count / 2; i++)
+            {
+                createEyeBullet((i * spreadAngle) - spreadAngle / 2);
+                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2));
+            }
+        }
+        else // If projectile count odd
+        {
+            createEyeBullet(0);
+
+            for (int i = 1; i <= (count - 1) / 2; i++)
+            {
+                createEyeBullet(i * spreadAngle);
+                createEyeBullet(-i * spreadAngle);
+            }
+        }
+    }
+
     public void StartShootSpike()
     {
         StartCoroutine(ShootSpike());
@@ -98,6 +123,15 @@ public class BossBehavior : MonoBehaviour
         targetPos.y = -10;
         GameObject newWarning = Instantiate(warning, targetPos, Quaternion.identity);
         yield return new WaitForSeconds(1.0f);
+        GameObject newSpike = Instantiate(spike, targetPos, Quaternion.identity);
+        newSpike.GetComponent<SpikeBehaviour>().ignoreTag = gameObject.tag;
+        newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
+    }
+
+    public void ShootSpikeInstant()
+    {
+        var targetPos = player.position;
+        targetPos.y = -10;
         GameObject newSpike = Instantiate(spike, targetPos, Quaternion.identity);
         newSpike.GetComponent<SpikeBehaviour>().ignoreTag = gameObject.tag;
         newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
@@ -138,6 +172,37 @@ public class BossBehavior : MonoBehaviour
 
         Destroy(eyeBullet, 2f);
         */
+    }
+
+    public void ShootHorizontal()
+    {
+
+        Vector2 playerPos = player.position;
+        Vector2 currentPos = firePoint.position;
+
+        Vector2 force = (playerPos - currentPos).normalized;
+
+        force.y = 0;
+        if (force.x >= 0)
+        {
+            force.x = 1;
+        }
+        else
+        {
+            force.x = -1;
+        }
+
+        // To rotate bullet sprite
+        float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+
+        // Create Bullet
+        GameObject newBullet = Instantiate(eyeBulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+        newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
+
+        // Destroy after 5 seconds
+        Destroy(newBullet, 5f);
     }
 
     Vector2 RotateVector(Vector2 v, float angle)
@@ -203,5 +268,47 @@ public class BossBehavior : MonoBehaviour
         boss2Laser.HideLaser();
 
         animator.SetBool("Boss_Attacking", false);
+    }
+
+    public void ShootLow()
+    {
+        StartCoroutine(ChangeFirepointLow());
+    }
+
+    IEnumerator ChangeFirepointLow()
+    {
+        Transform normalFirepoint = firePoint;
+        firePoint = lowFirePoint;
+        ShootHorizontal();
+        yield return new WaitForSeconds(0.1f);
+        firePoint = normalFirepoint;
+    }
+
+
+    public void ShootHigh()
+    {
+        StartCoroutine(ChangeFirepointHigh());
+    }
+
+    IEnumerator ChangeFirepointHigh()
+    {
+        Transform normalFirepoint = firePoint;
+        firePoint = highFirePoint;
+        ShootHorizontal();
+        yield return new WaitForSeconds(0.1f);
+        firePoint = normalFirepoint;
+    }
+
+    public void RandomAttack1()
+    {
+        var rand = Random.Range(0f, 1.0f);
+        if(rand >= 0.5f)
+        {
+            ShootHigh();
+        }
+        else
+        {
+            ShootLow();
+        }
     }
 }

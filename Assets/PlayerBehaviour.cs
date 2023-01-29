@@ -136,14 +136,14 @@ public class PlayerBehaviour : MonoBehaviour
         animator.ResetTrigger("Attack");
 
     }
-    /*
+    
     void OnDrawGizmos()
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(firePoint.position, attackRange);
     }
-    */
+    
 
     public void Crouch()
     {

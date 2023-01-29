@@ -30,8 +30,9 @@ public class Boss1Walking : StateMachineBehaviour
         boss.LookAtPlayer();
 
         Vector2 target = new Vector2(player.position.x, rigidbody.position.y);
-        Vector2 newPos = Vector2.MoveTowards(rigidbody.position, target, moveSpeed * Time.fixedDeltaTime);
-        rigidbody.MovePosition(newPos);
+        boss.transform.position = Vector2.MoveTowards(rigidbody.position, target, moveSpeed * Time.fixedDeltaTime);
+        //Vector2 newPos = Vector2.MoveTowards(rigidbody.position, target, moveSpeed * Time.fixedDeltaTime);
+        //rigidbody.MovePosition(newPos);
 
         // Code for counting down to Firing Attack
         if (attackCooldown > 0)
@@ -46,9 +47,5 @@ public class Boss1Walking : StateMachineBehaviour
         }
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-
-    }
+    
 }

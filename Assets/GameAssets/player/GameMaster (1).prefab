@@ -5534,8 +5534,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.045719445, y: 4.205247}
-  m_Size: {x: 2.5322156, y: 8.620283}
+  m_Offset: {x: -0.045719445, y: 4.45572}
+  m_Size: {x: 2.5322156, y: 9.121229}
   m_Direction: 0
 --- !u!114 &4540136505109096981
 MonoBehaviour:
@@ -5611,9 +5611,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivot: {fileID: 4540136504919141771}
   firePoint: {fileID: 4540136504078667213}
-  cooldown: 0.4
+  cooldown: 0.2
   attackTime: 0
-  attackRange: 2.5
+  attackRange: 3
   damage: 10
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}

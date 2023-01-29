@@ -8,8 +8,9 @@ public class Boss2Firing : StateMachineBehaviour
     Transform player;
     BossBehavior boss;
 
-    public float firingDuration = 2.1f;
-    public float firingLoop = 0.7f;
+    float exitTime = 0.0f;
+    float firingLoop = 0.7f;
+    public float stateDuration = 21.0f;
     public bool shootBullet = false;
 
     public float laserDelay = 1.5f;
@@ -22,7 +23,7 @@ public class Boss2Firing : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = animator.transform.GetComponent<Rigidbody2D>();
         boss = animator.transform.GetComponent<BossBehavior>();
-
+        exitTime = Time.time + stateDuration;
         if (shootLaser)
         {
             boss.StartShootLaser();
@@ -32,29 +33,43 @@ public class Boss2Firing : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (shootBullet)
+        boss.LookAtPlayer();
+        // Code for counting down to Firing Attack
+        //if (firingDuration > 0)
+        if (Time.time < exitTime)
         {
-            // Code for counting down to Firing Attack
-            if (firingDuration > 0)
-            {
-                firingDuration -= Time.deltaTime;
-            }
-            else
-            {
-                animator.SetBool("Boss_Attacking", false);
-            }
+            //firingDuration -= Time.deltaTime;
+        }
+        else
+        {
+            animator.SetBool("Boss_Attacking", false);
+            exitTime = 0.0f;
+        }
 
-            // Code for Firing Attack pattern
-            if (firingLoop > 0)
-            {
-                firingLoop -= Time.deltaTime;
-            }
-            else
+        /*
+         
+        // Code for Firing Attack pattern
+        if (firingLoop > 0)
+        {
+            firingLoop -= Time.deltaTime;
+        }
+        else
+        {
+            if (shootBullet)
             {
                 boss.Fire(5, 20);
-
-                firingLoop = 0.7f;
             }
+
+
+            firingLoop = 0.7f;
         }
+        */
+
+    }
+
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+
     }
 }

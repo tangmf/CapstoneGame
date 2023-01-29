@@ -192,12 +192,12 @@ TextureImporter:
       name: boss3_4
       rect:
         serializedVersion: 2
-        x: 357
-        y: 344
-        width: 212
-        height: 303
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 372
+        y: 368
+        width: 185
+        height: 228
+      alignment: 9
+      pivot: {x: 0.50693095, y: 0.14000154}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: boss3_5
       rect:
         serializedVersion: 2
-        x: 647
-        y: 343
-        width: 246
-        height: 304
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 659
+        y: 361
+        width: 200
+        height: 252
+      alignment: 9
+      pivot: {x: 0.59908384, y: 0.17786771}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
