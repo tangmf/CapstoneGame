@@ -39,7 +39,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   attackCooldown: 1.5
-  attackCountdown: 0
 --- !u!114 &-7361466434788983667
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -483,7 +482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   attackCooldown: 2
-  attackCountdown: 0
 --- !u!1102 &5541914360054512472
 AnimatorState:
   serializedVersion: 6
