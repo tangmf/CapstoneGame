@@ -8,13 +8,13 @@ public class SpawnObject : MonoBehaviour
     public float spawnCD = 5.0f;
     public int spawnCount = 1;
     public int maxSpawns = 5;
+    Transform container;
     public GameObject spawnPref;
     public Transform firepoint;
-    public Transform container;
     // Start is called before the first frame update
     void Start()
     {
-        
+        container = GameObject.FindGameObjectWithTag("SpawnContainer").transform;
     }
 
     // Update is called once per frame

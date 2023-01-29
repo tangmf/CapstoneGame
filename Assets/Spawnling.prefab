@@ -146,14 +146,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextAttackTime: 0
-  coolDown: 1
+  coolDown: 0.5
   firepoint: {fileID: 6716800601147808477}
   attackRange: 4
   enemyLayers:
     serializedVersion: 2
     m_Bits: 2147483647
   moveSpeed: 10
-  damage: 10
+  damage: 2
 --- !u!58 &5516812325042026653
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - WorldSpawn
   - GM
   - Foreground
+  - SpawnContainer
   layers:
   - Default
   - TransparentFX
