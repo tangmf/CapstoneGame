@@ -5515,7 +5515,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 15
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5556,7 +5556,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerMoveSpeed: 20
-  playerJumpSpeed: 60
+  playerJumpSpeed: 50
   jumpFloorDistance: 0.5
   dashCD: 0.5
   nextDash: 0
@@ -6429,7 +6429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8055663115408967902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: -10}
+  m_LocalPosition: {x: 3.2799997, y: -2.6299992, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
