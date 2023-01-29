@@ -52,7 +52,11 @@ public class PlayerMovement : MonoBehaviour
         //RaycastHit2D touchingCeiling = Physics2D.Raycast(ceilingRay.transform.position, Vector2.up, -0.5f, layerMask);
         if (nearCeiling.collider != null)
         {
-            animator.SetBool("Ceilinged", true);
+            if (nearCeiling.collider.gameObject.CompareTag("Ground"))
+            {
+                animator.SetBool("Ceilinged", true);
+            }
+
         }
         else
         {
