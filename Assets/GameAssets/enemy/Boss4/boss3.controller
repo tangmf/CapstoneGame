@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552dfeb1bb20eba42a992bd96c73fd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingDuration: 2.1
+  firingDuration: 0.7
   firingLoop: 0.7
   shootBullet: 1
   laserDelay: 1.5
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!1101 &8953345957037679884
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

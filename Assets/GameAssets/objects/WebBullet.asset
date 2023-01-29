@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f78e79232eb3b4c9af86610bdbf5d3, type: 3}
+  m_Name: WebBullet
+  m_EditorClassIdentifier: 
+  type: 
+  name: 
+  bulletSpeed: 30
+  damage: 10
+  forceMultiplier: 10
+  hitEffect: {fileID: 7038756251294249094, guid: 02ec44d7f1ff61c4eb7d96df3f13475e, type: 3}
+  bulletObject: {fileID: 5304152348078021175, guid: bd0a5329ed327cb42b4e9f830f7a1798, type: 3}
+  shootSfx: {fileID: 0}
+  hitSfx: {fileID: 0}
