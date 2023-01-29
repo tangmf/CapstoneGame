@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -500,6 +500,8 @@ MonoBehaviour:
   animator: {fileID: 2965223419133373637}
   eyeBulletPrefab: {fileID: 8887486330499392155, guid: eb82e384c40eac8459bb046c163e8fec, type: 3}
   firePoint: {fileID: 2965223418746777716}
+  lowFirePoint: {fileID: 0}
+  highFirePoint: {fileID: 0}
   warning: {fileID: 2166767555180047522, guid: 754cd8dad52e58d45a650bf81f8e1bc0, type: 3}
   spike: {fileID: 3702326162941164976, guid: 6ab7af3ab15ba964cb5714b4da656470, type: 3}
   isFlipped: 0
