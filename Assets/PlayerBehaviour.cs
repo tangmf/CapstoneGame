@@ -27,6 +27,8 @@ public class PlayerBehaviour : MonoBehaviour
     float normalSpeed;
     float newSpeed;
 
+    public bool lockDirection = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +59,7 @@ public class PlayerBehaviour : MonoBehaviour
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
         pivot.rotation = Quaternion.Euler(0f, 0f, rotation);
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             if (attackTime + cooldown < Time.time)
             {
@@ -87,6 +89,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
+        StartCoroutine(LockDirection());
 
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
 
@@ -157,6 +160,13 @@ public class PlayerBehaviour : MonoBehaviour
         collider.size = normalSize;
         collider.offset = normalOffset;
         GetComponent<PlayerMovement>().playerMoveSpeed = normalSpeed;
+    }
+
+    IEnumerator LockDirection()
+    {
+        lockDirection = true;
+        yield return new WaitForSeconds(cooldown);
+        lockDirection = false;
     }
 
 }

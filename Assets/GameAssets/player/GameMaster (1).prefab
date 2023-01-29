@@ -453,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4540136504078667202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17, y: -0.08, z: 0}
+  m_LocalPosition: {x: 21.750002, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5512,10 +5512,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 15
   m_Material: {fileID: 6200000, guid: a70a333ad4e29694fb3924abc528d7b1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5555,13 +5555,13 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
-  playerMoveSpeed: 15
-  playerJumpSpeed: 30
+  playerMoveSpeed: 20
+  playerJumpSpeed: 60
   jumpFloorDistance: 0.5
   dashCD: 0.5
   nextDash: 0
   grounded: 0
-  counterJumpForce: {x: 0, y: -100}
+  counterJumpForce: {x: 0, y: -300}
   dust: {fileID: 4540136504240519959}
 --- !u!95 &4540136505109096970
 Animator:
@@ -5618,6 +5618,7 @@ MonoBehaviour:
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
   animator: {fileID: 0}
+  lockDirection: 0
 --- !u!1 &4540136505168615358
 GameObject:
   m_ObjectHideFlags: 0
