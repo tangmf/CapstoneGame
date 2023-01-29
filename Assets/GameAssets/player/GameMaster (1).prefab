@@ -5403,7 +5403,6 @@ GameObject:
   - component: {fileID: 4540136505109096980}
   - component: {fileID: 4540136505109096981}
   - component: {fileID: 4540136505109096970}
-  - component: {fileID: 4540136505109096971}
   - component: {fileID: 4540136505109096979}
   m_Layer: 0
   m_Name: Player
@@ -5583,20 +5582,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4540136505109096971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4540136505109096969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6293ad5f60866194c81133e35110bc1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coolDownTime: 5
-  coolDownSlider: {fileID: 8055663115597613145}
 --- !u!114 &4540136505109096979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5617,6 +5602,10 @@ MonoBehaviour:
   damage: 10
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
+  abilityBullet: {fileID: 3024420252485329889, guid: 3208a9b43416fe34e936c950dd7cc7d4, type: 3}
+  nextShootTime: 0
+  abilityCD: 1
+  abilityCDSlider: {fileID: 8055663115597613145}
   animator: {fileID: 0}
   lockDirection: 0
 --- !u!1 &4540136505168615358
@@ -6084,7 +6073,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6955,7 +6944,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7899,7 +7888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6497695673623034057, guid: b298192fc6a4b90429c64b78f5ca7684, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b298192fc6a4b90429c64b78f5ca7684, type: 3}

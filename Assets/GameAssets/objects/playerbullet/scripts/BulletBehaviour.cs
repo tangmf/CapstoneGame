@@ -7,6 +7,7 @@ public class BulletBehaviour : MonoBehaviour
     public Bullet bullet;
     public string ignoreTag;
     public string damageTag;
+    public bool destroyOnImpact = true;
 
     public Transform bulletTransform;
 
@@ -35,10 +36,24 @@ public class BulletBehaviour : MonoBehaviour
             if (collision.gameObject.GetComponent<HealthManager>())
             {
                 collision.gameObject.GetComponent<HealthManager>().Damage(bullet.damage);
+                if (destroyOnImpact)
+                {
+                    Debug.Log("Bullet hit " + collision.gameObject.ToString());
+                    GameObject effect = Instantiate(bullet.hitEffect, transform.position, transform.rotation);
+                    if (bullet.hitSfx != null)
+                    {
+
+                        AudioSource.PlayClipAtPoint(bullet.hitSfx, transform.position);
+
+                    }
+                    effect.layer = gameObject.layer;
+                    effect.GetComponent<SpriteRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
+                    Destroy(gameObject);
+                }
             }
         }
         
-        if (collision.gameObject.CompareTag(ignoreTag) || collision.gameObject.CompareTag("Untagged"))
+        else if (collision.gameObject.CompareTag(ignoreTag) || collision.gameObject.CompareTag("Untagged"))
         {
 
         }

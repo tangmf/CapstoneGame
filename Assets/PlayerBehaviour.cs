@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class PlayerBehaviour : MonoBehaviour
     public float damage = 10.0f;
     public float swingForce = 2f;
     public AudioClip meleeSfx;
+
+    public GameObject abilityBullet;
+    public float nextShootTime = 0.0f;
+    public float abilityCD = 10.0f;
+    public Slider abilityCDSlider;
 
     public Animator animator;
     Rigidbody2D rb;
@@ -51,6 +57,15 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
+        {
+            abilityCDSlider.value = abilityCDSlider.maxValue;
+        }
+        else
+        {
+            abilityCDSlider.value = (nextShootTime-Time.timeSinceLevelLoad) / abilityCD;
+        }
+            
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 currentPos = transform.position;
         Vector2 force = (mousePos - currentPos).normalized;
@@ -64,6 +79,14 @@ public class PlayerBehaviour : MonoBehaviour
             if (attackTime + cooldown < Time.time)
             {
                 animator.SetTrigger("Attack");
+            }
+
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
+            {
+                Ability1();
             }
 
         }
@@ -139,7 +162,39 @@ public class PlayerBehaviour : MonoBehaviour
         animator.ResetTrigger("Attack");
 
     }
-    
+
+    public void Ability1()
+    {
+        rb.AddForce(-transform.right * swingForce*2, ForceMode2D.Force);
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 currentPos = firePoint.position;
+        Vector2 force = (mousePos - currentPos).normalized;
+
+        if (force.x > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (force.x < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        StartCoroutine(LockDirection());
+
+        float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+
+        // Create Bullet
+        GameObject newBullet = Instantiate(abilityBullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+        newBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
+
+        // Destroy after 5 seconds
+        Destroy(newBullet, 5f);
+
+        nextShootTime = Time.timeSinceLevelLoad;
+
+    }
+
     void OnDrawGizmos()
     {
         // Draw a yellow sphere at the transform's position
