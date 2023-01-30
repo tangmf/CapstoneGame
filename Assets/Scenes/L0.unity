@@ -1213,7 +1213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746614772552597040, guid: 3c256ffccbf7ab84e98a236debccdaf1, type: 3}
       propertyPath: healthPoints
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2746614772552597041, guid: 3c256ffccbf7ab84e98a236debccdaf1, type: 3}
       propertyPath: m_RootOrder

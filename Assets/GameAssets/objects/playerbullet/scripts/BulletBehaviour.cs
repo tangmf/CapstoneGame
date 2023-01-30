@@ -59,17 +59,20 @@ public class BulletBehaviour : MonoBehaviour
         }
         else
         {
-            Debug.Log("Bullet hit " + collision.gameObject.ToString());
-            GameObject effect = Instantiate(bullet.hitEffect, transform.position, transform.rotation);
-            if (bullet.hitSfx != null)
+            if (destroyOnImpact)
             {
+                Debug.Log("Bullet hit " + collision.gameObject.ToString());
+                GameObject effect = Instantiate(bullet.hitEffect, transform.position, transform.rotation);
+                if (bullet.hitSfx != null)
+                {
 
-                AudioSource.PlayClipAtPoint(bullet.hitSfx, transform.position);
+                    AudioSource.PlayClipAtPoint(bullet.hitSfx, transform.position);
 
+                }
+                effect.layer = gameObject.layer;
+                effect.GetComponent<SpriteRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
+                Destroy(gameObject);
             }
-            effect.layer = gameObject.layer;
-            effect.GetComponent<SpriteRenderer>().sortingLayerName = gameObject.GetComponent<SpriteRenderer>().sortingLayerName;
-            Destroy(gameObject);
         }
 
 
