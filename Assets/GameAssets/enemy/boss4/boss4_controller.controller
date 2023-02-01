@@ -17,6 +17,7 @@ MonoBehaviour:
   laserCooldown: 2.5
   shootBullet: 1
   shootLaser: 1
+  finalPhase: 0
 --- !u!1102 &-7069230258525716296
 AnimatorState:
   serializedVersion: 6
@@ -106,6 +107,7 @@ MonoBehaviour:
   laserCooldown: 0
   shootBullet: 0
   shootLaser: 0
+  finalPhase: 0
 --- !u!1102 &-5057231821249498819
 AnimatorState:
   serializedVersion: 6
@@ -114,7 +116,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: boss_4_enraged _2
-  m_Speed: 5
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -664174546248712885}
@@ -223,6 +225,7 @@ MonoBehaviour:
   laserCooldown: 0
   shootBullet: 0
   shootLaser: 0
+  finalPhase: 1
 --- !u!1107 &-1118561347842029629
 AnimatorStateMachine:
   serializedVersion: 6
@@ -271,7 +274,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: FinalPhase
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5772613991159331285}
   m_Solo: 0
@@ -281,7 +287,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.5
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -300,37 +306,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Boss_Attacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Boss_Fire
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Is_Dead
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Enrage1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Enrage2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: FinalPhase
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -389,6 +401,7 @@ MonoBehaviour:
   laserCooldown: 0
   shootBullet: 1
   shootLaser: 0
+  finalPhase: 0
 --- !u!1102 &1298350653496734885
 AnimatorState:
   serializedVersion: 6
@@ -525,9 +538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8a98d7100787f4a8aa369941ace361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss4CrossLaser: {fileID: 0}
   moveSpeed: 8
   fireCooldown: 3
-  laserCooldown: 0
 --- !u!1102 &5772613991159331285
 AnimatorState:
   serializedVersion: 6

@@ -239,8 +239,6 @@ public class BossBehavior : MonoBehaviour
         float width = 0.1f;
 
         boss2Laser.ShowLaser();
-        // Use this later for attack
-        //Physics2D.Raycast(currentPos, playerPos.normalized);
 
         while (telegraphDuration > 0)
         {
@@ -330,13 +328,10 @@ public class BossBehavior : MonoBehaviour
 
     IEnumerator CrossLaser(float telegraphDuration, float delayDuration)
     {
-        Vector2 playerPos = player.position;
         Vector2 currentPos = transform.position;
         float width = 0.1f;
 
         boss4CrossLaser.ShowLaser();
-        // Use this later for attack
-        //Physics2D.Raycast(currentPos, playerPos.normalized);
 
         while (telegraphDuration > 0)
         {
@@ -345,29 +340,18 @@ public class BossBehavior : MonoBehaviour
             telegraphDuration -= Time.deltaTime;
             yield return null;
         }
-
-        laserHitbox.laserDamaging = true;
-
         while (delayDuration > 0)
         {
             if (width < 5)
             {
                 width = width + 0.1f;
             }
-            boss4CrossLaser.LaserAttack(playerPos, currentPos, width);
+            boss4CrossLaser.LaserAttack(currentPos, width);
             attackDuration -= Time.deltaTime;
             yield return null;
         }
-        while (width > 0)
-        {
-            width = width - 0.1f;
-            boss4CrossLaser.LaserAttack(playerPos, currentPos, width);
-            yield return null;
-        }
 
-        laserHitbox.laserDamaging = false;
-        boss4CrossLaser.HideLaser();
-
-        animator.SetBool("Boss_Attacking", false);
+        Debug.Log("FinalPhaseStart");
+        animator.SetTrigger("FinalPhase");
     }
 }

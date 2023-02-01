@@ -15212,7 +15212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3311449581671333030}
-  healthPoints: 600
+  healthPoints: 900
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
   isBoss: 1
@@ -15301,7 +15301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3311449582750778158}
-  eyeBulletPrefab: {fileID: 99147296068487311, guid: 84e6b584ffccd7a4ea577920954d7fd6, type: 3}
+  eyeBulletPrefab: {fileID: 99147296068487311, guid: 8b5fce38505ba3a488ff123c8a356909, type: 3}
   firePoint: {fileID: 3311449582297603999}
   lowFirePoint: {fileID: 0}
   highFirePoint: {fileID: 0}
@@ -15311,7 +15311,7 @@ MonoBehaviour:
   healthManager: {fileID: 3311449582750778157}
   boss2Laser: {fileID: 7671761650643468534}
   laserHitbox: {fileID: 6235745742720770022}
-  boss4CrossLaser: {fileID: 0}
+  boss4CrossLaser: {fileID: 387826420}
   telegraphDuration: 0
   delayDuration: 0
   attackDuration: 0

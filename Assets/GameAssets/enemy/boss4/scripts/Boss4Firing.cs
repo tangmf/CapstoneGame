@@ -18,6 +18,7 @@ public class Boss4Firing : StateMachineBehaviour
 
     public bool shootBullet = false;
     public bool shootLaser = false;
+    public bool finalPhase = false;
 
     bool firePattern1 = false;
 
@@ -33,6 +34,11 @@ public class Boss4Firing : StateMachineBehaviour
         firePattern1 = true;
 
         laserCountdown = laserCooldown;
+
+        if (finalPhase)
+        {
+            boss.StartCrossLaser(2f, 1f);
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

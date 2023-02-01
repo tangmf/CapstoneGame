@@ -63,46 +63,54 @@ public class Boss4CrossLaser : MonoBehaviour
 
     public void LaserTelegraph(Vector3 currentPos, float width)
     {
-        LaserTelegraphI(currentPos, width, boss4CrossLaser1, lineRenderer1, 0);
-        LaserTelegraphI(currentPos, width, boss4CrossLaser2, lineRenderer2, 90);
-        LaserTelegraphI(currentPos, width, boss4CrossLaser3, lineRenderer3, 180);
-        LaserTelegraphI(currentPos, width, boss4CrossLaser4, lineRenderer4, 270);
+        LaserTelegraphI(currentPos, width, boss4CrossLaser1, lineRenderer1, boss4CrossLaser1.transform.up);
+        LaserTelegraphI(currentPos, width, boss4CrossLaser2, lineRenderer2, boss4CrossLaser1.transform.right);
+        LaserTelegraphI(currentPos, width, boss4CrossLaser3, lineRenderer3, -boss4CrossLaser1.transform.up);
+        LaserTelegraphI(currentPos, width, boss4CrossLaser4, lineRenderer4, -boss4CrossLaser1.transform.right);
     }
 
-    public void LaserTelegraphI(Vector3 currentPos, float width, GameObject boss4CrossLaser, LineRenderer lineRenderer, float angle)
+    public void LaserTelegraphI(Vector3 currentPos, float width, GameObject boss4CrossLaser, LineRenderer lineRenderer, Vector3 direction)
     {
         // Code for LineRender
         lineRenderer.startWidth = width;
         lineRenderer.startColor = new Color(0.5f, 0, 0);
         lineRenderer.endColor = new Color(0.5f, 0, 0);
 
-        Vector3 endPos = currentPos;
+        Vector3 endPos = currentPos + (direction * laserLength);
+        Vector3[] laserPath = new Vector3[] { currentPos, endPos };
+        lineRenderer.SetPositions(laserPath);
+
+        /*Vector3 endPos = currentPos;
         endPos.x =+ laserLength;
         boss4CrossLaser.transform.eulerAngles = new Vector3(0, 0, angle);
         Vector3[] laserPath = new Vector3[] { currentPos, endPos };
-        lineRenderer.SetPositions(laserPath);
+        lineRenderer.SetPositions(laserPath);*/
+
+        //boss4CrossLaser.transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
-    public void LaserAttack(Vector3 playerPos, Vector3 currentPos, float width)
+    public void LaserAttack(Vector3 currentPos, float width)
     {
-        LaserAttackI(playerPos, currentPos, width, boss4CrossLaser1, lineRenderer1, hitbox1, 0);
-        LaserAttackI(playerPos, currentPos, width, boss4CrossLaser2, lineRenderer2, hitbox2, 90);
-        LaserAttackI(playerPos, currentPos, width, boss4CrossLaser3, lineRenderer3, hitbox3, 180);
-        LaserAttackI(playerPos, currentPos, width, boss4CrossLaser4, lineRenderer4, hitbox4, 270);
+        LaserAttackI(currentPos, width, boss4CrossLaser1, lineRenderer1, hitbox1, 0);
+        LaserAttackI(currentPos, width, boss4CrossLaser2, lineRenderer2, hitbox2, 90);
+        LaserAttackI(currentPos, width, boss4CrossLaser3, lineRenderer3, hitbox3, 180);
+        LaserAttackI(currentPos, width, boss4CrossLaser4, lineRenderer4, hitbox4, 270);
     }
 
-    public void LaserAttackI(Vector3 playerPos, Vector3 currentPos, float width, GameObject boss4CrossLaser, LineRenderer lineRenderer, GameObject hitbox, float angle)
+    public void LaserAttackI(Vector3 currentPos, float width, GameObject boss4CrossLaser, LineRenderer lineRenderer, GameObject hitbox, float angle)
     {
+        hitbox.GetComponent<LaserHitbox>().laserDamaging = true;
+
         // Code for LineRender
         lineRenderer.startWidth = width;
         lineRenderer.startColor = Color.white;
         lineRenderer.endColor = Color.white;
 
-        Vector3 endPos = currentPos;
-        endPos.x = +laserLength;
-        boss4CrossLaser.transform.eulerAngles = new Vector3(0, 0, angle);
+        Vector3 endPos = currentPos + (Vector3.forward * laserLength);
         Vector3[] laserPath = new Vector3[] { currentPos, endPos };
         lineRenderer.SetPositions(laserPath);
+
+        boss4CrossLaser.transform.eulerAngles = new Vector3(0, 0, angle);
 
         // Code for Hitbox
         Vector3 dir = lineRenderer.GetPosition(1) - lineRenderer.GetPosition(0);
