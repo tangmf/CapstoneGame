@@ -45580,7 +45580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3311449582750778158}
-  eyeBulletPrefab: {fileID: 99147296068487311, guid: 84e6b584ffccd7a4ea577920954d7fd6, type: 3}
+  eyeBulletPrefab: {fileID: 99147296068487311, guid: 8b5fce38505ba3a488ff123c8a356909, type: 3}
   firePoint: {fileID: 3311449582297603999}
   lowFirePoint: {fileID: 0}
   highFirePoint: {fileID: 0}
