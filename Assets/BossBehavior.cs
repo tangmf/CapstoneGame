@@ -28,7 +28,8 @@ public class BossBehavior : MonoBehaviour
     public float delayDuration;
     public float attackDuration;
 
-    public bool enraged;
+    public bool enraged1;
+    public bool enraged2;
 
     public float enrageLevel1;
     public float enrageLevel2;
@@ -48,16 +49,15 @@ public class BossBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!enraged && healthManager.healthPoints <= healthManager.healthBar.maxValue * enrageLevel1)
+        if(!enraged1 && healthManager.healthPoints <= healthManager.healthBar.maxValue * enrageLevel1)
         {
             animator.SetTrigger("Enrage1");
-            enraged = true;
+            enraged1 = true;
         }
-
-        if (!enraged && healthManager.healthPoints <= healthManager.healthBar.maxValue * enrageLevel2)
+        else if (!enraged2 && healthManager.healthPoints <= healthManager.healthBar.maxValue * enrageLevel2)
         {
             animator.SetTrigger("Enrage2");
-            enraged = true;
+            enraged2 = true;
         }
     }
 

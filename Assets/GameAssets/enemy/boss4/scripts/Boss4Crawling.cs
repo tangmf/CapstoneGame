@@ -11,9 +11,12 @@ public class Boss4Crawling : StateMachineBehaviour
 
     public float moveSpeed;
 
+    public float fireCooldown;
+    float fireCountdown;
+    public float laserCooldown;
+    float laserCountdown;
+
     bool isCrawling;
-
-
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -23,6 +26,9 @@ public class Boss4Crawling : StateMachineBehaviour
         boss = animator.transform.GetComponent<BossBehavior>();
         bossTransform = animator.transform;
 
+        fireCountdown = fireCooldown;
+        laserCountdown = laserCooldown;
+
         isCrawling = false;
     }
 
@@ -30,8 +36,25 @@ public class Boss4Crawling : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Code for boss crawling
-        bossTransform.LookAt(player);
-        bossTransform.position = Vector2.MoveTowards(bossTransform.position, player.position, moveSpeed * Time.deltaTime);
+        Vector2 currentPos = bossTransform.position;
+        Vector2 playerPos = player.position;
+
+        Vector2 direction = playerPos - currentPos;
+        float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bossTransform.eulerAngles = new Vector3(0, 0, rotation);
+
+        bossTransform.position = Vector2.MoveTowards(currentPos, playerPos, moveSpeed * Time.deltaTime);
+
+        // Code for boss firing
+        if (fireCountdown > 0)
+        {
+            fireCountdown -= Time.deltaTime;
+        }
+        else
+        {
+            boss.Fire(36, 10);
+            fireCountdown = fireCooldown;
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
