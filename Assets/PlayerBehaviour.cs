@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject abilityBullet;
     public float nextShootTime = 0.0f;
     public float abilityCD = 10.0f;
-    public Slider abilityCDSlider;
+    public Image abilityCDImage;
+    public TextMeshProUGUI abilityCDText;
 
     public Animator animator;
     Rigidbody2D rb;
@@ -59,11 +61,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
         {
-            abilityCDSlider.value = abilityCDSlider.maxValue;
+            abilityCDImage.fillAmount = 0;
+            abilityCDText.text = "0";
         }
         else
         {
-            abilityCDSlider.value = (nextShootTime-Time.timeSinceLevelLoad) / abilityCD;
+            int timer = (int)(nextShootTime - Time.timeSinceLevelLoad) + (int)(abilityCD);
+            abilityCDImage.fillAmount = timer /abilityCD;
+            abilityCDText.text = timer.ToString();
         }
             
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

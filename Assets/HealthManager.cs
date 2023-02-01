@@ -93,7 +93,7 @@ public class HealthManager : MonoBehaviour
             
             tmp = Color.red;
             gameObject.GetComponent<SpriteRenderer>().material.color = tmp;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
             gameObject.GetComponent<SpriteRenderer>().material.color = prevColor;
 
         }
@@ -101,7 +101,7 @@ public class HealthManager : MonoBehaviour
         {
             tmp.a = 0.7f;
             gameObject.GetComponent<SpriteRenderer>().color = tmp;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
             gameObject.GetComponent<SpriteRenderer>().color = prevColor;
         }
 
@@ -120,6 +120,7 @@ public class HealthManager : MonoBehaviour
         {
             GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
             GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
+            GetComponent<PlayerBehaviour>().enabled = !GetComponent<PlayerBehaviour>().enabled;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             Debug.Log(gameObject.ToString() + " has been killed");
             gm.GameOver("LOSE");
