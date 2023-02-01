@@ -20,7 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject abilityBullet;
     public float nextShootTime = 0.0f;
     public float abilityCD = 10.0f;
-    public Slider abilityCDSlider;
+    public Image abilityCDImage;
     public TextMeshProUGUI abilityCDText;
 
     public Animator animator;
@@ -61,13 +61,13 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
         {
-            abilityCDSlider.value = 0;
+            abilityCDImage.fillAmount = 0;
             abilityCDText.text = "0";
         }
         else
         {
             int timer = (int)(nextShootTime - Time.timeSinceLevelLoad) + (int)(abilityCD);
-            abilityCDSlider.value = timer /abilityCD *  abilityCDSlider.maxValue;
+            abilityCDImage.fillAmount = timer /abilityCD;
             abilityCDText.text = timer.ToString();
         }
             
