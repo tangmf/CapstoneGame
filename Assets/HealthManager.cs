@@ -120,6 +120,7 @@ public class HealthManager : MonoBehaviour
         {
             GetComponent<PlayerMovement>().animator.SetTrigger("IsDead");
             GetComponent<PlayerMovement>().enabled = !GetComponent<PlayerMovement>().enabled;
+            GetComponent<PlayerBehaviour>().enabled = !GetComponent<PlayerBehaviour>().enabled;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             Debug.Log(gameObject.ToString() + " has been killed");
             gm.GameOver("LOSE");

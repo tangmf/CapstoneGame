@@ -162,10 +162,6 @@ public class GameMaster : MonoBehaviour
     public void CalculateScore()
     {
         score = (int)(winHealthPoints * 10 - winTime);
-        if(score <= 100)
-        {
-            score = 100;
-        }
         Debug.Log("Score: " + score.ToString());
     }
 
@@ -180,6 +176,13 @@ public class GameMaster : MonoBehaviour
 
         Time.timeScale = 1.0f;
         GameObject newGameOverScreen = Instantiate(gameOverScreen);
+        if(type == "WIN")
+        {
+            if(score <= 100)
+            {
+                score = 100;
+            }
+        }
         newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score);
         /*
         if (type == "LOSE")

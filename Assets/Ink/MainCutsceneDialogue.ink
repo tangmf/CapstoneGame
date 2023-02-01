@@ -33,7 +33,7 @@ Can I get a quick smoke break
 {Portrait("portrait5")}
 No
 So...
-I have an idea. To finally have you guys get your work done.
+I have an idea. To finally get you guys to actually get your work done.
 The first one to finish all their assigned contracts wins the employee of the month award by yours truly.
 
 {Name("Yomo")}
