@@ -30,6 +30,10 @@ public class BossBehavior : MonoBehaviour
 
     public bool enraged;
 
+    public float enrageLevel1;
+    public float enrageLevel2;
+    public bool thirdPhase;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,9 +48,15 @@ public class BossBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!enraged && healthManager.healthPoints <= healthManager.healthBar.maxValue * 0.5)
+        if(!enraged && healthManager.healthPoints <= healthManager.healthBar.maxValue * enrageLevel1)
         {
-            animator.SetTrigger("Enrage");
+            animator.SetTrigger("Enrage1");
+            enraged = true;
+        }
+
+        if (!enraged && healthManager.healthPoints <= healthManager.healthBar.maxValue * enrageLevel2)
+        {
+            animator.SetTrigger("Enrage2");
             enraged = true;
         }
     }
@@ -216,18 +226,15 @@ public class BossBehavior : MonoBehaviour
         return new Vector2(_x, _y);
     }
 
-    public void StartShootLaser()
+    public void StartShootLaser(float telegraphDuration, float delayDuration, float attackDuration)
     {
-        StartCoroutine(ShootLaser());
+        StartCoroutine(ShootLaser(telegraphDuration, delayDuration, attackDuration));
     }
 
-    IEnumerator ShootLaser()
+    IEnumerator ShootLaser(float telegraphDuration, float delayDuration, float attackDuration)
     {
         Vector2 playerPos = player.position;
         Vector2 currentPos = transform.position;
-        telegraphDuration = 1f;
-        delayDuration = 0.5f;
-        attackDuration = 1f;
         float width = 0.1f;
 
         boss2Laser.ShowLaser();

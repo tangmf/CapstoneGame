@@ -652,6 +652,9 @@ MonoBehaviour:
   delayDuration: 0
   attackDuration: 0
   enraged: 0
+  enrageLevel1: 0.5
+  enrageLevel2: 0
+  thirdPhase: 0
 --- !u!114 &2965223419133373638
 MonoBehaviour:
   m_ObjectHideFlags: 0

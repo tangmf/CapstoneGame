@@ -26,7 +26,7 @@ public class Boss2Firing : StateMachineBehaviour
         exitTime = Time.time + stateDuration;
         if (shootLaser)
         {
-            boss.StartShootLaser();
+            boss.StartShootLaser(1f, 0.5f, 1f);
         }
     }
 
