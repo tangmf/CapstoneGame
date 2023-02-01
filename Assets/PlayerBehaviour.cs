@@ -86,7 +86,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
             {
-                Ability1();
+                Ability1(30);
             }
 
         }
@@ -140,7 +140,7 @@ public class PlayerBehaviour : MonoBehaviour
                 {
                     enemy.transform.position = firePoint.position;
                     //force.y += prevBulletTransform.rotation.eulerAngles.z;
-                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
+                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2, 30);
                     //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
                     enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
                     enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
@@ -163,7 +163,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
-    public void Ability1()
+    public void Ability1(float speed)
     {
         rb.AddForce(-transform.right * swingForce*2, ForceMode2D.Force);
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -184,7 +184,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         // Create Bullet
         GameObject newBullet = Instantiate(abilityBullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force, speed);
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
 

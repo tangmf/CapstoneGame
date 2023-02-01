@@ -52,7 +52,7 @@ public class Boss4Crawling : StateMachineBehaviour
         }
         else
         {
-            boss.Fire(36, 10);
+            boss.Fire(36, 10, 20);
             fireCountdown = fireCooldown;
         }
     }

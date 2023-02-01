@@ -80,24 +80,24 @@ public class BossBehavior : MonoBehaviour
         }
     }
 
-    public void Fire(int count, float spreadAngle)
+    public void Fire(int count, float spreadAngle, float speed)
     {
         if (count % 2 == 0) // If projectile count even
         {
             for (int i = 1; i <= count / 2; i++)
             {
-                createEyeBullet((i * spreadAngle) - spreadAngle / 2);
-                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2));
+                createEyeBullet((i * spreadAngle) - spreadAngle / 2, speed);
+                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2), speed);
             }
         }
         else // If projectile count odd
         {
-            createEyeBullet(0);
+            createEyeBullet(0, speed);
 
             for (int i = 1; i <= (count - 1) / 2; i++)
             {
-                createEyeBullet(i * spreadAngle);
-                createEyeBullet(-i * spreadAngle);
+                createEyeBullet(i * spreadAngle, speed);
+                createEyeBullet(-i * spreadAngle, speed);
             }
         }
     }
@@ -109,18 +109,18 @@ public class BossBehavior : MonoBehaviour
         {
             for (int i = 1; i <= count / 2; i++)
             {
-                createEyeBullet((i * spreadAngle) - spreadAngle / 2);
-                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2));
+                createEyeBullet((i * spreadAngle) - spreadAngle / 2, 30);
+                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2), 30);
             }
         }
         else // If projectile count odd
         {
-            createEyeBullet(0);
+            createEyeBullet(0, 30);
 
             for (int i = 1; i <= (count - 1) / 2; i++)
             {
-                createEyeBullet(i * spreadAngle);
-                createEyeBullet(-i * spreadAngle);
+                createEyeBullet(i * spreadAngle, 30);
+                createEyeBullet(-i * spreadAngle, 30);
             }
         }
     }
@@ -150,7 +150,7 @@ public class BossBehavior : MonoBehaviour
         newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
     }
 
-    void createEyeBullet(float angle)
+    void createEyeBullet(float angle, float speed)
     {
         Vector2 playerPos = player.position;
         Vector2 currentPos = firePoint.position;
@@ -162,7 +162,7 @@ public class BossBehavior : MonoBehaviour
 
         // Create Bullet
         GameObject newBullet = Instantiate(eyeBulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force, speed);
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
@@ -187,7 +187,7 @@ public class BossBehavior : MonoBehaviour
         */
     }
 
-    public void ShootHorizontal()
+    public void ShootHorizontal(float speed)
     {
 
         Vector2 playerPos = player.position;
@@ -210,7 +210,7 @@ public class BossBehavior : MonoBehaviour
 
         // Create Bullet
         GameObject newBullet = Instantiate(eyeBulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force, speed);
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
@@ -280,31 +280,31 @@ public class BossBehavior : MonoBehaviour
         animator.SetBool("Boss_Attacking", false);
     }
 
-    public void ShootLow()
+    public void ShootLow(float speed)
     {
-        StartCoroutine(ChangeFirepointLow());
+        StartCoroutine(ChangeFirepointLow(speed));
     }
 
-    IEnumerator ChangeFirepointLow()
+    IEnumerator ChangeFirepointLow(float speed)
     {
         Transform normalFirepoint = firePoint;
         firePoint = lowFirePoint;
-        ShootHorizontal();
+        ShootHorizontal(speed);
         yield return new WaitForSeconds(0.1f);
         firePoint = normalFirepoint;
     }
 
 
-    public void ShootHigh()
+    public void ShootHigh(float speed)
     {
-        StartCoroutine(ChangeFirepointHigh());
+        StartCoroutine(ChangeFirepointHigh(speed));
     }
 
-    IEnumerator ChangeFirepointHigh()
+    IEnumerator ChangeFirepointHigh(float speed)
     {
         Transform normalFirepoint = firePoint;
         firePoint = highFirePoint;
-        ShootHorizontal();
+        ShootHorizontal(speed);
         yield return new WaitForSeconds(0.1f);
         firePoint = normalFirepoint;
     }
@@ -314,11 +314,11 @@ public class BossBehavior : MonoBehaviour
         var rand = Random.Range(0f, 1.0f);
         if(rand >= 0.5f)
         {
-            ShootHigh();
+            ShootHigh(30);
         }
         else
         {
-            ShootLow();
+            ShootLow(30);
         }
     }
 }
