@@ -5606,6 +5606,7 @@ MonoBehaviour:
   nextShootTime: 0
   abilityCD: 5
   abilityCDSlider: {fileID: 8055663115597613145}
+  abilityCDText: {fileID: 3884078862830261370}
   animator: {fileID: 0}
   lockDirection: 0
 --- !u!1 &4540136505168615358
@@ -7892,6 +7893,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b298192fc6a4b90429c64b78f5ca7684, type: 3}
+--- !u!114 &3884078862830261370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6497695672170540847, guid: b298192fc6a4b90429c64b78f5ca7684, type: 3}
+  m_PrefabInstance: {fileID: 8055663115486411605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3884078863460598685 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6497695673623034056, guid: b298192fc6a4b90429c64b78f5ca7684, type: 3}
