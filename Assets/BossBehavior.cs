@@ -23,6 +23,7 @@ public class BossBehavior : MonoBehaviour
     public HealthManager healthManager;
     public Boss2Laser boss2Laser;
     public LaserHitbox laserHitbox;
+    public Boss4CrossLaser boss4CrossLaser;
 
     public float telegraphDuration;
     public float delayDuration;
@@ -80,24 +81,24 @@ public class BossBehavior : MonoBehaviour
         }
     }
 
-    public void Fire(int count, float spreadAngle, float speed)
+    public void Fire(int count, float spreadAngle)
     {
         if (count % 2 == 0) // If projectile count even
         {
             for (int i = 1; i <= count / 2; i++)
             {
-                createEyeBullet((i * spreadAngle) - spreadAngle / 2, speed);
-                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2), speed);
+                createEyeBullet((i * spreadAngle) - spreadAngle / 2);
+                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2));
             }
         }
         else // If projectile count odd
         {
-            createEyeBullet(0, speed);
+            createEyeBullet(0);
 
             for (int i = 1; i <= (count - 1) / 2; i++)
             {
-                createEyeBullet(i * spreadAngle, speed);
-                createEyeBullet(-i * spreadAngle, speed);
+                createEyeBullet(i * spreadAngle);
+                createEyeBullet(-i * spreadAngle);
             }
         }
     }
@@ -109,18 +110,18 @@ public class BossBehavior : MonoBehaviour
         {
             for (int i = 1; i <= count / 2; i++)
             {
-                createEyeBullet((i * spreadAngle) - spreadAngle / 2, 30);
-                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2), 30);
+                createEyeBullet((i * spreadAngle) - spreadAngle / 2);
+                createEyeBullet(-((i * spreadAngle) - spreadAngle / 2));
             }
         }
         else // If projectile count odd
         {
-            createEyeBullet(0, 30);
+            createEyeBullet(0);
 
             for (int i = 1; i <= (count - 1) / 2; i++)
             {
-                createEyeBullet(i * spreadAngle, 30);
-                createEyeBullet(-i * spreadAngle, 30);
+                createEyeBullet(i * spreadAngle);
+                createEyeBullet(-i * spreadAngle);
             }
         }
     }
@@ -150,7 +151,7 @@ public class BossBehavior : MonoBehaviour
         newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
     }
 
-    void createEyeBullet(float angle, float speed)
+    void createEyeBullet(float angle)
     {
         Vector2 playerPos = player.position;
         Vector2 currentPos = firePoint.position;
@@ -162,7 +163,7 @@ public class BossBehavior : MonoBehaviour
 
         // Create Bullet
         GameObject newBullet = Instantiate(eyeBulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force, speed);
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
@@ -187,7 +188,7 @@ public class BossBehavior : MonoBehaviour
         */
     }
 
-    public void ShootHorizontal(float speed)
+    public void ShootHorizontal()
     {
 
         Vector2 playerPos = player.position;
@@ -210,7 +211,7 @@ public class BossBehavior : MonoBehaviour
 
         // Create Bullet
         GameObject newBullet = Instantiate(eyeBulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force, speed);
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
         newBullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 
@@ -280,31 +281,31 @@ public class BossBehavior : MonoBehaviour
         animator.SetBool("Boss_Attacking", false);
     }
 
-    public void ShootLow(float speed)
+    public void ShootLow()
     {
-        StartCoroutine(ChangeFirepointLow(speed));
+        StartCoroutine(ChangeFirepointLow());
     }
 
-    IEnumerator ChangeFirepointLow(float speed)
+    IEnumerator ChangeFirepointLow()
     {
         Transform normalFirepoint = firePoint;
         firePoint = lowFirePoint;
-        ShootHorizontal(speed);
+        ShootHorizontal();
         yield return new WaitForSeconds(0.1f);
         firePoint = normalFirepoint;
     }
 
 
-    public void ShootHigh(float speed)
+    public void ShootHigh()
     {
-        StartCoroutine(ChangeFirepointHigh(speed));
+        StartCoroutine(ChangeFirepointHigh());
     }
 
-    IEnumerator ChangeFirepointHigh(float speed)
+    IEnumerator ChangeFirepointHigh()
     {
         Transform normalFirepoint = firePoint;
         firePoint = highFirePoint;
-        ShootHorizontal(speed);
+        ShootHorizontal();
         yield return new WaitForSeconds(0.1f);
         firePoint = normalFirepoint;
     }
@@ -314,11 +315,59 @@ public class BossBehavior : MonoBehaviour
         var rand = Random.Range(0f, 1.0f);
         if(rand >= 0.5f)
         {
-            ShootHigh(30);
+            ShootHigh();
         }
         else
         {
-            ShootLow(30);
+            ShootLow();
         }
+    }
+
+    public void StartCrossLaser(float telegraphDuration, float delayDuration)
+    {
+        StartCoroutine(CrossLaser(telegraphDuration, delayDuration));
+    }
+
+    IEnumerator CrossLaser(float telegraphDuration, float delayDuration)
+    {
+        Vector2 playerPos = player.position;
+        Vector2 currentPos = transform.position;
+        float width = 0.1f;
+
+        boss4CrossLaser.ShowLaser();
+        // Use this later for attack
+        //Physics2D.Raycast(currentPos, playerPos.normalized);
+
+        while (telegraphDuration > 0)
+        {
+            currentPos = transform.position;
+            boss4CrossLaser.LaserTelegraph(currentPos, width);
+            telegraphDuration -= Time.deltaTime;
+            yield return null;
+        }
+
+        laserHitbox.laserDamaging = true;
+
+        while (delayDuration > 0)
+        {
+            if (width < 5)
+            {
+                width = width + 0.1f;
+            }
+            boss4CrossLaser.LaserAttack(playerPos, currentPos, width);
+            attackDuration -= Time.deltaTime;
+            yield return null;
+        }
+        while (width > 0)
+        {
+            width = width - 0.1f;
+            boss4CrossLaser.LaserAttack(playerPos, currentPos, width);
+            yield return null;
+        }
+
+        laserHitbox.laserDamaging = false;
+        boss4CrossLaser.HideLaser();
+
+        animator.SetBool("Boss_Attacking", false);
     }
 }

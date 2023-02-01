@@ -72,7 +72,7 @@ public class BossBehaviour : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
 
-            bullet.GetComponent<BulletBehaviour>().SetForce(RotateVector(force, angle), 30);
+            bullet.GetComponent<BulletBehaviour>().SetForce(RotateVector(force, angle));
             bullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
             bullet.GetComponent<BulletBehaviour>().damageTag = "Player";
 

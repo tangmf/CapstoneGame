@@ -51,13 +51,13 @@ public class Boss4Firing : StateMachineBehaviour
             {
                 if (firePattern1)
                 {
-                    boss.Fire(15, 24, 20);
+                    boss.Fire(15, 24);
                     fireCountdown = fireCooldown;
                     firePattern1 = false;
                 }
                 else
                 {
-                    boss.Fire(16, 22.5f, 20);
+                    boss.Fire(16, 22.5f);
                     fireCountdown = fireCooldown;
                     firePattern1 = true;
                 }

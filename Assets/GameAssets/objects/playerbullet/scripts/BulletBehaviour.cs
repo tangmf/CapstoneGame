@@ -78,10 +78,10 @@ public class BulletBehaviour : MonoBehaviour
 
     }
 
-    public void SetForce(Vector2 force, float speed)
+    public void SetForce(Vector2 force)
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        gameObject.GetComponent<Rigidbody2D>().AddForce(force * speed, ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(force * bullet.bulletSpeed, ForceMode2D.Impulse);
     }
     
 

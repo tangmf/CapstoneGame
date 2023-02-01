@@ -36,11 +36,11 @@ public class Shoot : MonoBehaviour
         if (direction == "LEFT")
         {
             newBullet.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(-1, 0), 30);
+            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(-1, 0));
         }
         else
         {
-            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(1, 0), 30);
+            newBullet.GetComponent<BulletBehaviour>().SetForce(new Vector2(1, 0));
         }
         
         newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;

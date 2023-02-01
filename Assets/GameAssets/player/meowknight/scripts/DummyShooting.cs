@@ -44,7 +44,7 @@ public class DummyShooting : MonoBehaviour
 
                 // Create Bullet
                 GameObject newBullet = Instantiate(bullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-                newBullet.GetComponent<BulletBehaviour>().SetForce(force * bulletSpeed, 20);
+                newBullet.GetComponent<BulletBehaviour>().SetForce(force * bulletSpeed);
                 newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
                 newBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
 
@@ -109,7 +109,7 @@ public class DummyShooting : MonoBehaviour
                 if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
                 {
                     enemy.transform.position = firePoint.position;
-                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force, 30);
+                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force);
                     //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
                     enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
                     enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;

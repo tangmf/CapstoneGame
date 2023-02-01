@@ -13,10 +13,8 @@ public class Boss4Crawling : StateMachineBehaviour
 
     public float fireCooldown;
     float fireCountdown;
-    public float laserCooldown;
-    float laserCountdown;
 
-    bool isCrawling;
+    bool isActive;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -27,33 +25,37 @@ public class Boss4Crawling : StateMachineBehaviour
         bossTransform = animator.transform;
 
         fireCountdown = fireCooldown;
-        laserCountdown = laserCooldown;
 
-        isCrawling = false;
+        boss.StartCrossLaser(1.5f, 1f);
+
+        isActive = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Code for boss crawling
-        Vector2 currentPos = bossTransform.position;
-        Vector2 playerPos = player.position;
-
-        Vector2 direction = playerPos - currentPos;
-        float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bossTransform.eulerAngles = new Vector3(0, 0, rotation);
-
-        bossTransform.position = Vector2.MoveTowards(currentPos, playerPos, moveSpeed * Time.deltaTime);
-
-        // Code for boss firing
-        if (fireCountdown > 0)
+        if (isActive)
         {
-            fireCountdown -= Time.deltaTime;
-        }
-        else
-        {
-            boss.Fire(36, 10, 20);
-            fireCountdown = fireCooldown;
+            Vector2 currentPos = bossTransform.position;
+            Vector2 playerPos = player.position;
+
+            Vector2 direction = playerPos - currentPos;
+            float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            bossTransform.eulerAngles = new Vector3(0, 0, rotation);
+
+            bossTransform.position = Vector2.MoveTowards(currentPos, playerPos, moveSpeed * Time.deltaTime);
+
+            // Code for boss firing
+            if (fireCountdown > 0)
+            {
+                fireCountdown -= Time.deltaTime;
+            }
+            else
+            {
+                boss.Fire(36, 10);
+                fireCountdown = fireCooldown;
+            }
         }
     }
 
