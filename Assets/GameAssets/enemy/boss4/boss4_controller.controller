@@ -432,8 +432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  fireCooldown: 1
-  spikeCooldown: 2
+  fireCooldown: 2
+  spikeCooldown: 3
   laserCooldown: 2.5
   shootBullet: 1
   shootSpike: 1
