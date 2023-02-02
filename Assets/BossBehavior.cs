@@ -333,11 +333,14 @@ public class BossBehavior : MonoBehaviour
 
         boss4CrossLaser.ShowLaser();
 
+        Debug.Log("FinalPhaseTest1");
+
         while (telegraphDuration > 0)
         {
             currentPos = transform.position;
             boss4CrossLaser.LaserTelegraph(currentPos, width);
             telegraphDuration -= Time.deltaTime;
+
             yield return null;
         }
         while (delayDuration > 0)
