@@ -159,6 +159,16 @@
             "sceneName": "L1",
             "score": 367,
             "grade": 68
+        },
+        {
+            "sceneName": "L1",
+            "score": 100,
+            "grade": 68
+        },
+        {
+            "sceneName": "L1",
+            "score": 1585,
+            "grade": 83
         }
     ]
 }
