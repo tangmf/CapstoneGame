@@ -234,12 +234,12 @@ TextureImporter:
       name: boss4_18
       rect:
         serializedVersion: 2
-        x: 8
-        y: 169
-        width: 320
-        height: 273
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 10
+        y: 151
+        width: 316
+        height: 367
+      alignment: 9
+      pivot: {x: 0.47148445, y: 0.5081842}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: boss4_19
       rect:
         serializedVersion: 2
-        x: 381
+        x: 357
         y: 156
-        width: 303
-        height: 286
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 311
+        height: 361
+      alignment: 9
+      pivot: {x: 0.4855131, y: 0.5041601}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,12 +276,12 @@ TextureImporter:
       name: boss4_20
       rect:
         serializedVersion: 2
-        x: 707
-        y: 166
-        width: 299
-        height: 276
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 689
+        y: 165
+        width: 319
+        height: 349
+      alignment: 9
+      pivot: {x: 0.5282474, y: 0.49569666}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
