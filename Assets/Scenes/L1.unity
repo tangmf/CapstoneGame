@@ -45909,6 +45909,7 @@ MonoBehaviour:
   ignoreTag: 
   laserLength: 100
   lineRenderer: {fileID: 5926103984806824345}
+  boss: {fileID: 3311449582750778152}
   hitbox: {fileID: 2044635719498209701}
 --- !u!61 &8481542227712052372
 BoxCollider2D:

@@ -12,6 +12,7 @@ public class Boss2Laser : MonoBehaviour
 
     public LineRenderer lineRenderer;
 
+    public GameObject boss;
     public GameObject hitbox;
 
     // Start is called before the first frame update
@@ -74,6 +75,8 @@ public class Boss2Laser : MonoBehaviour
         hitbox.transform.position = center;
 
         hitbox.transform.eulerAngles = new Vector3(0, 0, rotation);
-        hitbox.transform.localScale = new Vector3(66.75f, width * 0.6675f, 0);
+
+        float laserScale = 1 / boss.transform.lossyScale.x;
+        hitbox.transform.localScale = new Vector3(laserLength * laserScale, width * laserScale, 0);
     }
 }

@@ -488,6 +488,7 @@ MonoBehaviour:
   ignoreTag: 
   laserLength: 100
   lineRenderer: {fileID: 6264497227441694322}
+  boss: {fileID: 2965223419133373635}
   hitbox: {fileID: 1779544718055634510}
 --- !u!1 &2965223419123316891
 GameObject:
@@ -698,10 +699,12 @@ MonoBehaviour:
   healthManager: {fileID: 2965223419133373638}
   boss2Laser: {fileID: 7972960923184099101}
   laserHitbox: {fileID: 5934590450724925453}
+  boss4CrossLaser: {fileID: 0}
   telegraphDuration: 0
   delayDuration: 0
   attackDuration: 0
-  enraged: 0
+  enraged1: 0
+  enraged2: 0
   enrageLevel1: 0.5
   enrageLevel2: 0
   thirdPhase: 0
