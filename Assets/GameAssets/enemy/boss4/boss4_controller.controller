@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   fireCooldown: 1
+  spikeCooldown: 0
   laserCooldown: 2.5
   shootBullet: 1
+  shootSpike: 0
   shootLaser: 1
   finalPhase: 0
 --- !u!1102 &-7069230258525716296
@@ -104,8 +106,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   fireCooldown: 0
+  spikeCooldown: 0
   laserCooldown: 0
   shootBullet: 0
+  shootSpike: 0
   shootLaser: 0
   finalPhase: 0
 --- !u!1102 &-5057231821249498819
@@ -222,8 +226,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   fireCooldown: 0
+  spikeCooldown: 0
   laserCooldown: 0
   shootBullet: 0
+  shootSpike: 0
   shootLaser: 0
   finalPhase: 1
 --- !u!1102 &-2102254438670610956
@@ -427,8 +433,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   fireCooldown: 1
+  spikeCooldown: 2
   laserCooldown: 2.5
   shootBullet: 1
+  shootSpike: 1
   shootLaser: 0
   finalPhase: 0
 --- !u!1102 &1298350653496734885

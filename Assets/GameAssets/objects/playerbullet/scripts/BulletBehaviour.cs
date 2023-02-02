@@ -61,7 +61,7 @@ public class BulletBehaviour : MonoBehaviour
         {
             if (destroyOnImpact)
             {
-                Debug.Log("Bullet hit " + collision.gameObject.ToString());
+                //Debug.Log("Bullet hit " + collision.gameObject.ToString());
                 GameObject effect = Instantiate(bullet.hitEffect, transform.position, transform.rotation);
                 if (bullet.hitSfx != null)
                 {

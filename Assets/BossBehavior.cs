@@ -17,6 +17,7 @@ public class BossBehavior : MonoBehaviour
 
     public GameObject warning;
     public GameObject spike;
+    public GameObject platforms;
 
     public bool isFlipped = false;
 
@@ -35,6 +36,8 @@ public class BossBehavior : MonoBehaviour
     public float enrageLevel1;
     public float enrageLevel2;
     public bool thirdPhase;
+
+    public List<GameObject> platformsList;
 
     // Start is called before the first frame update
     void Start()
@@ -354,5 +357,76 @@ public class BossBehavior : MonoBehaviour
         }
 
         animator.SetTrigger("FinalPhase");
+    }
+
+    public void StartShootBoss4Spike()
+    {
+        StartCoroutine(ShootBoss4Spike());
+    }
+
+    IEnumerator ShootBoss4Spike()
+    {
+        // Code to position spike
+        var playerPos = player.position;
+        GameObject spikePlatform = platforms.transform.GetChild(0).GetChild(0).gameObject;
+
+        foreach (Transform platformRow in platforms.transform)
+        {
+            foreach (Transform platformGroup in platformRow.transform)
+            {
+                platformsList.Add(platformGroup.gameObject);
+
+                float closestDistance = Vector2.Distance(playerPos, spikePlatform.transform.position);
+                float platformDistance = Vector2.Distance(playerPos, platformGroup.position);
+
+                if (platformDistance < closestDistance)
+                {
+                    spikePlatform = platformGroup.gameObject;
+                }
+            }
+        }
+
+        // Code to spawn spike
+        Vector3 spikePlatformSpawn1 = spikePlatform.transform.position;
+        spikePlatformSpawn1.y += 0.2f;
+        Vector3 spikePlatformSpawn2 = spikePlatform.transform.position;
+        spikePlatformSpawn2.x += 2;
+        spikePlatformSpawn2.y -= 0.3f;
+        Vector3 spikePlatformSpawn3 = spikePlatform.transform.position;
+        spikePlatformSpawn3.x += -2;
+        spikePlatformSpawn3.y -= 0.3f;
+        Vector3 spikePlatformSpawn4 = spikePlatform.transform.position;
+        spikePlatformSpawn4.x += 4;
+        spikePlatformSpawn4.y -= 1f;
+        Vector3 spikePlatformSpawn5 = spikePlatform.transform.position;
+        spikePlatformSpawn5.x += -4;
+        spikePlatformSpawn5.y -= 1f;
+
+        ShootBoss4SpikeWarning(spikePlatformSpawn1);
+        ShootBoss4SpikeWarning(spikePlatformSpawn2);
+        ShootBoss4SpikeWarning(spikePlatformSpawn3);
+        ShootBoss4SpikeWarning(spikePlatformSpawn4);
+        ShootBoss4SpikeWarning(spikePlatformSpawn5);
+
+        yield return new WaitForSeconds(1.0f);
+
+        ShootBoss4SpikeAttack(spikePlatformSpawn1);
+        ShootBoss4SpikeAttack(spikePlatformSpawn2);
+        ShootBoss4SpikeAttack(spikePlatformSpawn3);
+        ShootBoss4SpikeAttack(spikePlatformSpawn4);
+        ShootBoss4SpikeAttack(spikePlatformSpawn5);
+    }
+
+    public void ShootBoss4SpikeWarning(Vector3 spikePlatformSpawn)
+    {
+        GameObject newWarning = Instantiate(warning, spikePlatformSpawn, Quaternion.identity);
+    }
+
+    public void ShootBoss4SpikeAttack(Vector3 spikePlatformSpawn)
+    {
+        GameObject newSpike = Instantiate(spike, spikePlatformSpawn, Quaternion.identity);
+
+        newSpike.GetComponent<SpikeBehaviour>().ignoreTag = gameObject.tag;
+        newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
     }
 }

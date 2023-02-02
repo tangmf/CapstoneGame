@@ -13,10 +13,13 @@ public class Boss4Firing : StateMachineBehaviour
 
     public float fireCooldown;
     float fireCountdown;
+    public float spikeCooldown;
+    float spikeCountdown;
     public float laserCooldown;
     float laserCountdown;
 
     public bool shootBullet = false;
+    public bool shootSpike = false;
     public bool shootLaser = false;
     public bool finalPhase = false;
 
@@ -32,6 +35,8 @@ public class Boss4Firing : StateMachineBehaviour
 
         fireCountdown = fireCooldown;
         firePattern1 = true;
+
+        spikeCountdown = spikeCooldown;
 
         laserCountdown = laserCooldown;
 
@@ -67,6 +72,19 @@ public class Boss4Firing : StateMachineBehaviour
                     fireCountdown = fireCooldown;
                     firePattern1 = true;
                 }
+            }
+        }
+
+        if (shootSpike)
+        {
+            if (spikeCountdown > 0)
+            {
+                spikeCountdown -= Time.deltaTime;
+            }
+            else
+            {
+                boss.StartShootBoss4Spike();
+                spikeCountdown = spikeCooldown;
             }
         }
 
