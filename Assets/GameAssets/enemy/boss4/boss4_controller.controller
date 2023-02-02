@@ -225,7 +225,7 @@ MonoBehaviour:
   laserCooldown: 0
   shootBullet: 0
   shootLaser: 0
-  finalPhase: 0
+  finalPhase: 1
 --- !u!1102 &-2102254438670610956
 AnimatorState:
   serializedVersion: 6
@@ -429,7 +429,7 @@ MonoBehaviour:
   fireCooldown: 1
   laserCooldown: 2.5
   shootBullet: 1
-  shootLaser: 1
+  shootLaser: 0
   finalPhase: 0
 --- !u!1102 &1298350653496734885
 AnimatorState:
@@ -567,8 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8a98d7100787f4a8aa369941ace361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss4CrossLaser: {fileID: 0}
-  moveSpeed: 8
+  moveSpeed: 5
   fireCooldown: 3
 --- !u!1102 &5772613991159331285
 AnimatorState:

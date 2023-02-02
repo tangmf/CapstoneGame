@@ -20,7 +20,7 @@ public class LaserHitbox : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        /*if (laserDamaging)
+        if (laserDamaging)
         {
             if (collision.gameObject.CompareTag("Player"))
             {
@@ -29,6 +29,6 @@ public class LaserHitbox : MonoBehaviour
                     collision.gameObject.GetComponent<HealthManager>().Damage(2f);
                 }
             }
-        }*/
+        }
     }
 }

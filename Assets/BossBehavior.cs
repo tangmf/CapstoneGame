@@ -333,8 +333,6 @@ public class BossBehavior : MonoBehaviour
 
         boss4CrossLaser.ShowLaser();
 
-        Debug.Log("FinalPhaseTest1");
-
         while (telegraphDuration > 0)
         {
             currentPos = transform.position;
@@ -343,18 +341,18 @@ public class BossBehavior : MonoBehaviour
 
             yield return null;
         }
+
         while (delayDuration > 0)
         {
-            if (width < 5)
+            if (width < 3)
             {
                 width = width + 0.1f;
             }
             boss4CrossLaser.LaserAttack(currentPos, width);
-            attackDuration -= Time.deltaTime;
+            delayDuration -= Time.deltaTime;
             yield return null;
         }
 
-        Debug.Log("FinalPhaseStart");
         animator.SetTrigger("FinalPhase");
     }
 }

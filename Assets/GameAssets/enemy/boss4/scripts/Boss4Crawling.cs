@@ -9,12 +9,13 @@ public class Boss4Crawling : StateMachineBehaviour
     BossBehavior boss;
     Transform bossTransform;
 
-    public GameObject boss4CrossLaser;
+    Boss4CrossLaser boss4CrossLaser;
 
     public float moveSpeed;
 
     public float fireCooldown;
     float fireCountdown;
+    float laserRotation;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -24,7 +25,10 @@ public class Boss4Crawling : StateMachineBehaviour
         boss = animator.transform.GetComponent<BossBehavior>();
         bossTransform = animator.transform;
 
+        boss4CrossLaser = animator.GetComponentInChildren<Boss4CrossLaser>();
+
         fireCountdown = fireCooldown;
+        laserRotation = 0;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -36,7 +40,7 @@ public class Boss4Crawling : StateMachineBehaviour
 
         Vector2 direction = playerPos - currentPos;
         float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bossTransform.eulerAngles = new Vector3(0, 0, rotation);
+        bossTransform.eulerAngles = new Vector3(0, 0, rotation - 90);
 
         bossTransform.position = Vector2.MoveTowards(currentPos, playerPos, moveSpeed * Time.deltaTime);
 
@@ -52,7 +56,8 @@ public class Boss4Crawling : StateMachineBehaviour
         }
 
         // Code for boss laser
-        boss4CrossLaser.transform.Rotate(new Vector3(0, 0, 0.25f));
+        boss4CrossLaser.Rotate();
+        boss4CrossLaser.LaserAttack(currentPos, 3);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

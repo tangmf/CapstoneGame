@@ -8,6 +8,7 @@ public class Boss4CrossLaser : MonoBehaviour
 
     public float laserLength;
 
+    public GameObject boss;
     public GameObject boss4CrossLaser1;
     public GameObject boss4CrossLaser2;
     public GameObject boss4CrossLaser3;
@@ -20,6 +21,7 @@ public class Boss4CrossLaser : MonoBehaviour
     GameObject hitbox2;
     GameObject hitbox3;
     GameObject hitbox4;
+    public GameObject boss4CrossLaserRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -63,13 +65,13 @@ public class Boss4CrossLaser : MonoBehaviour
 
     public void LaserTelegraph(Vector3 currentPos, float width)
     {
-        LaserTelegraphI(currentPos, width, boss4CrossLaser1, lineRenderer1, boss4CrossLaser1.transform.up);
-        LaserTelegraphI(currentPos, width, boss4CrossLaser2, lineRenderer2, boss4CrossLaser1.transform.right);
-        LaserTelegraphI(currentPos, width, boss4CrossLaser3, lineRenderer3, -boss4CrossLaser1.transform.up);
-        LaserTelegraphI(currentPos, width, boss4CrossLaser4, lineRenderer4, -boss4CrossLaser1.transform.right);
+        LaserTelegraphI(currentPos, width, lineRenderer1, boss4CrossLaser1.transform.up);
+        LaserTelegraphI(currentPos, width, lineRenderer2, boss4CrossLaser1.transform.right);
+        LaserTelegraphI(currentPos, width, lineRenderer3, -boss4CrossLaser1.transform.up);
+        LaserTelegraphI(currentPos, width, lineRenderer4, -boss4CrossLaser1.transform.right);
     }
 
-    public void LaserTelegraphI(Vector3 currentPos, float width, GameObject boss4CrossLaser, LineRenderer lineRenderer, Vector3 direction)
+    public void LaserTelegraphI(Vector3 currentPos, float width, LineRenderer lineRenderer, Vector3 direction)
     {
         // Code for LineRender
         lineRenderer.startWidth = width;
@@ -79,25 +81,17 @@ public class Boss4CrossLaser : MonoBehaviour
         Vector3 endPos = currentPos + (direction * laserLength);
         Vector3[] laserPath = new Vector3[] { currentPos, endPos };
         lineRenderer.SetPositions(laserPath);
-
-        /*Vector3 endPos = currentPos;
-        endPos.x =+ laserLength;
-        boss4CrossLaser.transform.eulerAngles = new Vector3(0, 0, angle);
-        Vector3[] laserPath = new Vector3[] { currentPos, endPos };
-        lineRenderer.SetPositions(laserPath);*/
-
-        //boss4CrossLaser.transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
     public void LaserAttack(Vector3 currentPos, float width)
     {
-        LaserAttackI(currentPos, width, boss4CrossLaser1, lineRenderer1, hitbox1, 0);
-        LaserAttackI(currentPos, width, boss4CrossLaser2, lineRenderer2, hitbox2, 90);
-        LaserAttackI(currentPos, width, boss4CrossLaser3, lineRenderer3, hitbox3, 180);
-        LaserAttackI(currentPos, width, boss4CrossLaser4, lineRenderer4, hitbox4, 270);
+        LaserAttackI(currentPos, width, lineRenderer1, hitbox1, boss4CrossLaser1.transform.up);
+        LaserAttackI(currentPos, width, lineRenderer2, hitbox2, boss4CrossLaser1.transform.right);
+        LaserAttackI(currentPos, width, lineRenderer3, hitbox3, -boss4CrossLaser1.transform.up);
+        LaserAttackI(currentPos, width, lineRenderer4, hitbox4, -boss4CrossLaser1.transform.right);
     }
 
-    public void LaserAttackI(Vector3 currentPos, float width, GameObject boss4CrossLaser, LineRenderer lineRenderer, GameObject hitbox, float angle)
+    public void LaserAttackI(Vector3 currentPos, float width, LineRenderer lineRenderer, GameObject hitbox, Vector3 direction)
     {
         hitbox.GetComponent<LaserHitbox>().laserDamaging = true;
 
@@ -106,11 +100,9 @@ public class Boss4CrossLaser : MonoBehaviour
         lineRenderer.startColor = Color.white;
         lineRenderer.endColor = Color.white;
 
-        Vector3 endPos = currentPos + (Vector3.forward * laserLength);
+        Vector3 endPos = currentPos + (direction * laserLength);
         Vector3[] laserPath = new Vector3[] { currentPos, endPos };
         lineRenderer.SetPositions(laserPath);
-
-        boss4CrossLaser.transform.eulerAngles = new Vector3(0, 0, angle);
 
         // Code for Hitbox
         Vector3 dir = lineRenderer.GetPosition(1) - lineRenderer.GetPosition(0);
@@ -123,6 +115,13 @@ public class Boss4CrossLaser : MonoBehaviour
         hitbox.transform.position = center;
 
         hitbox.transform.eulerAngles = new Vector3(0, 0, rotation);
-        hitbox.transform.localScale = new Vector3(66.75f, width * 0.6675f, 0);
+
+        float laserScale = 1 / boss.transform.lossyScale.x;
+        hitbox.transform.localScale = new Vector3(laserLength * laserScale, width * laserScale, 0);
+    }
+
+    public void Rotate()
+    {
+        boss4CrossLaserRotation.transform.Rotate(new Vector3(0, 0, 0.20f));
     }
 }
