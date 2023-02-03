@@ -83,6 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (attackTime + cooldown < Time.time)
             {
+                
                 animator.SetTrigger("Attack");
             }
 
@@ -98,17 +99,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
-    public void MeleeAttack()
+    public void RotateToAttackPoint()
     {
-        rb.AddForce(transform.right * swingForce, ForceMode2D.Force);
-        if (meleeSfx != null)
-        {
-            AudioSource.PlayClipAtPoint(meleeSfx, this.gameObject.transform.position);
-        }
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 currentPos = firePoint.position;
-        
+        Vector2 currentPos = transform.position;
         Vector2 force = (mousePos - currentPos).normalized;
+        Debug.Log("POS1" + firePoint.position.x + " , " + firePoint.position.y);
 
         if (force.x > 0)
         {
@@ -119,12 +115,27 @@ public class PlayerBehaviour : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
         LockDirection();
-        Transform currentTransform = firePoint;
+    }
+
+    public void MeleeAttack()
+    {
+        rb.AddForce(transform.right * swingForce, ForceMode2D.Force);
+        if (meleeSfx != null)
+        {
+            AudioSource.PlayClipAtPoint(meleeSfx, this.gameObject.transform.position);
+        }
 
 
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 currentPos = firePoint.position;
+
+        Vector2 force = (mousePos - currentPos).normalized;
+
+        Debug.Log("POS2" + firePoint.position.x + " , " + firePoint.position.y);
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(currentTransform.position, attackRange);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(currentPos, attackRange);
         foreach (Collider2D enemy in hitEnemies)
         {
 
@@ -146,7 +157,7 @@ public class PlayerBehaviour : MonoBehaviour
 
                 if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
                 {
-                    enemy.transform.position = currentTransform.position;
+                    enemy.transform.position = currentPos;
                     //force.y += prevBulletTransform.rotation.eulerAngles.z;
                     enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
                     //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
@@ -168,7 +179,6 @@ public class PlayerBehaviour : MonoBehaviour
 
         attackTime = Time.time;
         animator.ResetTrigger("Attack");
-        UnLockDirection();
 
     }
 
