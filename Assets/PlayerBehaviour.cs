@@ -107,6 +107,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 currentPos = firePoint.position;
+        
         Vector2 force = (mousePos - currentPos).normalized;
 
         if (force.x > 0)
@@ -117,11 +118,13 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        StartCoroutine(LockDirection());
+        LockDirection();
+        Transform currentTransform = firePoint;
+
 
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, attackRange);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(currentTransform.position, attackRange);
         foreach (Collider2D enemy in hitEnemies)
         {
 
@@ -143,7 +146,7 @@ public class PlayerBehaviour : MonoBehaviour
 
                 if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
                 {
-                    enemy.transform.position = firePoint.position;
+                    enemy.transform.position = currentTransform.position;
                     //force.y += prevBulletTransform.rotation.eulerAngles.z;
                     enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
                     //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
@@ -165,6 +168,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         attackTime = Time.time;
         animator.ResetTrigger("Attack");
+        UnLockDirection();
 
     }
 
@@ -183,7 +187,6 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        StartCoroutine(LockDirection());
 
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
 
@@ -222,10 +225,20 @@ public class PlayerBehaviour : MonoBehaviour
         GetComponent<PlayerMovement>().playerMoveSpeed = normalSpeed;
     }
 
-    IEnumerator LockDirection()
+    IEnumerator LockDirectionEnumerator()
     {
         lockDirection = true;
         yield return new WaitForSeconds(cooldown);
+        lockDirection = false;
+    }
+
+    public void LockDirection()
+    {
+        lockDirection = true;
+    }
+
+    public void UnLockDirection()
+    {
         lockDirection = false;
     }
 

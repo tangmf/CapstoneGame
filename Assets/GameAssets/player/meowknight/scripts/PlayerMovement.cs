@@ -74,11 +74,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         playerBody.velocity = new Vector2(moveInput * playerMoveSpeed, playerBody.velocity.y);
-        if (moveInput > 0 && !playerBody.transform.gameObject.GetComponent<PlayerBehaviour>().lockDirection)
+        if (moveInput > 0 && !animator.GetBool("Attack"))
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
-        else if (moveInput < 0 && !playerBody.transform.gameObject.GetComponent<PlayerBehaviour>().lockDirection)
+        else if (moveInput < 0 && !animator.GetBool("Attack"))
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
