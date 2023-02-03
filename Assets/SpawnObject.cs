@@ -14,7 +14,8 @@ public class SpawnObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        container = GameObject.FindGameObjectWithTag("SpawnContainer").transform;
+        container = new GameObject("spawncontainer").transform;
+        //container = GameObject.FindGameObjectWithTag("SpawnContainer").transform;
     }
 
     // Update is called once per frame
