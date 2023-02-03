@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6662894179699704572}
   - component: {fileID: 5598233215430382555}
   - component: {fileID: 4914167290924793547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SpikeLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 3768583636533229215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.9128, y: -5.117, z: 0}
-  m_LocalScale: {x: 0.8269924, y: 1.3635, z: 0}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.59, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

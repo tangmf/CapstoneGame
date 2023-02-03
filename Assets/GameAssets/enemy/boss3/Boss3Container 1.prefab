@@ -644,17 +644,21 @@ MonoBehaviour:
   highFirePoint: {fileID: 648447140}
   warning: {fileID: 2166767555180047522, guid: 754cd8dad52e58d45a650bf81f8e1bc0, type: 3}
   spike: {fileID: 3768583636533229215, guid: f70765b02ba6325448b9dca10c539315, type: 3}
+  platforms: {fileID: 0}
   isFlipped: 0
   healthManager: {fileID: 2965223419133373638}
   boss2Laser: {fileID: 0}
   laserHitbox: {fileID: 0}
+  boss4CrossLaser: {fileID: 0}
   telegraphDuration: 0
   delayDuration: 0
   attackDuration: 0
-  enraged: 0
-  enrageLevel1: 0.5
-  enrageLevel2: 0
+  enraged1: 0
+  enraged2: 0
+  enrageLevel1: 0.6
+  enrageLevel2: 0.3
   thirdPhase: 0
+  platformsList: []
 --- !u!114 &2965223419133373638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2965223418062328653}
-  healthPoints: 400
+  healthPoints: 1000
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
   isBoss: 1
@@ -721,10 +725,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2926d7871843ee7468f2eff3fc966087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSpawnTime: 0
+  nextSpawnTime: 5
   spawnCD: 5
   spawnCount: 1
-  maxSpawns: 5
+  maxSpawns: 2
   spawnPref: {fileID: 3915833660529475769, guid: cecd31d07b9529244a3c250ed977f97d, type: 3}
   firepoint: {fileID: 546370410}
 --- !u!1 &2965223419585566800
