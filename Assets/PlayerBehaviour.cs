@@ -22,6 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float abilityCD = 10.0f;
     public Image abilityCDImage;
     public TextMeshProUGUI abilityCDText;
+    GameObject newAbilityBullet;
 
     public Animator animator;
     Rigidbody2D rb;
@@ -92,6 +93,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
             {
+                animator.SetTrigger("Attack");
                 Ability1();
             }
 
@@ -199,15 +201,15 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
-
+        if(newAbilityBullet != null)
+        {
+            Destroy(newAbilityBullet);
+        }
         // Create Bullet
-        GameObject newBullet = Instantiate(abilityBullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
-        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
-        newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
-        newBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
-
-        // Destroy after 5 seconds
-        Destroy(newBullet, 5f);
+        newAbilityBullet = Instantiate(abilityBullet, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
+        newAbilityBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newAbilityBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+        newAbilityBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
 
         nextShootTime = Time.timeSinceLevelLoad;
 

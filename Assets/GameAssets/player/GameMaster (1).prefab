@@ -6178,7 +6178,7 @@ MonoBehaviour:
   damage: 10
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
-  abilityBullet: {fileID: 3024420252485329889, guid: 3208a9b43416fe34e936c950dd7cc7d4, type: 3}
+  abilityBullet: {fileID: 4987738559015409847, guid: 585ed2f9e0a124e40b54e8418d07f223, type: 3}
   nextShootTime: 0
   abilityCD: 5
   abilityCDImage: {fileID: 576100011866750622}
@@ -7208,7 +7208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8055663115408967902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2799997, y: -2.6299992, z: -10}
+  m_LocalPosition: {x: 3.2800007, y: -2.6299994, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7802,7 +7802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8055663115765035458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2799997, y: -2.6299992, z: -10}
+  m_LocalPosition: {x: 3.2800007, y: -2.6299994, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
