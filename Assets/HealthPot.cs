@@ -27,7 +27,7 @@ public class HealthPot : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<HealthManager>())
             {
-                if (!collision.gameObject.GetComponent<HealthManager>().dead)
+                if (!collision.gameObject.GetComponent<HealthManager>().dead && collision.gameObject.GetComponent<HealthManager>().healthPoints < collision.gameObject.GetComponent<HealthManager>().healthBar.maxValue)
                 {
                     if(effect != null)
                     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7189317851029517284}
   - component: {fileID: 7189317851029517283}
   - component: {fileID: 7189317851029517282}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: healthPot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
