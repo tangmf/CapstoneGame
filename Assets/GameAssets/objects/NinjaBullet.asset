@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f78e79232eb3b4c9af86610bdbf5d3, type: 3}
-  m_Name: AbilityBullet
+  m_Name: NinjaBullet
   m_EditorClassIdentifier: 
   type: 
   name: 
-  bulletSpeed: 60
-  damage: 10
+  bulletSpeed: 30
+  damage: 5
   forceMultiplier: 50
   hitEffect: {fileID: 8847189659127399039, guid: ecca68c5743ae1d48bbf03f939b118c8, type: 3}
-  bulletObject: {fileID: 3024420252485329889, guid: 3208a9b43416fe34e936c950dd7cc7d4, type: 3}
+  bulletObject: {fileID: 7819976209225152144, guid: fcb3e8412b67f5244945eb6a0820e9ba, type: 3}
   shootSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
   hitSfx: {fileID: 8300000, guid: 64032c52228679e499876df288eaa5a2, type: 3}
