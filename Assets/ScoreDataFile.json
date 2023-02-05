@@ -264,6 +264,26 @@
             "sceneName": "L5",
             "score": 675,
             "grade": 66
+        },
+        {
+            "sceneName": "L1",
+            "score": 100,
+            "grade": 68
+        },
+        {
+            "sceneName": "L1",
+            "score": 906,
+            "grade": 66
+        },
+        {
+            "sceneName": "L2",
+            "score": 664,
+            "grade": 66
+        },
+        {
+            "sceneName": "L4",
+            "score": 748,
+            "grade": 66
         }
     ]
 }

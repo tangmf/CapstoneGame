@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3803245319788877396}
   - component: {fileID: 6302370136531395601}
   - component: {fileID: 2946319591851875218}
-  - component: {fileID: 7789011612911428393}
   - component: {fileID: 7819976209225152147}
   m_Layer: 0
   m_Name: EnemyBounceBullet
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7819976209225152144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -26.637619, y: -0.3493445, z: -4.0497108}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dba418be3506ab64f93700fc319a2eb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 53fa2e7d5ace9874b93440bb85f184d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -104,7 +103,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 4
 --- !u!50 &6302370136531395601
 Rigidbody2D:
   serializedVersion: 4
@@ -140,29 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 11400000, guid: d71c1ec1bc03d8e4dba62e78e9da670d, type: 2}
   ignoreTag: 
-  damageTag: 
+  damageTag: Player
   destroyOnImpact: 0
   bulletTransform: {fileID: 0}
---- !u!95 &7789011612911428393
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7819976209225152144}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3678b599c23ca434995b2f371a094a45, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &7819976209225152147
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -178,4 +157,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.12
+  m_Radius: 6

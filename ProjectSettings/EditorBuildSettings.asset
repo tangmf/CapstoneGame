@@ -25,14 +25,20 @@ EditorBuildSettings:
     guid: 38d173a90a7c32d43937f40ca4fbbec1
   - enabled: 1
     path: Assets/Scenes/L1.unity
-    guid: 09fb5765b533a0644b11d29ff53f26f2
-  - enabled: 1
-    path: Assets/Scenes/L2.unity
     guid: c7771246c88f25147a2b078201e6a41f
   - enabled: 1
-    path: Assets/Scenes/L3.unity
+    path: Assets/Scenes/L2.unity
     guid: c2c056a35ae7bd240bd7b75d0c2b2d2b
   - enabled: 1
+    path: Assets/Scenes/L3.unity
+    guid: 09fb5765b533a0644b11d29ff53f26f2
+  - enabled: 1
     path: Assets/Scenes/L4.unity
+    guid: f6a18b0854bb2844a8720572791a4631
+  - enabled: 1
+    path: Assets/Scenes/L5.unity
     guid: ebf02109a824dce4c9dcc1837f6d8519
+  - enabled: 1
+    path: Assets/Scenes/LSurvival.unity
+    guid: a5ff8839c3e9f964a92f8abefd7ef6d6
   m_configObjects: {}
