@@ -216,6 +216,8 @@ MonoBehaviour:
   enrageLevel1: 0.6
   enrageLevel2: 0.3
   thirdPhase: 0
+  attackRange: 5
+  meleeDmg: 20
   platformsList: []
 --- !u!114 &5196448816519886068
 MonoBehaviour:
@@ -447,7 +449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5196448816905431111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0333471, y: 6.54, z: 0}
+  m_LocalPosition: {x: -2.0333471, y: 3.0357144, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -768,7 +770,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.2108889, y: -0.8100443}
+  m_Offset: {x: 1.9473572, y: -1.2000159}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -779,7 +781,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 27.826468, y: 14.284542}
+  m_Size: {x: 12.619656, y: 8.379252}
   m_EdgeRadius: 0
 --- !u!114 &7006449108665992930
 MonoBehaviour:
@@ -794,7 +796,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Player
+  detectBullets: 1
   detected: 0
+  bulletDetected: 0
   animator: {fileID: 5196448816519886071}
 --- !u!1 &7006449109081484123
 GameObject:

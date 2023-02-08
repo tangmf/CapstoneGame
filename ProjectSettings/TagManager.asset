@@ -10,6 +10,7 @@ TagManager:
   - GM
   - Foreground
   - SpawnContainer
+  - Bullet
   layers:
   - Default
   - TransparentFX

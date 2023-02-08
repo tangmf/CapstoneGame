@@ -37,6 +37,9 @@ public class BossBehavior : MonoBehaviour
     public float enrageLevel2;
     public bool thirdPhase;
 
+    public float attackRange = 3.0f;
+    public float meleeDmg = 10f;
+
     public List<GameObject> platformsList;
 
     // Start is called before the first frame update
@@ -428,5 +431,45 @@ public class BossBehavior : MonoBehaviour
 
         newSpike.GetComponent<SpikeBehaviour>().ignoreTag = gameObject.tag;
         newSpike.GetComponent<SpikeBehaviour>().damageTag = "Player";
+    }
+
+    public void MeleeAtk()
+    {
+        Vector2 playerPos = player.position;
+        Vector2 currentPos = firePoint.position;
+
+        Vector2 force = (playerPos - currentPos).normalized;
+        float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, attackRange);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (!enemy.CompareTag("Ground"))
+            {
+                if (enemy.CompareTag("Player") && enemy.gameObject.GetComponent<HealthManager>())
+                {
+                    enemy.gameObject.GetComponent<HealthManager>().Damage(meleeDmg);
+                }
+
+                if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
+                {
+                    enemy.transform.position = firePoint.position;
+                    //force.y += prevBulletTransform.rotation.eulerAngles.z;
+                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
+                    //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
+                    enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
+                    enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+                    enemy.gameObject.GetComponent<BulletBehaviour>().damageTag = "Player";
+                }
+
+                if (enemy.gameObject.GetComponent<Rigidbody2D>() && !enemy.gameObject.GetComponent<BulletBehaviour>())
+                {
+
+                    enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 50.0f, ForceMode2D.Impulse);
+                }
+            }
+
+
+
+        }
     }
 }
