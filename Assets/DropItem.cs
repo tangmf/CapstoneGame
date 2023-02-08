@@ -5,6 +5,7 @@ using UnityEngine;
 public class DropItem : MonoBehaviour
 {
     public GameObject item;
+    public float dropchance = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,10 @@ public class DropItem : MonoBehaviour
     void OnDestroy()
     {
         if (!this.gameObject.scene.isLoaded) return;
-        Instantiate(item, transform.position, transform.rotation);
+        if(Random.Range(0.0f, 1.0f) > dropchance)
+        {
+            Instantiate(item, transform.position, transform.rotation);
+        }
+        
     }
 }
