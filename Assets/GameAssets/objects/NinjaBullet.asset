@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 
   name: 
-  bulletSpeed: 40
+  bulletSpeed: 20
   damage: 5
   forceMultiplier: 50
   hitEffect: {fileID: 8847189659127399039, guid: ecca68c5743ae1d48bbf03f939b118c8, type: 3}
