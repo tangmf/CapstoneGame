@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 5196448817598286719}
-  healthPoints: 600
+  healthPoints: 400
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
   isBoss: 1
