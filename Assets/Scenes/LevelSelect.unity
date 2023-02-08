@@ -2642,8 +2642,8 @@ RectTransform:
   - {fileID: 398138536}
   - {fileID: 519130588}
   - {fileID: 1546383207}
-  - {fileID: 1525265574}
   - {fileID: 855183387}
+  - {fileID: 1525265574}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2807,7 +2807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2827,11 +2827,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160.8273
+      value: 128.1348
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 101.8483
+      value: 81.145
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2863,11 +2863,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -153.15
+      value: -169.4962
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -162
+      value: -172.35
       objectReference: {fileID: 0}
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4672,7 +4672,7 @@ RectTransform:
   - {fileID: 1649545940}
   - {fileID: 1367567847}
   m_Father: {fileID: 821425679}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
