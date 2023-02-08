@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 54630
+  controlID: 60845
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 18b3faff
+      m_SelectedIDs: b044faff
       m_LastClickedID: 0
-      m_ExpandedIDs: eefefaff081102000c110200141102003c11020048110200
+      m_ExpandedIDs: f670faffa2290200a6290200ae290200d6290200e2290200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -526,9 +526,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -8.24218, y: -6.9864736, z: -0.014907527}
+    m_Target: {x: -7.809358, y: -6.7183537, z: -0.018451782}
     speed: 2
-    m_Value: {x: -8.24218, y: -6.9864736, z: -0.014907527}
+    m_Value: {x: -7.809358, y: -6.7183537, z: -0.018451782}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -579,9 +579,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 12.572827
+    m_Target: 12.92726
     speed: 2
-    m_Value: 12.572827
+    m_Value: 12.92726
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -686,7 +686,7 @@ MonoBehaviour:
   - {fileID: 13}
   - {fileID: 2}
   m_Selected: 2
-  m_LastSelected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -728,21 +728,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/GameAssets/enemy/owlet_monster/scripts
+    - Assets
     m_Globs: []
     m_OriginalText: ninja
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/GameAssets/enemy/owlet_monster/scripts
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\derps\Documents\GitHub\CapstoneGame\CapstoneGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b6720000
-    m_LastClickedID: 29366
+    m_SelectedIDs: 9a6b0000
+    m_LastClickedID: 27546
     m_ExpandedIDs: 000000009a6b00009c6b00009e6b0000a06b0000a26b0000a46b0000a66b0000a86b0000aa6b0000ac6b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -796,8 +796,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1ac9faff
-    m_LastClickedInstanceID: -341734
+    m_SelectedInstanceIDs: b044faff
+    m_LastClickedInstanceID: -375632
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300001c70000074a400008ca40000a4a400006ca400009ca4000090a4000080a4000094a400007ca4000098a40000a8a400007eef00007aef00008eef000086ef00003c6000003e7c00009e6a0000347b000066680000b666000050630000a6610000c4640000a649030082740000745c0100
     m_RenameOverlay:
@@ -1118,14 +1118,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.73499626
+    - e00: 0.51908654
       e01: 0
       e02: 0
-      e03: -46.03709
+      e03: 23.709427
       e10: 0
-      e11: 0.73499626
+      e11: 0.51908654
       e12: 0
-      e13: 109.89638
+      e13: 66.939804
       e20: 0
       e21: 0
       e22: 1
@@ -1180,7 +1180,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 135444
+  m_LastSelectedObjectID: 141804
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1242,7 +1242,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 140
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

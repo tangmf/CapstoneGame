@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &5196448816519886071
 Animator:
   serializedVersion: 4
@@ -735,6 +735,7 @@ GameObject:
   - component: {fileID: 7006449108665992956}
   - component: {fileID: 7006449108665992957}
   - component: {fileID: 7006449108665992930}
+  - component: {fileID: 6086905513514905106}
   m_Layer: 0
   m_Name: Detection
   m_TagString: Untagged
@@ -770,7 +771,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.9473572, y: -1.2000159}
+  m_Offset: {x: -0.25384462, y: -1.42578}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -781,7 +782,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.619656, y: 8.379252}
+  m_Size: {x: 8.217252, y: 6.5731378}
   m_EdgeRadius: 0
 --- !u!114 &7006449108665992930
 MonoBehaviour:
@@ -796,9 +797,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Player
-  detectBullets: 1
+  detectBullets: 0
   detected: 0
   bulletDetected: 0
+  animator: {fileID: 5196448816519886071}
+--- !u!114 &6086905513514905106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006449108665992959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83677b0dace0b541a483c29338daccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 5196448816519886071}
 --- !u!1 &7006449109081484123
 GameObject:
