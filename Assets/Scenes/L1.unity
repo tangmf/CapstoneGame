@@ -478,6 +478,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8055663115408967900, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
+      propertyPath: orthographic size
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8055663115408967901, guid: c4d2c3ae92a6dff40ae13a0f12efb0c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8934,6 +8938,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserShooter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3638918739248309665, guid: 69c9bd4f65a449d409cb7e7eb633c886, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3638918739248309668, guid: 69c9bd4f65a449d409cb7e7eb633c886, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -9301,6 +9309,10 @@ PrefabInstance:
     - target: {fileID: 3638918739248309665, guid: 69c9bd4f65a449d409cb7e7eb633c886, type: 3}
       propertyPath: m_Name
       value: LaserShooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638918739248309665, guid: 69c9bd4f65a449d409cb7e7eb633c886, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3638918739248309668, guid: 69c9bd4f65a449d409cb7e7eb633c886, type: 3}
       propertyPath: m_RootOrder
