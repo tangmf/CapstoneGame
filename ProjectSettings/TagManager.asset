@@ -11,6 +11,7 @@ TagManager:
   - Foreground
   - SpawnContainer
   - Bullet
+  - PM
   layers:
   - Default
   - TransparentFX
