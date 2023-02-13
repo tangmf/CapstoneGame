@@ -31,14 +31,14 @@ public class ProfileMaster : MonoBehaviour
     {
         newScene = SceneManager.GetActiveScene();
         // Is Playable level
-        if (newScene.name[0] == 'L' && newScene.name != "LevelSelect" || newScene.name == "MainMenu")
+        if (newScene.name[0] == 'L' && newScene.name != "LevelSelect" || newScene.name == "MainMenu" || newScene.name == "Options")
         {
             contents.SetActive(false);
         }
         else
         {
             contents.SetActive(true);
-            UpdateProfile();
+            
         }
     }
 
@@ -117,5 +117,20 @@ public class ProfileMaster : MonoBehaviour
         PlayerPrefs.SetString("Char", character);
         currentCharacterName.text = character;
         Debug.Log("Char updated: " + character);
+    }
+
+    public void ChangeCharacter(string name)
+    {
+        if(name == "Yomo" || name == "Cardena" || name == "Hound")
+        {
+            PlayerPrefs.SetString("Char", name);
+        }
+        else
+        {
+            Debug.Log("Error with changing character");
+        }
+
+        UpdateCharacter();
+
     }
 }
