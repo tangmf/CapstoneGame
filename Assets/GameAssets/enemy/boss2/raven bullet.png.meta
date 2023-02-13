@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97d7daf9d338e114786b67eefa2e252d
+guid: 5e1a91e81f0e43541be021d7418f6310
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: uielements_0
+      name: raven bullet_0
       rect:
         serializedVersion: 2
-        x: 447
-        y: 1421
-        width: 541
-        height: 536
+        x: 174
+        y: 1599
+        width: 1152
+        height: 455
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e92348fd1011dd44188926f74d085a06
-      internalID: 1842340678
+      spriteID: 7fa74e1b1a15bd244b39b8283c1dbac2
+      internalID: -978888739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: uielements_1
+      name: raven bullet_1
       rect:
         serializedVersion: 2
-        x: 454
-        y: 854
-        width: 528
-        height: 538
+        x: 283
+        y: 858
+        width: 372
+        height: 418
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6842c7159b428d4eb3f989e2a274b4f
-      internalID: 749629645
+      spriteID: 0feca2b9530a6984b8adb30595dbeb41
+      internalID: 370693275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: uielements_2
+      name: raven bullet_2
       rect:
         serializedVersion: 2
-        x: 238
-        y: 322
-        width: 1024
-        height: 393
+        x: 768
+        y: 857
+        width: 601
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +161,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0aba3bf0ef59024fb7841548a176d97
-      internalID: -257851579
+      spriteID: e579c862dc60a2742920ade1ad91df7e
+      internalID: 157948323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raven bullet_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 84
+        width: 651
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b90b428f1024f40ac8f92adb30659d
+      internalID: -1342536452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raven bullet_8
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 37
+        width: 699
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797107fa6faa9274a97033f1380fd9fb
+      internalID: -431678268
       vertices: []
       indices: 
       edges: []
@@ -178,9 +220,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      uielements_2: -257851579
-      uielements_0: 1842340678
-      uielements_1: 749629645
+      raven bullet_2: 157948323
+      raven bullet_3: -1342536452
+      raven bullet_9: 35749714
+      raven bullet_6: -2103815659
+      raven bullet_0: -978888739
+      raven bullet_8: -431678268
+      raven bullet_7: 1708826203
+      raven bullet_5: 62520223
+      raven bullet_1: 370693275
+      raven bullet_4: -1423859780
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
