@@ -32,6 +32,8 @@ public class GameMaster : MonoBehaviour
 
     ProfileMaster pm;
 
+    public float difficultyMultiplier = 1.0f;
+
     void Start()
     {
         
@@ -190,14 +192,40 @@ public class GameMaster : MonoBehaviour
 
         Time.timeScale = 1.0f;
         GameObject newGameOverScreen = Instantiate(gameOverScreen);
+        char grade = 'F';
         if(type == "WIN")
         {
-            if(score <= 100)
+            if (score >= 1900)
             {
-                score = 100;
+                grade = 'S';
             }
+            else if (score >= 1000)
+            {
+                grade = 'A';
+            }
+            else if(score >= 700)
+            {
+                grade = 'B';
+            }
+            else if (score >= 300)
+            {
+                grade = 'C';
+            }
+            else
+            {
+                if (score <= 100)
+                {
+                    score = 100;
+                }
+                grade = 'D';
+            }
+            
         }
-        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score);
+        else
+        {
+            score = 0;
+        }
+        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score, grade);
         /*
         if (type == "LOSE")
         {

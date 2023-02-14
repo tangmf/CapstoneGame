@@ -25,72 +25,24 @@ public class GameOverManager : MonoBehaviour
         
     }
 
-    public void GameOver(string winLose, int score)
+    public void GameOver(string winLose, int score, char grade)
     {
-        char grade;
         if (winLose == "WIN")
         {
             winLoseText.text = "WIN";
-            if (score >= 1500)
-            {
-                grade = 'S';
-            }
-            else if (score >= 1000)
-            {
-                grade = 'A';
-            }
-            else if (score >= 600)
-            {
-                grade = 'B';
-            }
-            else if (score >= 400)
-            {
-                grade = 'C';
-            }
-            else
-            {
-                grade = 'D';
-            }
             SaveToJson(score, grade);
         }
         else
         {
             winLoseText.text = "LOSE";
-            if (score < 0)
-            {
-                score = 0;
-            }
-            grade = 'F';
         }
-        scoreText.text = score.ToString();
-        gradeText.text = grade.ToString();
+        ShowScore(score, grade);
         
 
     }
 
-    public void ShowScore(int score)
+    public void ShowScore(int score, char grade)
     {
-        char grade;
-        if (score >= 1940)
-        {
-            grade = 'S';
-        }
-        else if (score >= 1900)
-        {
-            grade = 'A';
-        }
-        else if (score >= 1500)
-        {
-            grade = 'B';
-        }
-        else if (score >= 1000)
-        {
-            grade = 'C';
-        }
-        else
-        {
-            grade = 'D';
-        }
         scoreText.text = score.ToString();
         gradeText.text = grade.ToString();
     }
