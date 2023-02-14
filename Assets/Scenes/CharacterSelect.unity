@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 130036998}
   - component: {fileID: 130037000}
   - component: {fileID: 130037001}
+  - component: {fileID: 130037002}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -462,6 +463,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &130037002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130036997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873425c6fe066b3438488ed81ee9507e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &225886932
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +654,10 @@ PrefabInstance:
       propertyPath: charName
       value: Cardena
       objectReference: {fileID: 0}
+    - target: {fileID: 8918610312519470179, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bb9df65380fefd47ae4fbbfaa3fc84a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
 --- !u!224 &449818627 stripped
@@ -1492,6 +1509,10 @@ PrefabInstance:
       propertyPath: charName
       value: Hound
       objectReference: {fileID: 0}
+    - target: {fileID: 8918610312519470179, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 11400000, guid: 52d93e8e6c957f443b03ce8f54589251, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
 --- !u!224 &2119569973 stripped

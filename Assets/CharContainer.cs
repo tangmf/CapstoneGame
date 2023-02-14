@@ -7,12 +7,13 @@ using TMPro;
 public class CharContainer : MonoBehaviour
 {
     ProfileMaster pm;
-    public string charName;
+    public Character character;
     public TMP_Text charNameText;
+    public GameObject locker;
     // Start is called before the first frame update
     void Start()
     {
-        charNameText.text = charName;
+        charNameText.text = character.name;
         pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
     }
 
@@ -24,6 +25,16 @@ public class CharContainer : MonoBehaviour
 
     public void SelectCharacter()
     {
-        pm.ChangeCharacter(charName);
+        pm.ChangeCharacter(character.name);
+    }
+
+    public void Lock()
+    {
+        locker.SetActive(true);
+    }
+
+    public void Unlock()
+    {
+        locker.SetActive(false);
     }
 }
