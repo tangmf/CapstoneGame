@@ -10,6 +10,8 @@ public class CharContainer : MonoBehaviour
     public Character character;
     public TMP_Text charNameText;
     public GameObject locker;
+
+    public CharacterManager cm;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +38,11 @@ public class CharContainer : MonoBehaviour
     public void Unlock()
     {
         locker.SetActive(false);
+    }
+
+    public void UnlockCharacter()
+    {
+        PlayerPrefs.SetString(character.name, "Unlocked");
+        cm.UpdateAll();
     }
 }

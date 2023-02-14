@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8918610312519470179, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
+      propertyPath: cm
+      value: 
+      objectReference: {fileID: 130037002}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
 --- !u!224 &93727541 stripped
@@ -650,6 +654,10 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8918610312519470179, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
+      propertyPath: cm
+      value: 
+      objectReference: {fileID: 130037002}
     - target: {fileID: 8918610312519470179, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
       propertyPath: charName
       value: Cardena
@@ -1505,6 +1513,10 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8918610312519470179, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
+      propertyPath: cm
+      value: 
+      objectReference: {fileID: 130037002}
     - target: {fileID: 8918610312519470179, guid: d69ab41a9535f3d4aaf971f1fca87368, type: 3}
       propertyPath: charName
       value: Hound
