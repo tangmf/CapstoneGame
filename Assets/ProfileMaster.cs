@@ -19,6 +19,9 @@ public class ProfileMaster : MonoBehaviour
     Scene firstScene;
     Scene newScene;
 
+    public List<Character> charList;
+    public string currChar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -124,6 +127,14 @@ public class ProfileMaster : MonoBehaviour
         if(name == "Yomo" || name == "Cardena" || name == "Hound")
         {
             PlayerPrefs.SetString("Char", name);
+            currChar = name;
+            foreach(Character c in charList)
+            {
+                if(name == c.name)
+                {
+                    currentCharacterImg.sprite = c.icon;
+                }
+            }
         }
         else
         {

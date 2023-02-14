@@ -175,9 +175,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 3916482484412238232}
-  currentCharacterImg: {fileID: 0}
+  currentCharacterImg: {fileID: 9011306366660781715}
   currentCharacterName: {fileID: 3916482485658160685}
   contents: {fileID: 712373682171915797}
+  charList:
+  - {fileID: 11400000, guid: 0bc2e9afdd9965049a8f95566d96103a, type: 2}
+  - {fileID: 11400000, guid: 4bb9df65380fefd47ae4fbbfaa3fc84a, type: 2}
+  - {fileID: 11400000, guid: 52d93e8e6c957f443b03ce8f54589251, type: 2}
+  currChar: 
 --- !u!114 &712373680533753675
 MonoBehaviour:
   m_ObjectHideFlags: 0
