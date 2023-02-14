@@ -10,6 +10,7 @@ public class CharContainer : MonoBehaviour
     public Character character;
     public TMP_Text charNameText;
     public GameObject locker;
+    public TMP_Text price;
 
     public CharacterManager cm;
     // Start is called before the first frame update
@@ -27,12 +28,17 @@ public class CharContainer : MonoBehaviour
 
     public void SelectCharacter()
     {
-        pm.ChangeCharacter(character.name);
+        if(PlayerPrefs.GetString(character.name) == "Unlocked")
+        {
+            pm.ChangeCharacter(character.name);
+        }
+        
     }
 
     public void Lock()
     {
         locker.SetActive(true);
+        price.text = character.cost.ToString();
     }
 
     public void Unlock()
@@ -42,7 +48,13 @@ public class CharContainer : MonoBehaviour
 
     public void UnlockCharacter()
     {
-        PlayerPrefs.SetString(character.name, "Unlocked");
-        cm.UpdateAll();
+        int coins = PlayerPrefs.GetInt("Coins");
+        if (coins >= character.cost)
+        {
+            pm.RemoveCoins(character.cost);
+            PlayerPrefs.SetString(character.name, "Unlocked");
+            cm.UpdateAll();
+        }
+        
     }
 }

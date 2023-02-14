@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Hound
   icon: {fileID: 144147109, guid: 7239a5f89f0d7784a87cdae95e13da89, type: 3}
-  cost: 0
+  cost: 400
   playerModel: {fileID: 3454301474813296991, guid: 91b3efff5cd760d44bfc2960cde88a95, type: 3}
