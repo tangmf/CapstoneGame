@@ -1,1 +1,14 @@
-{}
+{
+    "scoreDatas": [
+        {
+            "sceneName": "L4",
+            "score": 378,
+            "grade": 68
+        },
+        {
+            "sceneName": "L5",
+            "score": 1995,
+            "grade": 83
+        }
+    ]
+}

@@ -28,6 +28,7 @@ public class ScriptReader : MonoBehaviour
         }
         else
         {
+            gameObject.SetActive(true);
             LoadStory();
 
             DisplayNextLine();
