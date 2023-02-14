@@ -13,6 +13,7 @@ public class GameOverManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gradeText;
     public TextMeshProUGUI winLoseText;
+    public TextMeshProUGUI rewardText;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class GameOverManager : MonoBehaviour
         
     }
 
-    public void GameOver(string winLose, int score, char grade, float winTime, float healthPoints, string charName)
+    public void GameOver(string winLose, int score, char grade, float winTime, float healthPoints, string charName, int rewardAmt)
     {
         if (winLose == "WIN")
         {
@@ -36,15 +37,16 @@ public class GameOverManager : MonoBehaviour
         {
             winLoseText.text = "LOSE";
         }
-        ShowScore(score, grade);
+        ShowScore(score, grade, rewardAmt);
         
 
     }
 
-    public void ShowScore(int score, char grade)
+    public void ShowScore(int score, char grade,int rewardAmt)
     {
         scoreText.text = score.ToString();
         gradeText.text = grade.ToString();
+        rewardText.text = rewardAmt.ToString() + " coins";
     }
 
     public void SaveToJson(int score,char grade, float winTime, float healthPoints, string charName)

@@ -33,6 +33,7 @@ public class GameMaster : MonoBehaviour
     ProfileMaster pm;
 
     public float difficultyMultiplier = 1.0f;
+    public string levelType = "Boss";
 
     void Start()
     {
@@ -225,7 +226,9 @@ public class GameMaster : MonoBehaviour
         {
             score = 0;
         }
-        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score, grade,winTime,winHealthPoints, pm.currChar.name);
+        int rewardAmt = CalculateReward(score, grade, winTime, winHealthPoints);
+        pm.AddCoins(rewardAmt);
+        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score, grade,winTime,winHealthPoints, pm.currChar.name, rewardAmt);
         /*
         if (type == "LOSE")
         {
@@ -238,6 +241,37 @@ public class GameMaster : MonoBehaviour
         */
 
 
+    }
+
+    public int CalculateReward(int score, char grade, float winTime, float healthLeft)
+    {
+        if (levelType == "Boss" && difficultyMultiplier != 0)
+        {
+            if (grade == 'S')
+            {
+                return 20;
+            }
+            else if(grade == 'A')
+            {
+                return 8;
+            }
+            else if(grade == 'B')
+            {
+                return 6;
+            }
+            else if(grade == 'C')
+            {
+                return 4;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        else
+        {
+            return 0;
+        }
     }
 
 
