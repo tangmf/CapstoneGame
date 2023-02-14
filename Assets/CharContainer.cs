@@ -18,6 +18,7 @@ public class CharContainer : MonoBehaviour
     {
         charNameText.text = character.name;
         pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
+        cm.cCustomizer.ChangeCharacter(pm.currChar);
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class CharContainer : MonoBehaviour
         if(PlayerPrefs.GetString(character.name) == "Unlocked")
         {
             pm.ChangeCharacter(character.name);
+            cm.cCustomizer.ChangeCharacter(character);
         }
         
     }

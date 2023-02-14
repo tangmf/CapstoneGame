@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Yomo
   icon: {fileID: -1467382206, guid: 7239a5f89f0d7784a87cdae95e13da89, type: 3}
+  imgModel: {fileID: -1548639336, guid: 063163bce81980343a74d4056589ee4c, type: 3}
   cost: 0
   playerModel: {fileID: 3454301474813296991, guid: c6d96bdfb1ef22143b94220487088299, type: 3}

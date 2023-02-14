@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cardena
   icon: {fileID: -1008383236, guid: 7239a5f89f0d7784a87cdae95e13da89, type: 3}
+  imgModel: {fileID: 58023696, guid: 2d05c6d0d9c06754f83e21ede90dc967, type: 3}
   cost: 100
   playerModel: {fileID: 3454301474813296991, guid: cdc897bfe1c621e46a3313c9b90413b8, type: 3}

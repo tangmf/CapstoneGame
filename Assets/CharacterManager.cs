@@ -6,6 +6,8 @@ public class CharacterManager : MonoBehaviour
 {
     List<CharContainer> charList = new List<CharContainer>();
 
+    public CharacterCustomizer cCustomizer;
+
     // Start is called before the first frame update
     void Start()
     {
