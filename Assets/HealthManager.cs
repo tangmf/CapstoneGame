@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
     public bool dead = false;
     public AudioClip hitSfx;
     public bool isBoss = false;
+    public ParticleSystem onHitParticle;
     Color prevColor;
     // Start is called before the first frame update
     void Start()
@@ -87,6 +88,7 @@ public class HealthManager : MonoBehaviour
 
     IEnumerator Damaged()
     {
+        onHitParticle.Play();
         Color tmp = prevColor;
         if (gameObject.CompareTag("Player"))
         {

@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = true;
                 playerBody.velocity = Vector2.up * playerJumpSpeed;
                 animator.SetBool("Jumping", true);
+                CreateDust();
             }
 
         }

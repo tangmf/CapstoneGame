@@ -14,6 +14,36 @@
             "sceneName": "L0",
             "score": 1725,
             "grade": 83
+        },
+        {
+            "sceneName": "L1",
+            "score": 1473,
+            "grade": 65
+        },
+        {
+            "sceneName": "L2",
+            "score": 1810,
+            "grade": 83
+        },
+        {
+            "sceneName": "L1",
+            "score": 947,
+            "grade": 66
+        },
+        {
+            "sceneName": "L1",
+            "score": 124,
+            "grade": 68
+        },
+        {
+            "sceneName": "L1",
+            "score": 877,
+            "grade": 66
+        },
+        {
+            "sceneName": "L1",
+            "score": 768,
+            "grade": 66
         }
     ]
 }
