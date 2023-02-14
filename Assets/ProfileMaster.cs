@@ -20,13 +20,13 @@ public class ProfileMaster : MonoBehaviour
     Scene newScene;
 
     public List<Character> charList;
-    public string currChar;
+    public Character currChar;
 
     // Start is called before the first frame update
     void Start()
     {
         firstScene = SceneManager.GetActiveScene();
-        UpdateProfile();
+        
     }
 
     // Update is called once per frame
@@ -56,7 +56,7 @@ public class ProfileMaster : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        UpdateProfile();
 
     }
 
@@ -119,6 +119,7 @@ public class ProfileMaster : MonoBehaviour
         }
         PlayerPrefs.SetString("Char", character);
         currentCharacterName.text = character;
+        ChangeCharacter(character);
         Debug.Log("Char updated: " + character);
     }
 
@@ -127,12 +128,13 @@ public class ProfileMaster : MonoBehaviour
         if(name == "Yomo" || name == "Cardena" || name == "Hound")
         {
             PlayerPrefs.SetString("Char", name);
-            currChar = name;
             foreach(Character c in charList)
             {
                 if(name == c.name)
                 {
                     currentCharacterImg.sprite = c.icon;
+                    currChar = c;
+                    currentCharacterName.text = currChar.name;
                 }
             }
         }
@@ -140,8 +142,7 @@ public class ProfileMaster : MonoBehaviour
         {
             Debug.Log("Error with changing character");
         }
-
-        UpdateCharacter();
+        
 
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - SpawnContainer
   - Bullet
   - PM
+  - Timer
   layers:
   - Default
   - TransparentFX

@@ -31,12 +31,14 @@ public class Menu : MonoBehaviour
     {
 
         StartCoroutine(PlayTransition(sceneName));
+        Time.timeScale = 1.0f;
 
     }
 
     public void LoadScreenByName(string sceneName)
     {
         StartCoroutine(PlayLoadScreen(sceneName));
+        Time.timeScale = 1.0f;
 
 
     }

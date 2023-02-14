@@ -30,9 +30,11 @@ public class GameMaster : MonoBehaviour
 
     public TextMeshProUGUI timer;
 
+    ProfileMaster pm;
+
     void Start()
     {
-
+        
 
     }
 
@@ -68,6 +70,15 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
         */
+        pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
+        if (pm != null)
+        {
+            Debug.Log("PM OK");
+        }
+        else
+        {
+            Debug.Log("PM ERROR");
+        }
         if (GameObject.FindGameObjectWithTag("WorldSpawn") != null)
         {
             transform.position = new Vector3(0, 0, 0);
@@ -90,6 +101,9 @@ public class GameMaster : MonoBehaviour
         Transform target = GameObject.FindGameObjectWithTag("WorldSpawn").GetComponent<Transform>();
         lastCheckPointPos = target.position;
         Debug.Log("Spawn point set at: " + target.position.x.ToString() + "," + target.position.y.ToString());
+        Instantiate(pm.currChar.playerModel, lastCheckPointPos, Quaternion.identity);
+        player = GameObject.FindWithTag("Player");
+        timer = GameObject.FindWithTag("Timer").GetComponent<TextMeshProUGUI>();
         player.transform.position = lastCheckPointPos;
 
 
