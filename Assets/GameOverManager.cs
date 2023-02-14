@@ -25,12 +25,12 @@ public class GameOverManager : MonoBehaviour
         
     }
 
-    public void GameOver(string winLose, int score, char grade)
+    public void GameOver(string winLose, int score, char grade, float winTime, float healthPoints, string charName)
     {
         if (winLose == "WIN")
         {
             winLoseText.text = "WIN";
-            SaveToJson(score, grade);
+            SaveToJson(score, grade, winTime, healthPoints, charName);
         }
         else
         {
@@ -47,7 +47,7 @@ public class GameOverManager : MonoBehaviour
         gradeText.text = grade.ToString();
     }
 
-    public void SaveToJson(int score,char grade)
+    public void SaveToJson(int score,char grade, float winTime, float healthPoints, string charName)
     {
         var currentScene = SceneManager.GetActiveScene();
         var currentSceneName = currentScene.name;
@@ -57,6 +57,9 @@ public class GameOverManager : MonoBehaviour
         datas.scoreDatas = new List<ScoreData>();
         ScoreData data = new ScoreData();
         data.sceneName = currentSceneName;
+        data.charName = charName;
+        data.winTime = winTime;
+        data.healthPoints = healthPoints;
         data.score = score;
         data.grade = grade;
         foreach(var i in LoadScoreDatas())

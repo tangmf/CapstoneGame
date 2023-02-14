@@ -1,53 +1,59 @@
 {
     "scoreDatas": [
         {
-            "sceneName": "L4",
-            "score": 378,
-            "grade": 68
-        },
-        {
-            "sceneName": "L5",
-            "score": 1995,
+            "sceneName": "L0",
+            "charName": "Yomo",
+            "winTime": 18.288408279418947,
+            "healthPoints": 200.0,
+            "score": 1981,
             "grade": 83
         },
         {
             "sceneName": "L0",
-            "score": 1725,
-            "grade": 83
-        },
-        {
-            "sceneName": "L1",
-            "score": 1473,
+            "charName": "Cardena",
+            "winTime": 27.28397560119629,
+            "healthPoints": 150.0,
+            "score": 1472,
             "grade": 65
         },
         {
-            "sceneName": "L2",
-            "score": 1810,
-            "grade": 83
+            "sceneName": "L1",
+            "charName": "Cardena",
+            "winTime": 19.92229461669922,
+            "healthPoints": 122.0,
+            "score": 1200,
+            "grade": 65
         },
         {
             "sceneName": "L1",
-            "score": 947,
-            "grade": 66
-        },
-        {
-            "sceneName": "L1",
-            "score": 124,
+            "charName": "Cardena",
+            "winTime": 22.26475715637207,
+            "healthPoints": 24.0,
+            "score": 217,
             "grade": 68
         },
         {
-            "sceneName": "L1",
-            "score": 877,
+            "sceneName": "L0",
+            "charName": "Cardena",
+            "winTime": 20.356422424316408,
+            "healthPoints": 200.0,
+            "score": 1979,
+            "grade": 83
+        },
+        {
+            "sceneName": "L2",
+            "charName": "Cardena",
+            "winTime": 31.22176170349121,
+            "healthPoints": 90.0,
+            "score": 868,
             "grade": 66
         },
         {
-            "sceneName": "L1",
-            "score": 768,
-            "grade": 66
-        },
-        {
-            "sceneName": "L1",
-            "score": 1673,
+            "sceneName": "L0",
+            "charName": "Hound",
+            "winTime": 22.691360473632814,
+            "healthPoints": 190.0,
+            "score": 1877,
             "grade": 65
         }
     ]

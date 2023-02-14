@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5894159173180466397}
   - component: {fileID: 8149030928559310578}
   m_Layer: 0
-  m_Name: scoreText (2)
+  m_Name: GradeHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 342401657755136891}
   - component: {fileID: 8230132585004545977}
   m_Layer: 0
-  m_Name: scoreText (1)
+  m_Name: ScoreHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7215032589225793833}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -575,7 +575,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7215032589225793833}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1229,10 +1229,10 @@ RectTransform:
   - {fileID: 3343656574733807076}
   - {fileID: 7355430855473048326}
   - {fileID: 415779458386577129}
-  - {fileID: 9150565896667976382}
-  - {fileID: 9062145390286520134}
-  - {fileID: 7142897282920995285}
   - {fileID: 7780166045955489322}
+  - {fileID: 9150565896667976382}
+  - {fileID: 7142897282920995285}
+  - {fileID: 9062145390286520134}
   - {fileID: 7618768668929207385}
   m_Father: {fileID: 7399051546643772836}
   m_RootOrder: 0
@@ -1273,7 +1273,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7215032589225793833}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

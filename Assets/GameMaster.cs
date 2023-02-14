@@ -225,7 +225,7 @@ public class GameMaster : MonoBehaviour
         {
             score = 0;
         }
-        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score, grade);
+        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score, grade,winTime,winHealthPoints, pm.currChar.name);
         /*
         if (type == "LOSE")
         {

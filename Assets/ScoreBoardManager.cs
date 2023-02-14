@@ -46,7 +46,7 @@ public class ScoreBoardManager : MonoBehaviour
             
             GameObject newObj = Instantiate(scoreContainer, transform, false);
             newObj.transform.parent = content;
-            newObj.GetComponent<ScoreContainer>().Set(data.grade, data.score, index);
+            newObj.GetComponent<ScoreContainer>().Set(data, index);
             index++;
         }
     }
