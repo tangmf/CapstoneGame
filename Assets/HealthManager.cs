@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour
     public float healthPoints;
     public bool dead = false;
     public AudioClip hitSfx;
+    public AudioClip deathSfx;
     public bool isBoss = false;
     public ParticleSystem onHitParticle;
     Color prevColor;
@@ -55,12 +56,13 @@ public class HealthManager : MonoBehaviour
             }
             */
             StartCoroutine(Damaged());
-            if (hitSfx != null)
-            {
-                AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
-            }
+            
             if (healthPoints <= 0)
             {
+                if (deathSfx != null)
+                {
+                    AudioSource.PlayClipAtPoint(deathSfx, this.gameObject.transform.position);
+                }
                 healthPoints = 0;
                 if (!dead)
                 {
@@ -68,6 +70,13 @@ public class HealthManager : MonoBehaviour
                     dead = true;
                 }
 
+            }
+            else
+            {
+                if (hitSfx != null)
+                {
+                    AudioSource.PlayClipAtPoint(hitSfx, this.gameObject.transform.position);
+                }
             }
         }
         

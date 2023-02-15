@@ -31,6 +31,30 @@
             "healthPoints": 148.0,
             "score": 1443,
             "grade": 65
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 23.52334213256836,
+            "healthPoints": 180.0,
+            "score": 1776,
+            "grade": 65
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 23.77763557434082,
+            "healthPoints": 96.0,
+            "score": 936,
+            "grade": 66
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 19.543306350708009,
+            "healthPoints": 130.0,
+            "score": 1280,
+            "grade": 65
         }
     ]
 }

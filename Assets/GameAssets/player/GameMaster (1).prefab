@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fd7203ed9d326d6498d6cf40495207c4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -218,6 +218,8 @@ MonoBehaviour:
   gameEnded: 0
   gameStartScreen: {fileID: 3694950635913348853, guid: c72c65d4b47b2f447b246943e2787955, type: 3}
   timer: {fileID: 4530287388597778208}
+  difficultyMultiplier: 1
+  levelType: Boss
 --- !u!1001 &6982342287735163597
 PrefabInstance:
   m_ObjectHideFlags: 0

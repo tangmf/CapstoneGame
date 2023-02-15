@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 82.659, y: 0.000015258789}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_SizeDelta: {x: -41.4724, y: -42.0484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5036552403244329408
 CanvasRenderer:
@@ -66,9 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'AXE TOSS
-
-'
+  m_text: AXE TOSS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a0b43f0faac86640a2ee0d0c3699799, type: 2}
   m_sharedMaterial: {fileID: 3397805452417403969, guid: 7a0b43f0faac86640a2ee0d0c3699799, type: 2}
@@ -95,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2229,7 +2227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6125254435221102260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7948,6 +7946,7 @@ MonoBehaviour:
   healthPoints: 200
   dead: 0
   hitSfx: {fileID: 8300000, guid: 11ca7167ef25e6b43a1f4f456539d886, type: 3}
+  deathSfx: {fileID: 0}
   isBoss: 0
   onHitParticle: {fileID: 7529355398887640698}
 --- !u!50 &6910647501425680602
@@ -8053,6 +8052,8 @@ MonoBehaviour:
   damage: 10
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
+  meleeHitSfx: {fileID: 8300000, guid: 5d2725e94795f6b429516cfe3e03ba1a, type: 3}
+  deflectSfx: {fileID: 8300000, guid: 155c4119994f17047908af50497d4659, type: 3}
   abilityBullet: {fileID: 4987738559015409847, guid: 585ed2f9e0a124e40b54e8418d07f223, type: 3}
   nextShootTime: 0
   abilityCD: 5

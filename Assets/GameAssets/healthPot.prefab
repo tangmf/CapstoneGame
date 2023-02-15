@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 0}
-  particle: {fileID: 624713116637075078, guid: badd578caec94764ba7ec6a02f94257f, type: 3}
-  deathSound: {fileID: 0}
+  particle: {fileID: 6599597845523260693, guid: f5cc310717efea04fba615346438046e, type: 3}
+  deathSound: {fileID: 8300000, guid: e979c00c894970b4586e6033c4bf6d05, type: 3}

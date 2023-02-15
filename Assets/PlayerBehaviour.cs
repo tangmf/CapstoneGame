@@ -16,6 +16,8 @@ public class PlayerBehaviour : MonoBehaviour
     public float damage = 10.0f;
     public float swingForce = 2f;
     public AudioClip meleeSfx;
+    public AudioClip meleeHitSfx;
+    public AudioClip deflectSfx;
 
     public GameObject abilityBullet;
     public float nextShootTime = 0.0f;
@@ -93,7 +95,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
             {
-                animator.SetTrigger("Attack");
+                //animator.SetTrigger("Attack");
                 Ability1();
             }
 
@@ -154,11 +156,19 @@ public class PlayerBehaviour : MonoBehaviour
                 Debug.Log("MELEE HIT: " + enemy.gameObject.ToString());
                 if (enemy.gameObject.GetComponent<HealthManager>())
                 {
+                    if (meleeHitSfx != null)
+                    {
+                        AudioSource.PlayClipAtPoint(meleeHitSfx, this.gameObject.transform.position);
+                    }
                     enemy.gameObject.GetComponent<HealthManager>().Damage(damage);
                 }
 
                 if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
                 {
+                    if (deflectSfx != null)
+                    {
+                        AudioSource.PlayClipAtPoint(deflectSfx, this.gameObject.transform.position);
+                    }
                     enemy.transform.position = currentPos;
                     //force.y += prevBulletTransform.rotation.eulerAngles.z;
                     enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
@@ -212,6 +222,7 @@ public class PlayerBehaviour : MonoBehaviour
         newAbilityBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
 
         nextShootTime = Time.timeSinceLevelLoad;
+        Destroy(newAbilityBullet, 5.0f);
 
     }
 
