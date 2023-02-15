@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeathEffect : MonoBehaviour
 {
     public GameObject effect;
+    public ParticleSystem particle;
     public AudioClip deathSound;
 
     // Start is called before the first frame update
@@ -29,6 +30,12 @@ public class DeathEffect : MonoBehaviour
         if (deathSound != null)
         {
             AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        }
+        if(particle != null)
+        {
+            var newParticle = Instantiate(particle, transform.position, Quaternion.identity);
+            newParticle.Play();
+            Destroy(newParticle, 2f);
         }
 
     }

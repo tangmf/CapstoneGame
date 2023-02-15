@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7189317851029517284}
   - component: {fileID: 7189317851029517283}
   - component: {fileID: 7189317851029517282}
+  - component: {fileID: 4078982005659886850}
   m_Layer: 3
   m_Name: healthPot
   m_TagString: Untagged
@@ -157,3 +158,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &4078982005659886850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7189317851029517288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c3eee69f8774349890bc690947b0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 0}
+  particle: {fileID: 624713116637075078, guid: badd578caec94764ba7ec6a02f94257f, type: 3}
+  deathSound: {fileID: 0}
