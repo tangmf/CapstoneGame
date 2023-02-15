@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 144147109, guid: 7239a5f89f0d7784a87cdae95e13da89, type: 3}
   imgModel: {fileID: 58023696, guid: 2d05c6d0d9c06754f83e21ede90dc967, type: 3}
   cost: 400
-  playerModel: {fileID: 3454301474813296991, guid: 91b3efff5cd760d44bfc2960cde88a95, type: 3}
+  playerModel: {fileID: 7398460329127032101, guid: 820ab27505499be43b77f1428a4b09a5, type: 3}
