@@ -37,7 +37,10 @@ public class Menu : MonoBehaviour
 
     public void LoadScreenByName(string sceneName)
     {
-        StartCoroutine(PlayLoadScreen(sceneName));
+        loadScreen.SetActive(true);
+        loadBar.value = 0;
+        
+        StartCoroutine(WaitBeforeLoadScreen(0.5f, sceneName));
         Time.timeScale = 1.0f;
 
 
@@ -66,16 +69,36 @@ public class Menu : MonoBehaviour
 
     IEnumerator PlayLoadScreen(string sceneName)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-        loadScreen.SetActive(true);
-        while (!operation.isDone)
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        operation.allowSceneActivation = false;
+        while (!operation.isDone) 
         {
             float progressVal = Mathf.Clamp01(operation.progress / 0.9f);
-
             loadBar.value = progressVal;
+            if(operation.progress >= 0.9f)
+            {
+                // Always wait 1 second before going next
+                yield return new WaitForSeconds(1.0f);
+                operation.allowSceneActivation = true;
+            }
+            
             yield return null;
+
         }
+        yield return new WaitForEndOfFrame();
+        yield return null;
+
+    }
+
+    IEnumerator WaitBeforeLoadScreen(float seconds, string sceneName)
+    {
+        yield return new WaitForSeconds(seconds);
+        StartCoroutine(PlayLoadScreen(sceneName));
+    }
+
+    IEnumerator WaitFor(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 
     public void Retry()
