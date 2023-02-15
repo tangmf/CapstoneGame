@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 1238409479358590877}
   - component: {fileID: 1238409479358590850}
   - component: {fileID: 6376428680071067491}
+  - component: {fileID: 8342763189335847264}
   m_Layer: 0
   m_Name: MiniBoss2
   m_TagString: Enemy
@@ -258,6 +259,8 @@ MonoBehaviour:
   enrageLevel1: 0.5
   enrageLevel2: 0
   thirdPhase: 0
+  attackRange: 3
+  meleeDmg: 10
   platformsList: []
 --- !u!114 &1238409479358590876
 MonoBehaviour:
@@ -276,6 +279,7 @@ MonoBehaviour:
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
   isBoss: 0
+  onHitParticle: {fileID: 0}
 --- !u!70 &1238409479358590877
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -326,6 +330,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 7189317851029517288, guid: fadeb40a7aaedd64886e7b9d2f6b66d0, type: 3}
+  dropchance: 0.5
+--- !u!114 &8342763189335847264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238409479358590873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c3eee69f8774349890bc690947b0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 8847189659127399039, guid: ecca68c5743ae1d48bbf03f939b118c8, type: 3}
+  deathSound: {fileID: 0}
 --- !u!1 &1238409479409179402
 GameObject:
   m_ObjectHideFlags: 0
