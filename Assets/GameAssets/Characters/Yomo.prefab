@@ -8053,7 +8053,7 @@ MonoBehaviour:
   swingForce: 1000
   meleeSfx: {fileID: 8300000, guid: 33d25467053a6174c97319a1a5184ad1, type: 3}
   meleeHitSfx: {fileID: 8300000, guid: 5d2725e94795f6b429516cfe3e03ba1a, type: 3}
-  deflectSfx: {fileID: 8300000, guid: 155c4119994f17047908af50497d4659, type: 3}
+  deflectSfx: {fileID: 8300000, guid: e868e5d1f537296458e2fd88cc0e974b, type: 3}
   abilityBullet: {fileID: 4987738559015409847, guid: 585ed2f9e0a124e40b54e8418d07f223, type: 3}
   nextShootTime: 0
   abilityCD: 5

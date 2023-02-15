@@ -55,6 +55,14 @@
             "healthPoints": 130.0,
             "score": 1280,
             "grade": 65
+        },
+        {
+            "sceneName": "L2",
+            "charName": "Yomo",
+            "winTime": 52.04988098144531,
+            "healthPoints": 74.0,
+            "score": 687,
+            "grade": 67
         }
     ]
 }
