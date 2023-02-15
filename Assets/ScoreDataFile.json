@@ -1,1 +1,76 @@
-{}
+{
+    "scoreDatas": [
+        {
+            "sceneName": "L0",
+            "charName": "Yomo",
+            "winTime": 18.979875564575197,
+            "healthPoints": 180.0,
+            "score": 1781,
+            "grade": 65
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 34.95185852050781,
+            "healthPoints": 18.0,
+            "score": 145,
+            "grade": 68
+        },
+        {
+            "sceneName": "L0",
+            "charName": "Yomo",
+            "winTime": 259.0540466308594,
+            "healthPoints": 200.0,
+            "score": 1740,
+            "grade": 65
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 26.48931312561035,
+            "healthPoints": 52.0,
+            "score": 493,
+            "grade": 67
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 35.78937911987305,
+            "healthPoints": 68.0,
+            "score": 644,
+            "grade": 67
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Cardena",
+            "winTime": 37.41397476196289,
+            "healthPoints": 120.0,
+            "score": 1162,
+            "grade": 65
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 32.782691955566409,
+            "healthPoints": 4.0,
+            "score": 100,
+            "grade": 68
+        },
+        {
+            "sceneName": "L2",
+            "charName": "Yomo",
+            "winTime": 36.74211502075195,
+            "healthPoints": 60.0,
+            "score": 563,
+            "grade": 67
+        },
+        {
+            "sceneName": "L1",
+            "charName": "Yomo",
+            "winTime": 32.33002853393555,
+            "healthPoints": 40.0,
+            "score": 367,
+            "grade": 67
+        }
+    ]
+}
