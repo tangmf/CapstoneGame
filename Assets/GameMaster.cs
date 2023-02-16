@@ -34,10 +34,13 @@ public class GameMaster : MonoBehaviour
 
     public float difficultyMultiplier = 1.0f;
     public string levelType = "Boss";
+    public GameObject upgradePopup;
+    public float upgradeCD = 60f;
+    public float nextUpgradeTime = 0f;
 
     void Start()
     {
-        
+
 
     }
 
@@ -54,6 +57,14 @@ public class GameMaster : MonoBehaviour
             GameOver("LOSE");
         }
         timer.text = ((int)(Time.timeSinceLevelLoad)).ToString();
+        if (levelType == "Survival" && !gameEnded)
+        {
+            if (Time.timeSinceLevelLoad >= nextUpgradeTime)
+            {
+                ShowUpgradeScreen();
+            }
+        }
+
 
 
 
@@ -132,11 +143,11 @@ public class GameMaster : MonoBehaviour
     {
         GameObject newGameStartScreen = Instantiate(gameStartScreen);
         yield return new WaitForSeconds(3.0f);
-        if(boss != null)
+        if (boss != null)
         {
             Instantiate(boss, bossSpawnPos.position, Quaternion.identity);
         }
-        
+
 
     }
 
@@ -172,14 +183,21 @@ public class GameMaster : MonoBehaviour
             CalculateScore();
             StartCoroutine(WrapUp(type));
         }
-        
+
 
     }
-    
+
     public void CalculateScore()
     {
-        score = (int)(winHealthPoints * 10 - winTime);
-        Debug.Log("Score: " + score.ToString());
+        if(levelType == "Boss")
+        {
+            score = (int)(winHealthPoints * 10 - winTime);
+        }
+        else if(levelType == "Survival")
+        {
+            score = (int)(winTime);
+        }
+        
     }
 
     IEnumerator WrapUp(string type)
@@ -194,41 +212,69 @@ public class GameMaster : MonoBehaviour
         Time.timeScale = 1.0f;
         GameObject newGameOverScreen = Instantiate(gameOverScreen);
         char grade = 'F';
-        if(type == "WIN")
+        if(levelType == "Boss")
         {
-            if (score >= 1900)
+            if (type == "WIN")
+            {
+                if (score >= 1900)
+                {
+                    grade = 'S';
+                }
+                else if (score >= 1000)
+                {
+                    grade = 'A';
+                }
+                else if (score >= 700)
+                {
+                    grade = 'B';
+                }
+                else if (score >= 300)
+                {
+                    grade = 'C';
+                }
+                else
+                {
+                    if (score <= 100)
+                    {
+                        score = 100;
+                    }
+                    grade = 'D';
+                }
+
+            }
+            else
+            {
+                score = 0;
+            }
+        }
+        else if(levelType == "Survival")
+        {
+            type = "WIN";
+            if (score >= 300)
             {
                 grade = 'S';
             }
-            else if (score >= 1000)
+            else if (score >= 180)
             {
                 grade = 'A';
             }
-            else if(score >= 700)
+            else if (score >= 120)
             {
                 grade = 'B';
             }
-            else if (score >= 300)
+            else if (score >= 60)
             {
                 grade = 'C';
             }
             else
             {
-                if (score <= 100)
-                {
-                    score = 100;
-                }
                 grade = 'D';
             }
-            
         }
-        else
-        {
-            score = 0;
-        }
+        
         int rewardAmt = CalculateReward(score, grade, winTime, winHealthPoints);
         pm.AddCoins(rewardAmt);
-        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type,score, grade,winTime,winHealthPoints, pm.currChar.name, rewardAmt);
+        newGameOverScreen.GetComponent<GameOverManager>().GameOver(type, score, grade, winTime, winHealthPoints, pm.currChar.name, rewardAmt);
         /*
         if (type == "LOSE")
         {
@@ -251,27 +297,43 @@ public class GameMaster : MonoBehaviour
             {
                 return 20;
             }
-            else if(grade == 'A')
+            else if (grade == 'A')
             {
                 return 8;
             }
-            else if(grade == 'B')
+            else if (grade == 'B')
             {
                 return 6;
             }
-            else if(grade == 'C')
+            else if (grade == 'C')
             {
                 return 4;
             }
-            else
+            else if (grade == 'D')
             {
                 return 2;
             }
+            else
+            {
+                return 0;
+            }
+        }
+        else if (levelType == "Survival" && difficultyMultiplier != 0)
+        {
+            return 10 * (int)winTime / 60;
         }
         else
         {
             return 0;
         }
+    }
+
+    public void ShowUpgradeScreen()
+    {
+        Instantiate(upgradePopup);
+        Time.timeScale = 0f;
+        nextUpgradeTime += upgradeCD;
+
     }
 
 

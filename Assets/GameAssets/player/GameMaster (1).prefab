@@ -220,6 +220,9 @@ MonoBehaviour:
   timer: {fileID: 4530287388597778208}
   difficultyMultiplier: 1
   levelType: Boss
+  upgradePopup: {fileID: 889992996270798620, guid: 601af05a7a0cf60438632f171292bc93, type: 3}
+  upgradeCD: 30
+  nextUpgradeTime: 10
 --- !u!1001 &6982342287735163597
 PrefabInstance:
   m_ObjectHideFlags: 0

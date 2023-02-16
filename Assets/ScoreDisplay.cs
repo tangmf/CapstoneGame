@@ -36,8 +36,15 @@ public class ScoreDisplay : MonoBehaviour
         string[] splitArray = scene.Split(char.Parse("L"));
         string newNumber = (splitArray[1]);
         Debug.Log(newNumber);
-
-        string prevSceneName = "L" + (Convert.ToInt32(newNumber)-1).ToString();
+        string prevSceneName = "L0";
+        try
+        {
+            prevSceneName = "L" + (Convert.ToInt32(newNumber) - 1).ToString();
+        }
+        catch
+        {
+            
+        }
         if(scene == "L0")
         {
             RemoveLock();
