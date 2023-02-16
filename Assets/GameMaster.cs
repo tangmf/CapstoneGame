@@ -116,6 +116,9 @@ public class GameMaster : MonoBehaviour
         lastCheckPointPos = target.position;
         Debug.Log("Spawn point set at: " + target.position.x.ToString() + "," + target.position.y.ToString());
         Instantiate(pm.currChar.playerModel, lastCheckPointPos, Quaternion.identity);
+
+        //(Add as function)
+
         player = GameObject.FindWithTag("Player");
         timer = GameObject.FindWithTag("Timer").GetComponent<TextMeshProUGUI>();
         player.transform.position = lastCheckPointPos;
