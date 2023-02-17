@@ -20,6 +20,7 @@ public class Upgrade : MonoBehaviour
     public void UpgradeHealth(int amt)
     {
         player.GetComponent<HealthManager>().healthBar.maxValue += amt;
+        player.GetComponent<HealthManager>().Heal(amt);
         Resume();
         
     }

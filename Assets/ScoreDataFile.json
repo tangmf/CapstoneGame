@@ -119,6 +119,94 @@
             "healthPoints": 0.0,
             "score": 125,
             "grade": 66
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 56.62084197998047,
+            "healthPoints": 0.0,
+            "score": 56,
+            "grade": 68
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 172.72592163085938,
+            "healthPoints": 0.0,
+            "score": 172,
+            "grade": 66
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 49.4364013671875,
+            "healthPoints": 0.0,
+            "score": 49,
+            "grade": 68
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 45.37434768676758,
+            "healthPoints": 0.0,
+            "score": 45,
+            "grade": 68
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 68.71500396728516,
+            "healthPoints": 0.0,
+            "score": 68,
+            "grade": 67
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 59.40101623535156,
+            "healthPoints": 0.0,
+            "score": 59,
+            "grade": 68
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 336.3520812988281,
+            "healthPoints": 0.0,
+            "score": 336,
+            "grade": 83
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 58.150691986083987,
+            "healthPoints": 0.0,
+            "score": 58,
+            "grade": 68
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 228.12704467773438,
+            "healthPoints": 0.0,
+            "score": 228,
+            "grade": 65
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 242.35067749023438,
+            "healthPoints": 0.0,
+            "score": 242,
+            "grade": 65
+        },
+        {
+            "sceneName": "LSurvival",
+            "charName": "Yomo",
+            "winTime": 384.48773193359377,
+            "healthPoints": 0.0,
+            "score": 384,
+            "grade": 83
         }
     ]
 }

@@ -113,7 +113,7 @@ TextureImporter:
         width: 268
         height: 198
       alignment: 9
-      pivot: {x: 0.48879224, y: 0.1055828}
+      pivot: {x: 0.49955624, y: 0.3660343}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,7 +134,7 @@ TextureImporter:
         width: 252
         height: 199
       alignment: 9
-      pivot: {x: 0.47020224, y: 0.115111694}
+      pivot: {x: 0.49253967, y: 0.3556859}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,7 +155,7 @@ TextureImporter:
         width: 253
         height: 206
       alignment: 9
-      pivot: {x: 0.5059363, y: 0.17922322}
+      pivot: {x: 0.5254524, y: 0.36022356}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,7 +176,7 @@ TextureImporter:
         width: 313
         height: 219
       alignment: 9
-      pivot: {x: 0.5239907, y: 0.12283088}
+      pivot: {x: 0.5265102, y: 0.34720698}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,12 +192,12 @@ TextureImporter:
       name: spawnling_4
       rect:
         serializedVersion: 2
-        x: 398
+        x: 396
         y: 415
         width: 348
         height: 225
       alignment: 9
-      pivot: {x: 0.50863105, y: 0.09284031}
+      pivot: {x: 0.50493616, y: 0.2687359}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
