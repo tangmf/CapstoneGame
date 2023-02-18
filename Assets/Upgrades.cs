@@ -5,7 +5,7 @@ using TMPro;
 
 public class Upgrades : MonoBehaviour
 {
-    public ProfileMaster profileMaster;
+    ProfileMaster profileMaster;
     public TextMeshProUGUI boxLevel;
     public TextMeshProUGUI boxCost;
 
@@ -20,6 +20,7 @@ public class Upgrades : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        profileMaster = GameObject.FindGameObjectWithTag("PM").GetComponent<ProfileMaster>();
         SetDisplay();
     }
 
