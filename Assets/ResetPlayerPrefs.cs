@@ -23,9 +23,6 @@ public class ResetPlayerPrefs : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
 
-        // Reset Upgrades to normal
-        ResetUpgrades();
-
         // Return to Main Menu
         menu.LoadSceneByName("MainMenu");
     }
@@ -43,20 +40,5 @@ public class ResetPlayerPrefs : MonoBehaviour
         }
 
 
-    }
-
-    void ResetUpgrades()
-    {
-        PlayerPrefs.SetInt("Damage", 10);
-        PlayerPrefs.SetInt("DamageLevel", 0);
-        PlayerPrefs.SetInt("DamageCost", 200);
-
-        PlayerPrefs.SetInt("Health", 200);
-        PlayerPrefs.SetInt("HealthLevel", 0);
-        PlayerPrefs.SetInt("HealthCost", 200);
-
-        PlayerPrefs.SetInt("Speed", 20);
-        PlayerPrefs.SetInt("SpeedLevel", 0);
-        PlayerPrefs.SetInt("SpeedCost", 200);
     }
 }

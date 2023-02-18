@@ -338,9 +338,9 @@ public class GameMaster : MonoBehaviour
 
     void SetPlayerUpgrades(GameObject player)
     {
-        player.GetComponent<PlayerBehaviour>().damage = PlayerPrefs.GetInt("Damage");
-        player.GetComponent<HealthManager>().healthPoints = PlayerPrefs.GetInt("Health");
-        player.GetComponent<PlayerMovement>().playerMoveSpeed = PlayerPrefs.GetInt("Speed");
+        player.GetComponent<PlayerBehaviour>().damage += PlayerPrefs.GetInt("Damage");
+        player.GetComponent<HealthManager>().healthPoints += PlayerPrefs.GetInt("Health");
+        player.GetComponent<PlayerMovement>().playerMoveSpeed += PlayerPrefs.GetInt("Speed");
 
         Debug.Log(player.GetComponent<PlayerBehaviour>().damage);
         Debug.Log(player.GetComponent<HealthManager>().healthPoints);

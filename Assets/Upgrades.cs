@@ -33,38 +33,35 @@ public class Upgrades : MonoBehaviour
     {
         if (isDamage)
         {
-            amount = PlayerPrefs.GetInt("Damage");
             level = PlayerPrefs.GetInt("DamageLevel");
             cost = PlayerPrefs.GetInt("DamageCost");
-            Upgrade("Damage", "DamageLevel", "DamageCost", amount, level, cost, 2);
+            Upgrade("Damage", "DamageLevel", "DamageCost", level, cost, 2);
         }
         else if (isHealth)
         {
-            amount = PlayerPrefs.GetInt("Health");
             level = PlayerPrefs.GetInt("HealthLevel");
             cost = PlayerPrefs.GetInt("HealthCost");
-            Upgrade("Health", "HealthLevel", "HealthCost", amount, level, cost, 30);
+            Upgrade("Health", "HealthLevel", "HealthCost", level, cost, 30);
         }
         else if (isSpeed)
         {
-            amount = PlayerPrefs.GetInt("Speed");
             level = PlayerPrefs.GetInt("SpeedLevel");
             cost = PlayerPrefs.GetInt("SpeedCost");
-            Upgrade("Speed", "SpeedLevel", "SpeedCost", amount, level, cost, 3);
+            Upgrade("Speed", "SpeedLevel", "SpeedCost", level, cost, 3);
         }
     }
 
-    public void Upgrade(string typeName, string typeLevel, string typeCost, int amount, int level, int cost, int increase)
+    public void Upgrade(string typeName, string typeLevel, string typeCost, int level, int cost, int increase)
     {
         if (level < 3)
         {
-            bool purchase = Purchase(cost);
+            bool purchase = Purchase(cost + 200);
 
             if (purchase)
             {
-                PlayerPrefs.SetInt(typeName, amount + increase);
+                PlayerPrefs.SetInt(typeName, increase * level);
                 PlayerPrefs.SetInt(typeLevel, level + 1);
-                PlayerPrefs.SetInt(typeCost, cost + (50 * (level + 1)));
+                PlayerPrefs.SetInt(typeCost, 50 * (level + 1));
 
                 SetDisplay();
             }
@@ -91,19 +88,19 @@ public class Upgrades : MonoBehaviour
         if (isDamage)
         {
             boxLevel.text = "Damage Level " + PlayerPrefs.GetInt("DamageLevel").ToString();
-            boxCost.text = PlayerPrefs.GetInt("DamageCost").ToString();
+            boxCost.text = (PlayerPrefs.GetInt("DamageCost") + 200).ToString();
             if (PlayerPrefs.GetInt("DamageLevel") == 3) { boxCost.text = "MAX"; gameObject.SetActive(false); }
         }
         else if (isHealth)
         {
             boxLevel.text = "Health Level " + PlayerPrefs.GetInt("HealthLevel").ToString();
-            boxCost.text = PlayerPrefs.GetInt("HealthCost").ToString();
+            boxCost.text = (PlayerPrefs.GetInt("DamageCost") + 200).ToString();
             if (PlayerPrefs.GetInt("HealthLevel") == 3) { boxCost.text = "MAX"; gameObject.SetActive(false); }
         }
         else if (isSpeed)
         {
             boxLevel.text = "Speed Level " + PlayerPrefs.GetInt("SpeedLevel").ToString();
-            boxCost.text = PlayerPrefs.GetInt("SpeedCost").ToString();
+            boxCost.text = (PlayerPrefs.GetInt("DamageCost") + 200).ToString();
             if (PlayerPrefs.GetInt("SpeedLevel") == 3) { boxCost.text = "MAX"; gameObject.SetActive(false); }
         }
     }

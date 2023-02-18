@@ -2696,6 +2696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProfileMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 4890270589587894453, guid: 04b6fcef677a582419058cb493276272, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b6fcef677a582419058cb493276272, type: 3}
 --- !u!1 &2110227361
