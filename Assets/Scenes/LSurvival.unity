@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14668242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14668244}
+  - component: {fileID: 14668243}
+  m_Layer: 0
+  m_Name: Spawner (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &14668243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14668242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2926d7871843ee7468f2eff3fc966087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSpawnTime: 3
+  spawnCD: 3
+  spawnCount: 1
+  maxSpawns: 1
+  spawnPref: {fileID: 4410306735334889408, guid: 7cba93230aadf054285ea8ac974484e3, type: 3}
+  firepoint: {fileID: 14668244}
+  scaleStrength: 1
+  hpIncrease: 0
+  hpScale: 15
+  spawnScale: 0.2
+  scaleCD: 30
+  maxSpawnScale: 0.2
+  nextScaleTime: 30
+--- !u!4 &14668244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14668242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.5, y: -7.3, z: 0.123053566}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &727621430
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,12 +209,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2926d7871843ee7468f2eff3fc966087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSpawnTime: 5
+  nextSpawnTime: 3
   spawnCD: 3
   spawnCount: 1
-  maxSpawns: 3
+  maxSpawns: 1
   spawnPref: {fileID: 7429261136346228274, guid: 8dcc1387572732e42adb67ded3108e96, type: 3}
   firepoint: {fileID: 727621433}
+  scaleStrength: 1
+  hpIncrease: 0
+  hpScale: 15
+  spawnScale: 0.2
+  scaleCD: 30
+  maxSpawnScale: 0.2
+  nextScaleTime: 30
 --- !u!4 &727621433
 Transform:
   m_ObjectHideFlags: 0
@@ -171,7 +235,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932523007
 GameObject:
@@ -319,12 +383,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2926d7871843ee7468f2eff3fc966087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSpawnTime: 5
+  nextSpawnTime: 3
   spawnCD: 3
   spawnCount: 1
-  maxSpawns: 5
-  spawnPref: {fileID: 3915833660529475769, guid: cecd31d07b9529244a3c250ed977f97d, type: 3}
+  maxSpawns: 1
+  spawnPref: {fileID: 4410306735334889408, guid: 7cba93230aadf054285ea8ac974484e3, type: 3}
   firepoint: {fileID: 1154911854}
+  scaleStrength: 1
+  hpIncrease: 0
+  hpScale: 15
+  spawnScale: 0.2
+  scaleCD: 30
+  maxSpawnScale: 0.2
+  nextScaleTime: 30
 --- !u!4 &1154911854
 Transform:
   m_ObjectHideFlags: 0
@@ -333,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154911852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.7, y: -7.3, z: 0.123053566}
+  m_LocalPosition: {x: -37, y: -7.3, z: 0.123053566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,6 +461,13 @@ MonoBehaviour:
   maxSpawns: 5
   spawnPref: {fileID: 3915833660529475769, guid: cecd31d07b9529244a3c250ed977f97d, type: 3}
   firepoint: {fileID: 1379819161}
+  scaleStrength: 0
+  hpIncrease: 0
+  hpScale: 5
+  spawnScale: 1
+  scaleCD: 30
+  maxSpawnScale: 1
+  nextScaleTime: 0
 --- !u!1 &1405788054
 GameObject:
   m_ObjectHideFlags: 0
@@ -15192,7 +15270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_LocalScale.x
@@ -15329,7 +15407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_LocalScale.x
@@ -15466,7 +15544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_LocalScale.x
@@ -15619,12 +15697,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2926d7871843ee7468f2eff3fc966087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSpawnTime: 5
+  nextSpawnTime: 3
   spawnCD: 3
   spawnCount: 1
-  maxSpawns: 3
+  maxSpawns: 1
   spawnPref: {fileID: 7429261136346228274, guid: 8dcc1387572732e42adb67ded3108e96, type: 3}
   firepoint: {fileID: 1802907178}
+  scaleStrength: 1
+  hpIncrease: 0
+  hpScale: 15
+  spawnScale: 0.2
+  scaleCD: 30
+  maxSpawnScale: 0.2
+  nextScaleTime: 30
 --- !u!4 &1802907178
 Transform:
   m_ObjectHideFlags: 0
@@ -15790,7 +15875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 253099055640947914, guid: eeeb33be3ce58e6468d6bf82d7bdf976, type: 3}
       propertyPath: m_LocalScale.x
@@ -16238,7 +16323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 889992996270798623, guid: 601af05a7a0cf60438632f171292bc93, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 889992996270798623, guid: 601af05a7a0cf60438632f171292bc93, type: 3}
       propertyPath: m_AnchorMax.x

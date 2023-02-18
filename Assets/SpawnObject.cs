@@ -6,11 +6,18 @@ public class SpawnObject : MonoBehaviour
 {
     public float nextSpawnTime = 0.0f;
     public float spawnCD = 5.0f;
-    public int spawnCount = 1;
-    public int maxSpawns = 5;
+    public float spawnCount = 1f;
+    public float maxSpawns = 5f;
     Transform container;
     public GameObject spawnPref;
     public Transform firepoint;
+    public bool scaleStrength = false;
+    public float hpIncrease = 0f;
+    public float hpScale = 5f;
+    public float spawnScale = 1;
+    public float scaleCD = 30f;
+    public float maxSpawnScale = 1;
+    public float nextScaleTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +28,25 @@ public class SpawnObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.timeSinceLevelLoad >= nextSpawnTime && CurrentSpawns() < maxSpawns )
+        if(Time.time >= nextScaleTime)
         {
-            for(int i=0; i < spawnCount; i++)
+            hpIncrease += hpScale;
+            spawnCount += spawnScale;
+            maxSpawns += maxSpawnScale;
+            nextScaleTime += scaleCD;
+
+            if(spawnCount >= 3)
+            {
+                spawnCount = 3;
+            }
+            if(maxSpawns >= 6)
+            {
+                maxSpawns = 6;
+            }
+        }
+        if(Time.timeSinceLevelLoad >= nextSpawnTime && CurrentSpawns() < (int)maxSpawns )
+        {
+            for(int i=0; i < (int)spawnCount; i++)
             {
                 SpawnNow();
             }
@@ -36,6 +59,16 @@ public class SpawnObject : MonoBehaviour
     {
         GameObject newSpawn = Instantiate(spawnPref, firepoint.position, firepoint.rotation);
         newSpawn.transform.parent = container;
+        if (scaleStrength == true)
+        {
+            if (newSpawn.GetComponent<HealthManager>() != null)
+            {
+                newSpawn.GetComponent<HealthManager>().healthPoints += hpIncrease;
+                newSpawn.GetComponent<HealthManager>().MaxHealth();
+                Debug.Log("Updated hp");
+            } 
+        }
+        
         
     }
 

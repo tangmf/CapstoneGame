@@ -21,7 +21,7 @@ public class DropItem : MonoBehaviour
     void OnDestroy()
     {
         if (!this.gameObject.scene.isLoaded) return;
-        if(Random.Range(0.0f, 1.0f) > dropchance)
+        if(Random.Range(0.0f, 1.0f) < dropchance)
         {
             Instantiate(item, transform.position, transform.rotation);
         }

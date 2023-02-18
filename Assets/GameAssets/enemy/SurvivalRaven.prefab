@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 6135068437252422027}
   - component: {fileID: 6829830703944567410}
   m_Layer: 0
-  m_Name: MiniRaven
+  m_Name: SurvivalRaven
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7429261136346228276}
-  eyeBulletPrefab: {fileID: 99147296068487311, guid: 84e6b584ffccd7a4ea577920954d7fd6, type: 3}
+  eyeBulletPrefab: {fileID: 99147296068487311, guid: 4809f5e08d0451a429ba01c733893215, type: 3}
   firePoint: {fileID: 7429261136698489477}
   lowFirePoint: {fileID: 0}
   highFirePoint: {fileID: 0}
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 5115219943224621968}
-  healthPoints: 40
+  healthPoints: 20
   dead: 0
   hitSfx: {fileID: 8300000, guid: c7585500d5c600842b3fc35eb22736ef, type: 3}
   deathSfx: {fileID: 8300000, guid: 3cc2812664f769349910c6f18dd2edc4, type: 3}
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 7189317851029517288, guid: fadeb40a7aaedd64886e7b9d2f6b66d0, type: 3}
-  dropchance: 0.5
+  dropchance: 0.3
 --- !u!1 &7429261136698489476
 GameObject:
   m_ObjectHideFlags: 0
