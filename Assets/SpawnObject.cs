@@ -28,7 +28,7 @@ public class SpawnObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time >= nextScaleTime)
+        if(Time.timeSinceLevelLoad >= nextScaleTime)
         {
             hpIncrease += hpScale;
             spawnCount += spawnScale;
