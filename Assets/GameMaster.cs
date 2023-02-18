@@ -19,6 +19,8 @@ public class GameMaster : MonoBehaviour
     public GameObject boss;
     public Transform bossSpawnPos;
 
+    GameObject instantiatedPlayer;
+
     public bool gameEnded;
 
     public GameObject gameStartScreen;
@@ -40,8 +42,7 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
-
-
+        
     }
 
     // Update is called once per frame
@@ -116,14 +117,10 @@ public class GameMaster : MonoBehaviour
         lastCheckPointPos = target.position;
         Debug.Log("Spawn point set at: " + target.position.x.ToString() + "," + target.position.y.ToString());
         Instantiate(pm.currChar.playerModel, lastCheckPointPos, Quaternion.identity);
-
-        //(Add as function)
-
         player = GameObject.FindWithTag("Player");
         timer = GameObject.FindWithTag("Timer").GetComponent<TextMeshProUGUI>();
         player.transform.position = lastCheckPointPos;
-
-
+        SetPlayerUpgrades(player);
     }
 
     public void WaitForRespawn()
@@ -339,5 +336,14 @@ public class GameMaster : MonoBehaviour
 
     }
 
+    void SetPlayerUpgrades(GameObject player)
+    {
+        player.GetComponent<PlayerBehaviour>().damage = PlayerPrefs.GetInt("Damage");
+        player.GetComponent<HealthManager>().healthPoints = PlayerPrefs.GetInt("Health");
+        player.GetComponent<PlayerMovement>().playerMoveSpeed = PlayerPrefs.GetInt("Speed");
 
+        Debug.Log(player.GetComponent<PlayerBehaviour>().damage);
+        Debug.Log(player.GetComponent<HealthManager>().healthPoints);
+        Debug.Log(player.GetComponent<PlayerMovement>().playerMoveSpeed);
+    }
 }

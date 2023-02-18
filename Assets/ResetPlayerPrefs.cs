@@ -5,6 +5,8 @@ using System.IO;
 
 public class ResetPlayerPrefs : MonoBehaviour
 {
+    public Menu menu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,12 @@ public class ResetPlayerPrefs : MonoBehaviour
     public void Reset()
     {
         PlayerPrefs.DeleteAll();
+
+        // Reset Upgrades to normal
+        ResetUpgrades();
+
+        // Return to Main Menu
+        menu.LoadSceneByName("MainMenu");
     }
 
     public void ResetScores()
@@ -35,5 +43,20 @@ public class ResetPlayerPrefs : MonoBehaviour
         }
 
 
+    }
+
+    void ResetUpgrades()
+    {
+        PlayerPrefs.SetInt("Damage", 10);
+        PlayerPrefs.SetInt("DamageLevel", 0);
+        PlayerPrefs.SetInt("DamageCost", 200);
+
+        PlayerPrefs.SetInt("Health", 200);
+        PlayerPrefs.SetInt("HealthLevel", 0);
+        PlayerPrefs.SetInt("HealthCost", 200);
+
+        PlayerPrefs.SetInt("Speed", 20);
+        PlayerPrefs.SetInt("SpeedLevel", 0);
+        PlayerPrefs.SetInt("SpeedCost", 200);
     }
 }

@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Upgrades : MonoBehaviour
 {
-    ProfileMaster profileMaster;
+    public ProfileMaster profileMaster;
+    public TextMeshProUGUI boxLevel;
+    public TextMeshProUGUI boxCost;
 
-    public int damageCost;
-    public int healthCost;
-    public int speedCost;
+    public int amount;
+    public int cost;
+    public int level;
 
-    public int damageLevel;
-    public int healthLevel;
-    public int speedLevel;
+    public bool isDamage;
+    public bool isHealth;
+    public bool isSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetDisplay();
     }
 
     // Update is called once per frame
@@ -26,50 +29,44 @@ public class Upgrades : MonoBehaviour
         
     }
 
-    void UpgradeDamage()
+    public void buttonClicked()
     {
-        bool purchase = Purchase(damageCost);
-
-        if (purchase)
+        if (isDamage)
         {
-            if (damageLevel <= 3)
-            {
-                int damage = PlayerPrefs.GetInt("Damage");
-
-                PlayerPrefs.SetInt("Damage", damage * (1/5));
-                damageCost = damageCost * 1/3;
-            }
+            amount = PlayerPrefs.GetInt("Damage");
+            level = PlayerPrefs.GetInt("DamageLevel");
+            cost = PlayerPrefs.GetInt("DamageCost");
+            Upgrade("Damage", "DamageLevel", "DamageCost", amount, level, cost, 2);
+        }
+        else if (isHealth)
+        {
+            amount = PlayerPrefs.GetInt("Health");
+            level = PlayerPrefs.GetInt("HealthLevel");
+            cost = PlayerPrefs.GetInt("HealthCost");
+            Upgrade("Health", "HealthLevel", "HealthCost", amount, level, cost, 30);
+        }
+        else if (isSpeed)
+        {
+            amount = PlayerPrefs.GetInt("Speed");
+            level = PlayerPrefs.GetInt("SpeedLevel");
+            cost = PlayerPrefs.GetInt("SpeedCost");
+            Upgrade("Speed", "SpeedLevel", "SpeedCost", amount, level, cost, 3);
         }
     }
 
-    void UpgradeHealth()
+    public void Upgrade(string typeName, string typeLevel, string typeCost, int amount, int level, int cost, int increase)
     {
-        bool purchase = Purchase(healthCost);
-
-        if (purchase)
+        if (level < 3)
         {
-            if (healthLevel <= 3)
+            bool purchase = Purchase(cost);
+
+            if (purchase)
             {
-                int health = PlayerPrefs.GetInt("Health");
+                PlayerPrefs.SetInt(typeName, amount + increase);
+                PlayerPrefs.SetInt(typeLevel, level + 1);
+                PlayerPrefs.SetInt(typeCost, cost + (50 * (level + 1)));
 
-                PlayerPrefs.SetInt("Health", health * 1/5);
-                healthCost = healthCost * 1/3;
-            }
-        }
-    }
-
-    void UpgradeSpeed()
-    {
-        bool purchase = Purchase(speedCost);
-
-        if (purchase)
-        {
-            if (speedLevel <= 3)
-            {
-                int speed = PlayerPrefs.GetInt("Speed");
-
-                PlayerPrefs.SetInt("Speed", speed * 1 / 5);
-                speedCost = speedCost * 1 / 3;
+                SetDisplay();
             }
         }
     }
@@ -86,6 +83,28 @@ public class Upgrades : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    void SetDisplay()
+    {
+        if (isDamage)
+        {
+            boxLevel.text = "Damage Level " + PlayerPrefs.GetInt("DamageLevel").ToString();
+            boxCost.text = PlayerPrefs.GetInt("DamageCost").ToString();
+            if (PlayerPrefs.GetInt("DamageLevel") == 3) { boxCost.text = "MAX"; gameObject.SetActive(false); }
+        }
+        else if (isHealth)
+        {
+            boxLevel.text = "Health Level " + PlayerPrefs.GetInt("HealthLevel").ToString();
+            boxCost.text = PlayerPrefs.GetInt("HealthCost").ToString();
+            if (PlayerPrefs.GetInt("HealthLevel") == 3) { boxCost.text = "MAX"; gameObject.SetActive(false); }
+        }
+        else if (isSpeed)
+        {
+            boxLevel.text = "Speed Level " + PlayerPrefs.GetInt("SpeedLevel").ToString();
+            boxCost.text = PlayerPrefs.GetInt("SpeedCost").ToString();
+            if (PlayerPrefs.GetInt("SpeedLevel") == 3) { boxCost.text = "MAX"; gameObject.SetActive(false); }
         }
     }
 }
