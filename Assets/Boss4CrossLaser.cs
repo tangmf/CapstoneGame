@@ -122,6 +122,6 @@ public class Boss4CrossLaser : MonoBehaviour
 
     public void Rotate()
     {
-        boss4CrossLaserRotation.transform.Rotate(new Vector3(0, 0, 0.20f));
+        boss4CrossLaserRotation.transform.Rotate(new Vector3(0, 0, 20f) * Time.deltaTime);
     }
 }
