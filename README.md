@@ -1,4 +1,6 @@
 # CapstoneGame
 
-# Features still in development:
-Character variety  (currently just recolors of the same character)
+## Features still in development:
+Character selection: Currently, the other characters are just recolors of the same character, and the character select UI is not refined yet.
+Character upgrade: Currently, character upgrading works but is just a temporary solution that we will change when the other characters are implemented.
+Coin system is already developed but just note that the add/remove coins buttons on the profile bar are temporary and just debug tools.
