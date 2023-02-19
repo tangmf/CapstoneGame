@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3889b7ef8d818b940a6fd01e577231b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuSong: {fileID: 8300000, guid: e508127786ff89548a3404b781bf0e79, type: 3}
+  gameSong: {fileID: 8300000, guid: fd7203ed9d326d6498d6cf40495207c4, type: 3}
 --- !u!82 &1640155140936006922
 AudioSource:
   m_ObjectHideFlags: 0

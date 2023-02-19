@@ -8,6 +8,9 @@ public class AudioPlayer : MonoBehaviour
     AudioSource audioSource;
     private static AudioPlayer instance;
 
+    public AudioClip menuSong;
+    public AudioClip gameSong;
+
     Scene firstScene;
     Scene newScene;
 
@@ -37,9 +40,14 @@ public class AudioPlayer : MonoBehaviour
         newScene = SceneManager.GetActiveScene();
         if(newScene.name[0] == 'L' && newScene.name != "LevelSelect")
         {
-            audioSource.Stop();
+            audioSource.clip = gameSong;
         }
-        else if(!audioSource.isPlaying)
+        else
+        {
+            audioSource.clip = menuSong;
+        }
+
+        if(!audioSource.isPlaying)
         {
             audioSource.Play();
         }

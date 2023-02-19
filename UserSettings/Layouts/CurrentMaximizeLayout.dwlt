@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 21841
+  controlID: 26766
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 48.399994}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e63ff9ff9e41f9fff0d3f9fff4e6f9ffce06faff9601fcffa603fcff0e1dfcff0621fcff6e21fcff1623fcffccb1fcffe2b1fcffe4b1fcfff4b5fcffe0d5fcff16d7fcff1ad8fcff68d8fcff382dffff7c2effff822effff0c2fffff7032ffff1a3dffffae41ffff2e90ffff2e91ffff7c91ffff0692ffff6a95ffffc0d0ffffe8f2ffffcce6000002e7000036e700004ae7000066e70000fa050100300601006406010078060100ceea0100d2ea0100eeea010034eb0100eaeb01000c4f0200
+      m_ExpandedIDs: de36f8ff3a43f8ff96c9f8ff9e41f9fff0d3f9fff4e6f9ffce06faff9601fcffa603fcff0e1dfcff0621fcff6e21fcff1623fcffccb1fcffe2b1fcffe4b1fcfff4b5fcffe0d5fcff16d7fcff1ad8fcff68d8fcff382dffff7c2effff822effff0c2fffff7032ffff1a3dffffae41ffff2e90ffff2e91ffff7c91ffff0692ffff6a95ffffc0d0ffffe8f2ffffcce6000002e7000036e700004ae7000066e70000fa050100300601006406010078060100ceea0100d2ea0100eeea010034eb0100eaeb01000c4f0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 830.4
     height: 249.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -332,7 +332,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 24.8}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -376,9 +376,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: -179.2}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 2
+      snapCorner: 0
       id: unity-transform-toolbar
       index: 0
       layout: 2
@@ -524,9 +524,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 310.13388, y: 92.28543, z: -0.46388653}
+    m_Target: {x: 251.95482, y: 227.31966, z: -0.10478179}
     speed: 2
-    m_Value: {x: 310.13388, y: 92.28543, z: -0.46388653}
+    m_Value: {x: 251.95482, y: 227.31966, z: -0.10478179}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -577,9 +577,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 91.976715
+    m_Target: 182.90701
     speed: 2
-    m_Value: 91.976715
+    m_Value: 182.90701
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -684,7 +684,7 @@ MonoBehaviour:
   - {fileID: 13}
   - {fileID: 2}
   m_Selected: 2
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -714,7 +714,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: yomo
+    m_NameFilter: level
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -726,21 +726,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/UI
+    - Assets
     m_Globs: []
-    m_OriginalText: yomo
+    m_OriginalText: level
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/UI
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\derps\Documents\GitHub\CapstoneGame\CapstoneGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 566f0000
-    m_LastClickedID: 28502
+    m_SelectedIDs: 526f0000
+    m_LastClickedID: 28498
     m_ExpandedIDs: 00000000526f0000546f0000566f0000586f00005a6f00005c6f00005e6f0000606f0000626f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -872,8 +872,8 @@ MonoBehaviour:
     y: 0
     width: 512
     height: 473.19998
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -910,7 +910,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 156672
+  m_LastSelectedObjectID: 178488
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
