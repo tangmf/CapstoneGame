@@ -1,1 +1,28 @@
-{}
+{
+    "scoreDatas": [
+        {
+            "sceneName": "L0",
+            "charName": "Yomo",
+            "winTime": 19.22514533996582,
+            "healthPoints": 180.0,
+            "score": 1780,
+            "grade": 65
+        },
+        {
+            "sceneName": "L2",
+            "charName": "Yomo",
+            "winTime": 40.95016860961914,
+            "healthPoints": 104.0,
+            "score": 999,
+            "grade": 66
+        },
+        {
+            "sceneName": "L3",
+            "charName": "Yomo",
+            "winTime": 45.32994079589844,
+            "healthPoints": 110.0,
+            "score": 1054,
+            "grade": 65
+        }
+    ]
+}
