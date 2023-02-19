@@ -45,7 +45,7 @@ public class ScoreDisplay : MonoBehaviour
         {
             
         }
-        if(scene == "L0")
+        if(scene == "L0" )
         {
             RemoveLock();
         }

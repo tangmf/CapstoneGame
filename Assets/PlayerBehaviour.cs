@@ -95,7 +95,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (nextShootTime + abilityCD < Time.timeSinceLevelLoad)
             {
-                //animator.SetTrigger("Attack");
+                animator.SetTrigger("Attack");
                 Ability1();
             }
 
