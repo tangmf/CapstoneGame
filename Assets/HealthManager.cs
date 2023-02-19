@@ -135,7 +135,8 @@ public class HealthManager : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             Debug.Log(gameObject.ToString() + " has been killed");
             gm.GameOver("LOSE");
-            gm.WaitForRespawn();
+
+            //gm.WaitForRespawn();
         }
         else if(gameObject.CompareTag("Enemy") &&   isBoss)
         {
