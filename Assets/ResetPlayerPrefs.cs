@@ -6,11 +6,11 @@ using System.IO;
 public class ResetPlayerPrefs : MonoBehaviour
 {
     public Menu menu;
-
+    ProfileMaster pm;
     // Start is called before the first frame update
     void Start()
     {
-
+        pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
     }
 
     // Update is called once per frame
@@ -22,6 +22,9 @@ public class ResetPlayerPrefs : MonoBehaviour
     public void Reset()
     {
         PlayerPrefs.DeleteAll();
+        ResetScores();
+
+        pm.UpdateProfile();
 
         // Return to Main Menu
         menu.LoadSceneByName("MainMenu");
