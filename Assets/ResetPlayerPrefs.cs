@@ -26,8 +26,6 @@ public class ResetPlayerPrefs : MonoBehaviour
 
         pm.UpdateProfile();
 
-        // Return to Main Menu
-        menu.LoadSceneByName("MainMenu");
     }
 
     public void ResetScores()

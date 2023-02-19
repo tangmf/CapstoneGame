@@ -13,6 +13,10 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+            SetVolume();
+    }
+    public void SetVolume()
+    {
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
             PlayerPrefs.SetFloat("musicVolume", 1);
