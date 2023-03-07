@@ -9,6 +9,7 @@ using TMPro;
 public class ScoreDisplay : MonoBehaviour
 {
     public TextMeshProUGUI grade;
+    public Image img;
     public SceneItem sceneItem;
     Menu m;
     public GameObject lockObject;
@@ -100,6 +101,10 @@ public class ScoreDisplay : MonoBehaviour
     {
         sceneItem = si;
         levelText.text = si.name;
+        if(si.type == "Survival")
+        {
+            img.sprite = Resources.Load<Sprite>("Images/survivalIcon");
+        }
     }
 
     public void StartLevel()
