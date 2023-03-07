@@ -1209,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712373680533753669, guid: 04b6fcef677a582419058cb493276272, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 712373680533753669, guid: 04b6fcef677a582419058cb493276272, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1318,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 1867715080}
     - target: {fileID: 2746614772552597041, guid: 3c256ffccbf7ab84e98a236debccdaf1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2746614772552597041, guid: 3c256ffccbf7ab84e98a236debccdaf1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23016,7 +23016,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1923773054
 GameObject:
