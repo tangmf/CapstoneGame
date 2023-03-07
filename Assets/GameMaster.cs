@@ -42,21 +42,7 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
-        pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
-        if (pm != null)
-        {
-            Debug.Log("PM OK");
-        }
-        else
-        {
-            Debug.Log("PM ERROR");
-        }
-        if (GameObject.FindGameObjectWithTag("WorldSpawn") != null)
-        {
-            transform.position = new Vector3(0, 0, 0);
-            Respawn();
-            StartCoroutine(GameStart());
-        }
+        
     }
 
     // Update is called once per frame
@@ -99,7 +85,21 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
         */
-        
+        pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
+        if (pm != null)
+        {
+            Debug.Log("PM OK");
+        }
+        else
+        {
+            Debug.Log("PM ERROR");
+        }
+        if (GameObject.FindGameObjectWithTag("WorldSpawn") != null)
+        {
+            transform.position = new Vector3(0, 0, 0);
+            Respawn();
+            StartCoroutine(GameStart());
+        }
 
     }
 
