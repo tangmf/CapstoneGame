@@ -13,6 +13,8 @@ TagManager:
   - Bullet
   - PM
   - Timer
+  - Menu
+  - Scoreboard
   layers:
   - Default
   - TransparentFX

@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 9034356539144613075}
   - component: {fileID: 1914077779457023924}
   - component: {fileID: 1203836595238131290}
+  - component: {fileID: 5019317487999708410}
   m_Layer: 5
   m_Name: LevelContainer
   m_TagString: Untagged
@@ -736,10 +737,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grade: {fileID: 5932889931123013232}
-  scene: 
+  sceneItem: {fileID: 0}
   lockObject: {fileID: 1868762795092642481}
   scoreBoard: {fileID: 0}
   levelText: {fileID: 4159573175189091635}
+--- !u!114 &5019317487999708410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9034356539144613074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 300
+  m_PreferredHeight: 100
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &9034356539694462127
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +943,18 @@ PrefabInstance:
     - target: {fileID: 5350108302789216605, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350108302789216606, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1203836595238131290}
+    - target: {fileID: 5350108302789216606, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350108302789216606, guid: ac75931c043178d419d0165173d1fcc4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScoreDisplay, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac75931c043178d419d0165173d1fcc4, type: 3}

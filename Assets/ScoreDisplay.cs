@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 using TMPro;
 
 public class ScoreDisplay : MonoBehaviour
 {
     public TextMeshProUGUI grade;
-    public string scene;
+    public SceneItem sceneItem;
+    Menu m;
     public GameObject lockObject;
     public GameObject scoreBoard;
     public TextMeshProUGUI levelText;
@@ -17,7 +19,9 @@ public class ScoreDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreBoard.SetActive(false);
+        m = GameObject.FindWithTag("Menu").GetComponent<Menu>();
+        scoreBoard = GameObject.FindWithTag("Scoreboard");
+        scoreBoard.transform.GetChild(0).gameObject.SetActive(false);
         LoadFromJson();
     }
 
@@ -29,6 +33,7 @@ public class ScoreDisplay : MonoBehaviour
 
     public void LoadFromJson()
     {
+        var scene = sceneItem.scene;
         string json = File.ReadAllText(Application.dataPath + "/ScoreDataFile.json");
         datas = JsonUtility.FromJson<ScoreDataList>(json);
         ScoreData highScore = null;
@@ -74,7 +79,6 @@ public class ScoreDisplay : MonoBehaviour
         }
         if(highScore != null)
         {
-            Debug.Log(highScore.score);
             grade.text = highScore.grade.ToString();
             RemoveLock();
         }
@@ -88,7 +92,18 @@ public class ScoreDisplay : MonoBehaviour
 
     public void ShowScoreBoard()
     {
-        scoreBoard.SetActive(true);
-        scoreBoard.GetComponent<ScoreBoardManager>().ShowScores(levelText.text, datas, scene);
+        scoreBoard.transform.GetChild(0).gameObject.SetActive(true);
+        scoreBoard.GetComponent<ScoreBoardManager>().ShowScores(levelText.text, datas, sceneItem.scene);
+    }
+
+    public void SetUp(SceneItem si)
+    {
+        sceneItem = si;
+        levelText.text = si.name;
+    }
+
+    public void StartLevel()
+    {
+        m.LoadScreenByName(sceneItem.scene);
     }
 }
