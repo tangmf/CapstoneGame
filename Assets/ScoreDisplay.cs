@@ -23,7 +23,7 @@ public class ScoreDisplay : MonoBehaviour
         m = GameObject.FindWithTag("Menu").GetComponent<Menu>();
         scoreBoard = GameObject.FindWithTag("Scoreboard");
         scoreBoard.transform.GetChild(0).gameObject.SetActive(false);
-        LoadFromJson();
+        
     }
 
     // Update is called once per frame
@@ -105,6 +105,7 @@ public class ScoreDisplay : MonoBehaviour
         {
             img.sprite = Resources.Load<Sprite>("Images/survivalIcon");
         }
+        LoadFromJson();
     }
 
     public void StartLevel()
