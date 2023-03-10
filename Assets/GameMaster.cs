@@ -72,36 +72,7 @@ public class GameMaster : MonoBehaviour
 
     }
 
-    void Awake()
-    {
-        /*
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-        */
-        pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
-        if (pm != null)
-        {
-            Debug.Log("PM OK");
-        }
-        else
-        {
-            Debug.Log("PM ERROR");
-        }
-        if (GameObject.FindGameObjectWithTag("WorldSpawn") != null)
-        {
-            transform.position = new Vector3(0, 0, 0);
-            Respawn();
-            StartCoroutine(GameStart());
-        }
-
-    }
+    
 
     // used by pause menu
     public void LoadSceneByName(string sceneName)
@@ -154,7 +125,24 @@ public class GameMaster : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("GM Setup");
         SceneManager.sceneLoaded += SceneLoaded; //You add your method to the delegate
+
+        pm = GameObject.FindWithTag("PM").GetComponent<ProfileMaster>();
+        if (pm != null)
+        {
+            Debug.Log("PM OK");
+        }
+        else
+        {
+            Debug.Log("PM ERROR");
+        }
+        if (GameObject.FindGameObjectWithTag("WorldSpawn") != null)
+        {
+            transform.position = new Vector3(0, 0, 0);
+            Respawn();
+            StartCoroutine(GameStart());
+        }
     }
 
     private void OnDisable()

@@ -47,6 +47,7 @@ public class ProfileMaster : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("PM Setup");
         if (instance == null)
         {
             instance = this;
