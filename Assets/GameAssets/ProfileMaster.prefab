@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 712373680533753671}
   - component: {fileID: 712373680533753674}
   - component: {fileID: 712373680533753675}
+  - component: {fileID: 6734585987179618233}
   m_Layer: 0
   m_Name: ProfileMaster
   m_TagString: PM
@@ -200,6 +201,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6734585987179618233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712373680533753670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58b59f5fc8a93548bfa1ee4e14f7f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 6becab435930ab14cb2af7d81c0beedc, type: 2}
 --- !u!1 &712373681632810466
 GameObject:
   m_ObjectHideFlags: 0
