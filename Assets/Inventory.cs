@@ -21,18 +21,23 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
+    public GameObject inventory;
+
     public List<Item> items = new List<Item>();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventory.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("i"))
+        {
+            ToggleInventory();
+        }
     }
 
     public void Add(Item item)
@@ -53,6 +58,18 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
+        }
+    }
+
+    public void ToggleInventory()
+    {
+        if (inventory.activeSelf)
+        {
+            inventory.SetActive(false);
+        }
+        else
+        {
+            inventory.SetActive(true);
         }
     }
 }
