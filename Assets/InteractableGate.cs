@@ -8,10 +8,10 @@ public class InteractableGate : Interactable
 {
     public Transform point;
 
-    public override void Interact()
+    public override void Interact(GameObject go)
     {
-        base.Interact();
-        base.player.transform.position = point.position;
+        base.Interact(go);
+        go.transform.position = point.position;
 
     }
 }

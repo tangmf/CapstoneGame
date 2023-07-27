@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class InteractableButton : Interactable
 {
 
-    public override void Interact()
+    public override void Interact(GameObject go)
     {
-        base.Interact();
+        base.Interact(go);
         this.GetComponent<Button>().onClick.Invoke();
 
     }

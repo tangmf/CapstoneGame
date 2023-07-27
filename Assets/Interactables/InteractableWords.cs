@@ -13,9 +13,9 @@ public class InteractableWords : Interactable
 
     private GameObject tempTextBox;
 
-    public override void Interact()
+    public override void Interact(GameObject go)
     {
-        base.Interact();
+        base.Interact(go);
         if (!tempTextBox)
         {
             tempTextBox = Instantiate(textPrefab, this.transform.position, this.transform.rotation);

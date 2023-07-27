@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
         // Detect when the E arrow key is pressed down
         if (isInArea && Input.GetKeyDown(KeyCode.E) && (totalAllowedTimes == -1 || (totalAllowedTimes != -1 && timesInteracted < totalAllowedTimes)))
         {
-            Interact();
+            Interact(player);
             timesInteracted++;
         }
     }
@@ -59,6 +59,7 @@ public class Interactable : MonoBehaviour
             //     }
             // }
         }
+        else { }
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -74,9 +75,9 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public virtual void Interact()
+    public virtual void Interact(GameObject go)
     {
         // Overwrite
-        Debug.Log("Interacting with " + transform.name);
+        Debug.Log("Interacting with " + transform.name + " as " + go.transform.name);
     }
 }

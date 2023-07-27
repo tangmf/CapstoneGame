@@ -9,9 +9,9 @@ public class InteractableItem : Interactable
     [SerializeField]
     Item item;
 
-    public override void Interact()
+    public override void Interact(GameObject go)
     {
-        base.Interact();
+        base.Interact(go);
         if (item)
         {
             PickUp();
