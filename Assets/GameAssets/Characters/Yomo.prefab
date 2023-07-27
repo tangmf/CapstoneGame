@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9028bc77e027454fa0763e851ba7f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 0}
+  volumeSlider: {fileID: 5540659790956612373}
 --- !u!1 &1093589371160759773
 GameObject:
   m_ObjectHideFlags: 0
@@ -8451,6 +8451,8 @@ MonoBehaviour:
   abilityCDImage: {fileID: 7428956662948361299}
   abilityCDText: {fileID: 6125254435221102263}
   animator: {fileID: 0}
+  bulletPref: {fileID: 0}
+  melee: 1
   lockDirection: 0
 --- !u!1 &6910647501502504307
 GameObject:

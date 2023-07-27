@@ -36,19 +36,19 @@ public class Upgrades : MonoBehaviour
         {
             level = PlayerPrefs.GetInt("DamageLevel");
             cost = PlayerPrefs.GetInt("DamageCost");
-            Upgrade("Damage", "DamageLevel", "DamageCost", level, cost, 2);
+            Upgrade("Damage", "DamageLevel", "DamageCost", level, cost, 5);
         }
         else if (isHealth)
         {
             level = PlayerPrefs.GetInt("HealthLevel");
             cost = PlayerPrefs.GetInt("HealthCost");
-            Upgrade("Health", "HealthLevel", "HealthCost", level, cost, 30);
+            Upgrade("Health", "HealthLevel", "HealthCost", level, cost, 50);
         }
         else if (isSpeed)
         {
             level = PlayerPrefs.GetInt("SpeedLevel");
             cost = PlayerPrefs.GetInt("SpeedCost");
-            Upgrade("Speed", "SpeedLevel", "SpeedCost", level, cost, 3);
+            Upgrade("Speed", "SpeedLevel", "SpeedCost", level, cost, 5);
         }
     }
 

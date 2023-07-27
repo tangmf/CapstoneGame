@@ -38,6 +38,8 @@ public class PlayerBehaviour : MonoBehaviour
     float normalSpeed;
     float newSpeed;
 
+    public GameObject bulletPref;
+    public bool melee = true;
     public bool lockDirection = false;
 
     // Start is called before the first frame update
@@ -82,7 +84,7 @@ public class PlayerBehaviour : MonoBehaviour
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
         pivot.rotation = Quaternion.Euler(0f, 0f, rotation);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButton("Fire1"))
         {
             if (attackTime + cooldown < Time.time)
             {
@@ -121,7 +123,7 @@ public class PlayerBehaviour : MonoBehaviour
         LockDirection();
     }
 
-    public void MeleeAttack()
+    public void ShootAttack()
     {
         rb.AddForce(transform.right * swingForce, ForceMode2D.Force);
         if (meleeSfx != null)
@@ -139,58 +141,98 @@ public class PlayerBehaviour : MonoBehaviour
         Debug.Log("POS2" + firePoint.position.x + " , " + firePoint.position.y);
         float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(currentPos, attackRange);
-        foreach (Collider2D enemy in hitEnemies)
-        {
-
-            /*
-            if (!enemy.CompareTag("Player") && enemy.gameObject.GetComponent<Rigidbody2D>())
-            {
-                enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 10.0f, ForceMode2D.Impulse);
-
-                //Destroy(enemy.gameObject);
-            }
-            */
-            if (!enemy.CompareTag("Player") && !enemy.CompareTag("Ground"))
-            {
-                Debug.Log("MELEE HIT: " + enemy.gameObject.ToString());
-                if (enemy.gameObject.GetComponent<HealthManager>())
-                {
-                    if (meleeHitSfx != null)
-                    {
-                        AudioSource.PlayClipAtPoint(meleeHitSfx, this.gameObject.transform.position);
-                    }
-                    enemy.gameObject.GetComponent<HealthManager>().Damage(damage);
-                }
-
-                if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
-                {
-                    if (deflectSfx != null)
-                    {
-                        AudioSource.PlayClipAtPoint(deflectSfx, this.gameObject.transform.position);
-                    }
-                    enemy.transform.position = currentPos;
-                    //force.y += prevBulletTransform.rotation.eulerAngles.z;
-                    enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
-                    //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
-                    enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
-                    enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
-                    enemy.gameObject.GetComponent<BulletBehaviour>().damageTag = "Enemy";
-                }
-
-                if (enemy.gameObject.GetComponent<Rigidbody2D>() && !enemy.gameObject.GetComponent<BulletBehaviour>())
-                {
-
-                    enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 50.0f, ForceMode2D.Impulse);
-                }
-            }
 
 
+        // Create Bullet
+        GameObject newBullet = Instantiate(bulletPref, firePoint.position, Quaternion.Euler(0f, 0f, rotation));
+        newBullet.GetComponent<BulletBehaviour>().SetForce(force);
+        newBullet.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+        newBullet.GetComponent<BulletBehaviour>().damageTag = "Enemy";
 
-        }
+        attackTime = Time.timeSinceLevelLoad;
+        Destroy(newBullet, 5.0f);
 
-        attackTime = Time.time;
         animator.ResetTrigger("Attack");
+    }
+
+    public void MeleeAttack()
+    {
+        if (melee)
+        {
+            rb.AddForce(transform.right * swingForce, ForceMode2D.Force);
+            if (meleeSfx != null)
+            {
+                AudioSource.PlayClipAtPoint(meleeSfx, this.gameObject.transform.position);
+            }
+
+
+
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 currentPos = firePoint.position;
+
+            Vector2 force = (mousePos - currentPos).normalized;
+
+            Debug.Log("POS2" + firePoint.position.x + " , " + firePoint.position.y);
+            float rotation = Mathf.Atan2(force.y, force.x) * Mathf.Rad2Deg;
+
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(currentPos, attackRange);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+
+                /*
+                if (!enemy.CompareTag("Player") && enemy.gameObject.GetComponent<Rigidbody2D>())
+                {
+                    enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 10.0f, ForceMode2D.Impulse);
+
+                    //Destroy(enemy.gameObject);
+                }
+                */
+                if (!enemy.CompareTag("Player"))
+                {
+                    Debug.Log("MELEE HIT: " + enemy.gameObject.ToString());
+                    if (enemy.gameObject.GetComponent<HealthManager>())
+                    {
+                        if (meleeHitSfx != null)
+                        {
+                            AudioSource.PlayClipAtPoint(meleeHitSfx, this.gameObject.transform.position);
+                        }
+                        enemy.gameObject.GetComponent<HealthManager>().Damage(damage);
+                    }
+
+                    if (enemy.gameObject.GetComponent<BulletBehaviour>() && enemy.gameObject.GetComponent<Rigidbody2D>())
+                    {
+                        if (deflectSfx != null)
+                        {
+                            AudioSource.PlayClipAtPoint(deflectSfx, this.gameObject.transform.position);
+                        }
+                        enemy.transform.position = currentPos;
+                        //force.y += prevBulletTransform.rotation.eulerAngles.z;
+                        enemy.gameObject.GetComponent<BulletBehaviour>().SetForce(force * 2);
+                        //enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 1.0f, ForceMode2D.Impulse);
+                        enemy.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
+                        enemy.gameObject.GetComponent<BulletBehaviour>().ignoreTag = gameObject.tag;
+                        enemy.gameObject.GetComponent<BulletBehaviour>().damageTag = "Enemy";
+                    }
+
+                    if (enemy.gameObject.GetComponent<Rigidbody2D>() && !enemy.gameObject.GetComponent<BulletBehaviour>())
+                    {
+
+                        enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(force * 50.0f, ForceMode2D.Impulse);
+                    }
+                }
+
+
+
+            }
+
+            attackTime = Time.time;
+            animator.ResetTrigger("Attack");
+        }
+        else
+        {
+            ShootAttack();
+        }
+        
 
     }
 

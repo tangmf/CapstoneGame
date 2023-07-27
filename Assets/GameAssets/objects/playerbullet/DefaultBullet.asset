@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Default
   name: Default
-  bulletSpeed: 10
+  bulletSpeed: 30
   damage: 10
   forceMultiplier: 100
   hitEffect: {fileID: 7038756251294249094, guid: 02ec44d7f1ff61c4eb7d96df3f13475e, type: 3}
   bulletObject: {fileID: 5565238402336925566, guid: 83768ad48548b1145a609aa4b4d13086, type: 3}
   shootSfx: {fileID: 8300000, guid: 64032c52228679e499876df288eaa5a2, type: 3}
-  hitSfx: {fileID: 0}
+  hitSfx: {fileID: 8300000, guid: f10d3455d652e324fa3b83d2e33b5c34, type: 3}

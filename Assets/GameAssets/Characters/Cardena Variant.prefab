@@ -47,6 +47,26 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.33536845
       objectReference: {fileID: 0}
+    - target: {fileID: 6910647501425680606, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
+      propertyPath: melee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910647501425680606, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
+      propertyPath: cooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910647501425680606, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
+      propertyPath: abilityCD
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910647501425680606, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
+      propertyPath: bulletPref
+      value: 
+      objectReference: {fileID: 99147296068487311, guid: 84e6b584ffccd7a4ea577920954d7fd6, type: 3}
+    - target: {fileID: 6910647501425680606, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
+      propertyPath: abilityBullet
+      value: 
+      objectReference: {fileID: 99147296068487311, guid: 8b5fce38505ba3a488ff123c8a356909, type: 3}
     - target: {fileID: 8644574011779986802, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -90,6 +110,12 @@ PrefabInstance:
     - target: {fileID: 8644574011779986802, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943902868507060720, guid: c6d96bdfb1ef22143b94220487088299, type: 3}
+      propertyPath: m_text
+      value: 'FIRE
+
+        BALL'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d96bdfb1ef22143b94220487088299, type: 3}

@@ -14,6 +14,8 @@ public class Interactable : MonoBehaviour
     private GameObject dialogueObject;
     private bool isInArea;
 
+    public GameObject player = null;
+
     void Update()
     {
         // Detect when the E arrow key is pressed down
@@ -29,10 +31,12 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag(playerTag))
         {
             isInArea = true;
+            player = collision.gameObject;
             // Show dialog box
             if (interactButton)
             {
                 dialogueObject = Instantiate(interactButton, this.transform.position + interactButtonOffset, this.transform.rotation);
+                dialogueObject.transform.parent = this.transform;
             }
 
             // if (collision.gameObject.GetComponent<HealthManager>())
@@ -61,6 +65,7 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTag))
         {
+            player = null;
             isInArea = false;
             if (dialogueObject)
             {
