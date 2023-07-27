@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FreezeNPCs : MonoBehaviour
 {
+    public float unfreezeAfter = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class FreezeNPCs : MonoBehaviour
         if (collision.gameObject.GetComponent<NPCBehavior>())
         {
             collision.gameObject.GetComponent<NPCBehavior>().Freeze();
-            collision.gameObject.GetComponent<NPCBehavior>().CallUnFreezeInSeconds(5.0f);
+            collision.gameObject.GetComponent<NPCBehavior>().CallUnFreezeInSeconds(unfreezeAfter);
         }
 
 

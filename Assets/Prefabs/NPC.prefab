@@ -5093,7 +5093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75250056ce592004dac4a72f14cc8551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 500
+  walkSpeed: 700
   jumpSpeed: 100
   groundRay: {fileID: 4461075646166481267}
   jumpFloorDistance: 0.5
@@ -5105,6 +5105,9 @@ MonoBehaviour:
   currentState: 1
   decisionTime: 3
   nextTime: 0
+  idleTime: 0
+  maxIdleTime: 15
+  freeze: 0
 --- !u!1 &4461075647577018668
 GameObject:
   m_ObjectHideFlags: 0
