@@ -26,6 +26,10 @@ public class NPCBehavior : MonoBehaviour
 
     public float decisionTime = 3.0f;
     public float nextTime = 0f;
+    public float idleTime = 0f;
+    public float maxIdleTime = 15f;
+
+    public bool freeze = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,30 +57,35 @@ public class NPCBehavior : MonoBehaviour
         {
             Walk(walkDir);
             animator.SetBool("Moving", true);
+
+            if (walkDir)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
         }
         else
         {
             // idle
             rb.velocity = new Vector2(0, rb.velocity.y);
             animator.SetBool("Moving", false);
-
-            if(Time.timeSinceLevelLoad > nextTime)
+            idleTime += Time.deltaTime;
+            if(Time.timeSinceLevelLoad > nextTime && !freeze)
             {
                 currentState = State.Walking;
                 nextTime = Time.timeSinceLevelLoad + decisionTime;
             }
         }
-
-
-
-        if (walkDir)
+        if(idleTime >= maxIdleTime && !freeze)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            idleTime = 0;
+            currentState = State.Walking;
         }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
+
+
     }
 
     public void Jump()
@@ -138,5 +147,29 @@ public class NPCBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
+    }
+
+    public void Freeze()
+    {
+        SetToIdle();
+        freeze = true;
+    }
+
+    public void UnFreeze()
+    {
+        freeze = false;
+        currentState = State.Walking;
+    }
+
+    public IEnumerator UnFreezeInSeconds(float time)
+    {
+        yield return new WaitForSeconds(time);
+        UnFreeze();
+    }
+
+    public void CallUnFreezeInSeconds(float time)
+    {
+        Debug.Log("Unfrozen");
+        StartCoroutine(UnFreezeInSeconds(time));
     }
 }

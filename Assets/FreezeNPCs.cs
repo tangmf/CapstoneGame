@@ -16,12 +16,13 @@ public class FreezeNPCs : MonoBehaviour
 
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.GetComponent<NPCBehavior>())
         {
-            collision.gameObject.GetComponent<NPCBehavior>().SetToIdle();
+            collision.gameObject.GetComponent<NPCBehavior>().Freeze();
+            collision.gameObject.GetComponent<NPCBehavior>().CallUnFreezeInSeconds(5.0f);
         }
 
 
