@@ -5093,7 +5093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75250056ce592004dac4a72f14cc8551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 400
+  walkSpeed: 500
   jumpSpeed: 100
   groundRay: {fileID: 4461075646166481267}
   jumpFloorDistance: 0.5

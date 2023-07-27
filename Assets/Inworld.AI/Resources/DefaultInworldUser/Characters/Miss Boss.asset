@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Miss Boss
   brain: workspaces/misfitmania/characters/miss_boss
-  avatar: {fileID: 0}
+  avatar: {fileID: 2965223420056320392, guid: bcfd77fc3dfd54c4ab9675a9bbc4e0ed, type: 3}
   workspace: workspaces/misfitmania
   currentScene: workspaces/misfitmania/characters/miss_boss
   ownerShip: 0
-  defaultThumbnail: {fileID: 0}
+  defaultThumbnail: {fileID: 2800000, guid: b82987f8e9a56944a9a26c2a8ce66796, type: 3}
   index: 0
   triggers: []
   scenes:
@@ -26,4 +26,4 @@ MonoBehaviour:
   modelUri: 
   posUri: 
   previewImgUri: 
-  characterID: 
+  characterID: 73e44fc4-590a-4018-a601-0c1a0391d282

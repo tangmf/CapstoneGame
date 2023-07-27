@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Cardena
+  m_EditorClassIdentifier: 
+  characterName: Cardena
+  brain: workspaces/misfitmania/characters/cardena
+  avatar: {fileID: 0}
+  workspace: workspaces/misfitmania
+  currentScene: workspaces/misfitmania/characters/cardena
+  ownerShip: 0
+  defaultThumbnail: {fileID: 2800000, guid: af2b29500dbe8a74481a04b819d1522b, type: 3}
+  index: 1
+  triggers: []
+  scenes:
+  - workspaces/misfitmania/scenes/misfitmaniadefault
+  modelUri: 
+  posUri: 
+  previewImgUri: 
+  characterID: a963ee25-9a2a-42ce-9d2f-1834da1b0f31

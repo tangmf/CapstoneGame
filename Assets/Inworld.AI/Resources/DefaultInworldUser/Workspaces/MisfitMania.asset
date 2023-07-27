@@ -15,9 +15,10 @@ MonoBehaviour:
   title: MisfitMania
   fullName: workspaces/misfitmania
   characters:
-  - {fileID: 11400000, guid: 531827fdb91336847a1b12509ced02ae, type: 2}
+  - {fileID: 11400000, guid: afccb119ee42588478f7adeb0777c1b7, type: 2}
+  - {fileID: 11400000, guid: 0247019eb5168e047bcbb9099a5a5fb0, type: 2}
   scenes:
-  - {fileID: 11400000, guid: 863326d26dba1f84f939d0f33f81bda7, type: 2}
+  - {fileID: 0}
   integrations:
-  - {fileID: 11400000, guid: e8af14c93e1e7d64aaa03b16875e6efe, type: 2}
+  - {fileID: 0}
   index: 0

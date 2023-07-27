@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2740e37fa8314bbe9948695617a79f70, type: 3}
   m_Name: InworldUser
   m_EditorClassIdentifier: 
-  m_UserName: DEFAULT
+  m_UserName: Yomo
   m_OrganizationID: 
   m_AdditionalPlayerData:
   - name: Level
     value: 18
+  - name: name
+    value: Yomo
+  - name: age
+    value: 17
+  - name: role
+    value: Member of the 11th Division
+  - name: gender
+    value: Female
