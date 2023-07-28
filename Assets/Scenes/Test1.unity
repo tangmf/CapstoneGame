@@ -11437,6 +11437,8 @@ MonoBehaviour:
   interactButtonOffset: {x: 0, y: 1, z: 0}
   player: {fileID: 0}
   point: {fileID: 4607279787333033779}
+  overlay: {fileID: 2577907626873860548, guid: 768a2de626b63f64e862413db9b610b5, type: 3}
+  overlayTime: 0.5
 --- !u!61 &1616059598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16798,6 +16800,8 @@ MonoBehaviour:
   interactButtonOffset: {x: 0, y: 1, z: 0}
   player: {fileID: 0}
   point: {fileID: 1616059596}
+  overlay: {fileID: 2577907626873860548, guid: 768a2de626b63f64e862413db9b610b5, type: 3}
+  overlayTime: 0.5
 --- !u!212 &4607279787333033778
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16930,6 +16934,8 @@ MonoBehaviour:
   interactButtonOffset: {x: 0, y: 1, z: 0}
   player: {fileID: 0}
   point: {fileID: 4607279785735859306}
+  overlay: {fileID: 2577907626873860548, guid: 768a2de626b63f64e862413db9b610b5, type: 3}
+  overlayTime: 0.5
 --- !u!224 &4707244338162948567
 RectTransform:
   m_ObjectHideFlags: 0
