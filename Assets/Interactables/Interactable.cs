@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
     public Vector3 interactButtonOffset = new Vector3(0, 1, 0);
 
     private GameObject dialogueObject;
-    private bool isInArea;
+    public bool isInArea;
 
     public GameObject player = null;
 
