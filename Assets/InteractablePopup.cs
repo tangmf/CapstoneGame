@@ -15,7 +15,6 @@ public class InteractablePopup : Interactable
             TogglePopup();
         }
         
-        
 
     }
 
@@ -33,4 +32,8 @@ public class InteractablePopup : Interactable
             popup.SetActive(true);
         }
     }
+
 }
+
+
+
