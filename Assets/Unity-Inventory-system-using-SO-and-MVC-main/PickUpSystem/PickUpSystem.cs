@@ -14,6 +14,7 @@ public class PickUpSystem : MonoBehaviour
         if (item != null)
         {
             int reminder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
+            LogManager.instance.Log("Picked up " + item.InventoryItem.Name + " x" + item.Quantity);
             if (reminder == 0)
                 item.DestroyItem();
             else
