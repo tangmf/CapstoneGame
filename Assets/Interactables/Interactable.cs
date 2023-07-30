@@ -16,13 +16,16 @@ public class Interactable : MonoBehaviour
 
     public GameObject player = null;
 
+
+
     void Update()
     {
         // Detect when the E arrow key is pressed down
         if (isInArea && Input.GetKeyDown(KeyCode.E) && (totalAllowedTimes == -1 || (totalAllowedTimes != -1 && timesInteracted < totalAllowedTimes)))
         {
-            Interact(player);
-            timesInteracted++;
+            Debug.Log("Player interact");
+            this.Interact(player);
+            
         }
     }
 
@@ -79,5 +82,6 @@ public class Interactable : MonoBehaviour
     {
         // Overwrite
         Debug.Log("Interacting with " + transform.name + " as " + go.transform.name);
+        timesInteracted++;
     }
 }

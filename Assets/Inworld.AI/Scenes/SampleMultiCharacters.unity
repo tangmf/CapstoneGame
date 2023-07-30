@@ -720,6 +720,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1139415839}
     - target: {fileID: 3818396142677475718, guid: d22bd8b2bca97c14295d2f6d73499a8a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818396142677475718, guid: d22bd8b2bca97c14295d2f6d73499a8a, type: 3}
       propertyPath: m_Character
       value: 
       objectReference: {fileID: 1139415834}
@@ -735,6 +739,10 @@ PrefabInstance:
       propertyPath: m_Data
       value: 
       objectReference: {fileID: 11400000, guid: 24d471e3970d0a74bb9163027f2b403c, type: 2}
+    - target: {fileID: 4642585711620351756, guid: d22bd8b2bca97c14295d2f6d73499a8a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4642585711620351756, guid: d22bd8b2bca97c14295d2f6d73499a8a, type: 3}
       propertyPath: m_SightAngle
       value: 180
@@ -1237,6 +1245,10 @@ PrefabInstance:
     - target: {fileID: -3915082565821610680, guid: 8afb08e7fb5095f468db60ff49631132, type: 3}
       propertyPath: m_Name
       value: Armature
+      objectReference: {fileID: 0}
+    - target: {fileID: -3612840882688719046, guid: 8afb08e7fb5095f468db60ff49631132, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3612840882688719046, guid: 8afb08e7fb5095f468db60ff49631132, type: 3}
       propertyPath: m_DirtyAABB

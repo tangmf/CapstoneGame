@@ -12,7 +12,7 @@ public class InteractableItem : Interactable
     public override void Interact(GameObject go)
     {
         base.Interact(go);
-        if (item)
+        if (item && go.CompareTag("Player"))
         {
             PickUp();
         }

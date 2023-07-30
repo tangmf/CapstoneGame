@@ -47,7 +47,9 @@ namespace Inworld
         #region Private Variables
         ControllerStates m_State = ControllerStates.Idle;
         InworldClient m_Client;
+        [SerializeField]
         InworldCharacter m_CurrentCharacter;
+        [SerializeField]
         InworldCharacter m_LastCharacter;
         InworldError m_ErrorMsg;
         string m_CurrentRecordingID;
