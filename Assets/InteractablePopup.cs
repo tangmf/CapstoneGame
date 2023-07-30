@@ -4,27 +4,19 @@ using UnityEngine;
 using TMPro;
 
 
-public class InteractableDisplay : Interactable
+public class InteractablePopup : Interactable
 {
     public GameObject popup;
 
     public override void Interact(GameObject go)
     {
         base.Interact(go);
-        if (go.CompareTag("Player"))
+        if(go.CompareTag("Player"))
         {
             TogglePopup();
         }
 
 
-    }
-
-    void Update()
-    {
-        if (!base.isInArea)
-        {
-            popup.SetActive(false);
-        }
     }
 
     public void TogglePopup()
@@ -36,6 +28,15 @@ public class InteractableDisplay : Interactable
         else
         {
             popup.SetActive(true);
+        }
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if (!base.isInArea)
+        {
+            popup.SetActive(false);
         }
     }
 

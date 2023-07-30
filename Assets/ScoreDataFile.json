@@ -1,1 +1,20 @@
-{}
+{
+    "scoreDatas": [
+        {
+            "sceneName": "Test1",
+            "charName": "Yomo",
+            "winTime": 40.68484115600586,
+            "healthPoints": 200.0,
+            "score": 1959,
+            "grade": 83
+        },
+        {
+            "sceneName": "L0",
+            "charName": "Yomo",
+            "winTime": 18.94264030456543,
+            "healthPoints": 190.0,
+            "score": 1881,
+            "grade": 65
+        }
+    ]
+}

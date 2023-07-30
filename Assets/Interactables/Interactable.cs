@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
 
 
 
-    void Update()
+    public virtual void Update()
     {
         // Detect when the E arrow key is pressed down
         if (isInArea && Input.GetKeyDown(KeyCode.E) && (totalAllowedTimes == -1 || (totalAllowedTimes != -1 && timesInteracted < totalAllowedTimes)))
