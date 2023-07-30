@@ -125,6 +125,11 @@ public class HealthManager : MonoBehaviour
         healthBar.value = healthPoints;
     }
 
+    public void AddHealth(float health)
+    {
+        healthBar.maxValue += health;
+    }
+
     public void Die()
     {
         if (gameObject.CompareTag("Player"))
