@@ -9,10 +9,14 @@ public class AgentWeapon : MonoBehaviour
     private EquippableItemSO weapon;
 
     [SerializeField]
+    private EquippableItemSO chest;
+
+    [SerializeField]
     private InventorySO inventoryData;
 
     [SerializeField]
     private List<ItemParameter> parametersToModify, itemCurrentState;
+    
 
     public void SetWeapon(EquippableItemSO weaponItemSO, List<ItemParameter> itemState)
     {
@@ -22,6 +26,18 @@ public class AgentWeapon : MonoBehaviour
         }
 
         this.weapon = weaponItemSO;
+        this.itemCurrentState = new List<ItemParameter>(itemState);
+        ModifyParameters();
+    }
+
+    public void SetChest(EquippableItemSO chestItemSO, List<ItemParameter> itemState)
+    {
+        if (chest != null)
+        {
+            inventoryData.AddItem(chest, 1, itemCurrentState);
+        }
+
+        this.chest = chestItemSO;
         this.itemCurrentState = new List<ItemParameter>(itemState);
         ModifyParameters();
     }

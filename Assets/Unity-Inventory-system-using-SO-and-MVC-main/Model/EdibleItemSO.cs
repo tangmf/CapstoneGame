@@ -22,6 +22,10 @@ namespace Inventory.Model
             {
                 data.statModifier.AffectCharacter(character, data.value);
             }
+
+            LogManager.instance.Log(ActionName + " " + base.name);
+
+
             return true;
         }
     }
