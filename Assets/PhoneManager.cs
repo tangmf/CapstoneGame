@@ -8,10 +8,14 @@ public class PhoneManager : MonoBehaviour
     public GameObject phone;
     public List<GameObject> apps;
     public GameObject currentApp;
+    public Transform appContainer;
     // Start is called before the first frame update
     void Start()
     {
-        OpenApp(apps[0]);
+        foreach(Transform app in appContainer){
+            apps.Add(app.gameObject);
+        }
+        OpenApp(0);
     }
 
     // Update is called once per frame
@@ -42,12 +46,13 @@ public class PhoneManager : MonoBehaviour
         }
     }
 
-    public void OpenApp(GameObject app)
+    public void OpenApp(int index)
     {
         foreach (GameObject go in apps)
         {
             CloseApp(go);
         }
+        GameObject app = apps[index];
         currentApp = app;
         app.SetActive(true);
     }
