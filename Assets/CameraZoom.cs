@@ -27,6 +27,9 @@ public class CameraZoom : MonoBehaviour
         {
             ZoomOut(scrollRate);
         }
+        if(Input.GetKeyDown("o")){
+            LockOnPlayer();
+        }
     }
 
     public void ZoomOut(float x)
@@ -50,5 +53,10 @@ public class CameraZoom : MonoBehaviour
     public void ZoomReset()
     {
         vcam.m_Lens.OrthographicSize = defaultValue;
+    }
+
+    public void LockOnPlayer(){
+        vcam.LookAt = this.transform;
+        vcam.Follow = this.transform;
     }
 }
