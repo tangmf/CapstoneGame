@@ -5,6 +5,10 @@ using UnityEngine;
 public class LogManager : MonoBehaviour
 {
     public GameObject logItem;
+
+    public List<LogData> logDataList = new List<LogData>();
+
+ 
     // Start is called before the first frame update
 
     #region singleton
@@ -21,6 +25,7 @@ public class LogManager : MonoBehaviour
 
     #endregion
 
+    
     void Start()
     {
         
@@ -35,6 +40,11 @@ public class LogManager : MonoBehaviour
     public void Log(string s)
     {
         Debug.Log("New log");
+
+        // Locally save it
+        LogData newLogData = new LogData(s, null, null);
+        logDataList.Add(newLogData);
+
         GameObject logItemInstance = Instantiate(logItem, new Vector3(0, 0, 0), Quaternion.identity);
         logItemInstance.transform.parent = transform;
 
