@@ -97,7 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cd: 1
   next: 0
-  trashPref: {fileID: 0}
+  velocityToDropTrash: 1
+  trashPref: {fileID: 4521824223933909807, guid: 19a2234553f33b34d95f264a37800053, type: 3}
   spawnPoint: {fileID: 7925276674408972072}
 --- !u!1 &938791477276442847
 GameObject:

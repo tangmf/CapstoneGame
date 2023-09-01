@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    [Header("Data")]
     public List<MapLocation> mapLocations;
 
     public List<MapLocation> addedMapLocations;
@@ -11,6 +12,13 @@ public class MapManager : MonoBehaviour
 
     public Transform defaultLocationsContainer;
     public Transform addedLocationsContainer;
+
+    [Header("Shortcut Keys")]
+    public KeyCode update;
+    public KeyCode addObject;
+
+    // Debugging purposes
+    public GameObject testPref;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +28,14 @@ public class MapManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown(update))
         {
             UpdateMapLocations();
+        }
+
+        if (Input.GetKeyDown(addObject))
+        {
+            addedMapLocations.Add(new MapLocation(new Vector2(10, 10), testPref));
         }
     }
 

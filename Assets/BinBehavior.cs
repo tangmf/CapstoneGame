@@ -6,6 +6,7 @@ public class BinBehavior : MonoBehaviour
 {
     public float cd = 1.0f;
     public float next = 0f;
+    public float velocityToDropTrash = 1f;
     public GameObject trashPref;
     public Transform spawnPoint;
     Rigidbody2D rb;
@@ -18,7 +19,7 @@ public class BinBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.velocity.x != 0 && Time.timeSinceLevelLoad > next){
+        if((rb.velocity.x >velocityToDropTrash || rb.velocity.y > velocityToDropTrash) && Time.timeSinceLevelLoad > next){
             GameObject trash = Instantiate(trashPref, spawnPoint.position, Quaternion.identity);
             Destroy(trash, 3.0f);
             next = Time.timeSinceLevelLoad + cd;
